@@ -581,6 +581,121 @@
             color: var(--white);
         }
 
+        /* ─── TEAM ─── */
+        .team {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .team-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-400);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .team h2 {
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            max-width: 600px;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .team-sub {
+            font-size: 1rem;
+            color: var(--gray-400);
+            max-width: 460px;
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem 2rem;
+            max-width: 960px;
+            width: 100%;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            display: block;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .team-card:hover .team-photo {
+            filter: grayscale(0%);
+        }
+
+        .team-initials {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gray-100);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gray-400);
+            letter-spacing: -0.02em;
+        }
+
+        .team-card h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.15rem;
+        }
+
+        .team-card .role {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 0.6rem;
+        }
+
+        .team-card .bio {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            line-height: 1.55;
+        }
+
+        .team-divider {
+            grid-column: 1 / -1;
+            border: none;
+            border-top: 1px solid var(--gray-200);
+            margin: 0.5rem 0;
+        }
+
+        .team-section-label {
+            grid-column: 1 / -1;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-400);
+            font-weight: 600;
+            text-align: left;
+            padding-bottom: 0.5rem;
+        }
+
         /* ─── FOOTER ─── */
         footer {
             background: var(--white);
@@ -676,6 +791,8 @@
 
             .cta-buttons { flex-direction: column; align-items: center; }
 
+            .team-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; }
+
             .footer-inner { flex-direction: column; text-align: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; }
         }
@@ -695,6 +812,7 @@
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#approach">Approach</a></li>
                 <li><a href="#kenya">Kenya</a></li>
+                <li><a href="#team">Team</a></li>
                 <li><a href="#involved">Get Involved</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -838,6 +956,72 @@
         <p class="attribution reveal reveal-delay-1">A clinic that controls its own power controls its ability<br>to care for the people who depend on it.</p>
     </section>
 
+    <!-- TEAM -->
+    <section class="panel team" id="team">
+        <div class="team-label reveal">The Team</div>
+        <h2 class="reveal reveal-delay-1">Built by people who<br>understand the stakes.</h2>
+        <p class="team-sub reveal reveal-delay-2">Harvard, MIT, the United Nations, and field experience across four continents.</p>
+        <div class="team-grid reveal reveal-delay-3">
+
+            <!-- Leadership -->
+            <div class="team-section-label">Leadership</div>
+
+            <div class="team-card">
+                <img src="sarah.png" alt="Sarah Wang" class="team-photo">
+                <h3>Sarah Wang, MPH</h3>
+                <div class="role">Co-Founder & CEO</div>
+                <div class="bio">Harvard Chan MPH. Rose Fellow Scholar (top 1%), One Harvard Award (top 1%). MIT Applied Data Science & AI (top 1%). Coca-Cola Gold Scholar (top 50 of 6.4M). Co-led 20-person multi-country team to launch BioKite pilot. Asst. Director, Harvard&ndash;MIT Health Systems & AI Governance Initiative. Field research in Taiwan, Chile, and Kenya. Published in Int'l Journal of Infectious Diseases.</div>
+            </div>
+
+            <div class="team-card">
+                <img src="mary.jpg" alt="Mary Mugambi" class="team-photo">
+                <h3>Mary Mugambi</h3>
+                <div class="role">Chief Financial Officer</div>
+                <div class="bio">Harvard Kennedy School MPA (Edward Mason Fellow). 18+ years senior finance & operations across the UN system. Former Strategic Ops Advisor to the Treasurer at ILO Geneva. Regional Chief of Admin & Finance for Africa (11 countries). IPSAS compliance, Oracle ERP, risk governance. Board Member, Calestous Juma Legacy Foundation.</div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-initials">MK</div>
+                <h3>Maison Ole Kipila</h3>
+                <div class="role">Chief of Partnerships</div>
+                <div class="bio">Partnerships Manager, ACOPPHE Nairobi. Africa Focal Point, Indigenous Peoples Caucus at the UN (COP30). UNFCCC COP29, UNCCD COP16, UNFCCC COP30 Delegate. Bridges grassroots community voices into global policy. Expertise in climate-health partnerships and Indigenous knowledge systems.</div>
+            </div>
+
+            <div class="team-card">
+                <img src="blerta.png" alt="Blerta Dodaj" class="team-photo">
+                <h3>Blerta Dodaj</h3>
+                <div class="role">Chief Marketing Officer</div>
+                <div class="bio">Harvard Innovation Labs, Climate Venture Class. Founder, Alex's Studio (Albania's largest casting group, 300+ members). Co-Founder, Virtuosa Albania. Design Lead, WIP Student Conference 2025, Harvard Kennedy School. 1st Prize, Tirana Bank Business Challenge. Expertise in branding and impact communications for early-stage ventures.</div>
+            </div>
+
+            <!-- Advisors & Regional Leads -->
+            <div class="team-divider"></div>
+            <div class="team-section-label">Advisors & Regional Leads</div>
+
+            <div class="team-card">
+                <img src="reward.jpg" alt="Reward Muzerengwa" class="team-photo">
+                <h3>Reward Muzerengwa</h3>
+                <div class="role">Biosecurity & Southern Africa Lead</div>
+                <div class="bio">Microbial genomics researcher. UN Youth for Biosecurity Fellow. Leads Southern Africa pilot feasibility, pathogen surveillance integration, and biosecurity alignment across the continent.</div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-initials">BA</div>
+                <h3>Byron Aho</h3>
+                <div class="role">Board Advisor</div>
+                <div class="bio">Construction and power-grid infrastructure specialist. Advises on hardware deployment, electrical installation standards, and site-readiness for clinic solar+battery systems.</div>
+            </div>
+
+            <div class="team-card">
+                <img src="olabiyi.jpg" alt="Olabiyi Hezekiah Olaniran" class="team-photo">
+                <h3>Olabiyi Olaniran, PhD</h3>
+                <div class="role">Clinical Advisor & Nigeria Lead</div>
+                <div class="bio">Harvard T.H. Chan School of Public Health. Leads Nigeria pilot liaison and West Africa expansion site scouting. Develops QA checklists and clinical protocols ensuring pilot facilities meet health, safety, and compliance standards.</div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="panel-short cta-panel" id="involved" style="padding: 6rem 2rem;">
         <h2 class="reveal">Join the work.</h2>
@@ -860,6 +1044,7 @@
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#approach">Approach</a></li>
                 <li><a href="#kenya">Kenya</a></li>
+                <li><a href="#team">Team</a></li>
                 <li><a href="mailto:sarahwangmph@gmail.com">Contact</a></li>
             </ul>
             <div class="footer-copy">&copy; 2026 BioKite Labs</div>
