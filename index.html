@@ -24,18 +24,13 @@
          */
 
         :root {
-            /* ── Logo Blues ── */
             --sky: #4DBAD9;
             --azure: #2A8FBA;
             --ocean: #18679A;
             --ocean-dark: #0F4E76;
-
-            /* ── Logo Greens ── */
             --leaf: #A9C63B;
             --fern: #73A332;
             --forest: #4D8B2A;
-
-            /* ── Neutrals from logo text ── */
             --slate: #404A53;
             --graphite: #2C333A;
             --ink: #151A1E;
@@ -44,20 +39,13 @@
             --mist: #E9EEF2;
             --cloud: #F4F7F9;
             --white: #FAFCFD;
-
-            /* ── Brand Gradients ── */
             --grad-brand: linear-gradient(135deg, #4DBAD9, #73A332);
             --grad-blue: linear-gradient(135deg, #4DBAD9, #18679A);
             --grad-green: linear-gradient(135deg, #A9C63B, #4D8B2A);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        html { scroll-behavior: smooth; font-size: 16px; }
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--graphite);
@@ -69,805 +57,220 @@
 
         /* ─── NAV ─── */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             background: rgba(250,252,253,0.82);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
-
         .nav-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            height: 52px;
+            max-width: 1080px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 2rem; height: 52px;
         }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.55rem;
-            text-decoration: none;
-        }
-
-        .nav-logo img {
-            height: 30px;
-            width: auto;
-        }
-
-        .nav-logo-text {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--slate);
-            letter-spacing: -0.02em;
-        }
-
-        .nav-logo-text .labs {
-            font-weight: 400;
-            color: var(--silver);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--steel);
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.005em;
-            transition: color 0.2s;
-        }
-
+        .nav-logo { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; }
+        .nav-logo img { height: 30px; width: auto; }
+        .nav-logo-text { font-size: 0.95rem; font-weight: 700; color: var(--slate); letter-spacing: -0.02em; }
+        .nav-logo-text .labs { font-weight: 400; color: var(--silver); }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--steel); font-size: 0.8rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--azure); }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 18px;
-            height: 1.5px;
-            background: var(--slate);
-            margin: 4px 0;
-            transition: all 0.3s;
-        }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 18px; height: 1.5px; background: var(--slate); margin: 4px 0; transition: all 0.3s; }
 
         /* ─── PANELS ─── */
         .panel {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 7rem 2rem;
-            position: relative;
+            min-height: 100vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; padding: 7rem 2rem; position: relative;
         }
+        .panel-short { min-height: auto; padding: 7rem 2rem; }
 
-        .panel-short {
-            min-height: auto;
-            padding: 7rem 2rem;
-        }
+        /* ─── REUSABLE ─── */
+        .section-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--azure); font-weight: 600; margin-bottom: 1.5rem; }
+        .section-title { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800; letter-spacing: -0.04em; max-width: 600px; line-height: 1.08; margin-bottom: 1.5rem; color: var(--graphite); }
+        .section-sub { font-size: 1.05rem; color: var(--steel); max-width: 500px; line-height: 1.7; font-weight: 300; text-align: center; }
+        .brand-bar { width: 40px; height: 3px; background: var(--grad-brand); margin: 2rem auto; border-radius: 2px; }
+        .brand-grad { background: var(--grad-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
         /* ─── HERO ─── */
-        .hero {
-            background: var(--ink);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .hero-logo {
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-logo img {
-            height: 80px;
-            width: auto;
-            filter: drop-shadow(0 0 60px rgba(77,186,217,0.25));
-        }
-
+        .hero { background: var(--ink); color: var(--white); text-align: center; }
+        .hero-logo { margin-bottom: 2.5rem; }
+        .hero-logo img { height: 80px; width: auto; filter: drop-shadow(0 0 60px rgba(77,186,217,0.25)); }
         .hero h1 {
-            font-size: clamp(3rem, 7.5vw, 6rem);
-            font-weight: 800;
-            line-height: 1.02;
-            letter-spacing: -0.045em;
-            max-width: 780px;
-            margin-bottom: 1.5rem;
+            font-size: clamp(3rem, 7.5vw, 6rem); font-weight: 800;
+            line-height: 1.02; letter-spacing: -0.045em; max-width: 780px; margin-bottom: 1.5rem;
         }
-
-        .hero h1 .brand-grad {
-            background: var(--grad-brand);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-sub {
-            font-size: clamp(1rem, 1.8vw, 1.2rem);
-            color: var(--silver);
-            max-width: 460px;
-            line-height: 1.65;
-            font-weight: 300;
-        }
-
-        .hero-url {
-            display: inline-block;
-            margin-top: 2.5rem;
-            padding: 0.5rem 1.2rem;
-            background: rgba(77,186,217,0.08);
-            border: 1px solid rgba(77,186,217,0.15);
-            border-radius: 980px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--sky);
-            letter-spacing: 0.01em;
-        }
-
-        .hero-scroll {
-            position: absolute;
-            bottom: 2.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hero-scroll span {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--steel);
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 28px;
-            background: linear-gradient(to bottom, var(--steel), transparent);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
+        .hero-sub { font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--silver); max-width: 460px; line-height: 1.65; font-weight: 300; }
+        .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+        .hero-scroll span { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--steel); }
+        .scroll-line { width: 1px; height: 28px; background: linear-gradient(to bottom, var(--steel), transparent); animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
         /* ─── OUTCOME ─── */
-        .outcome {
-            background: var(--white);
-            text-align: center;
-        }
+        .outcome { background: var(--white); text-align: center; }
+        .outcome-number { font-size: clamp(4rem, 10vw, 8.5rem); font-weight: 800; letter-spacing: -0.05em; line-height: 1; background: var(--grad-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+        .outcome-label { font-size: clamp(1rem, 1.8vw, 1.3rem); color: var(--steel); font-weight: 400; max-width: 480px; line-height: 1.55; }
 
-        .outcome-number {
-            font-size: clamp(4rem, 10vw, 8.5rem);
-            font-weight: 800;
-            letter-spacing: -0.05em;
-            line-height: 1;
-            background: var(--grad-brand);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .outcome-label {
-            font-size: clamp(1rem, 1.8vw, 1.3rem);
-            color: var(--steel);
-            font-weight: 400;
-            max-width: 480px;
-            line-height: 1.55;
-        }
-
-        /* ─── STATS ─── */
-        .stats-row {
-            display: flex;
-            gap: 0;
-            width: 100%;
-            max-width: 960px;
-        }
-
-        .stat-block {
-            flex: 1;
-            text-align: center;
-            padding: 3rem 2rem;
-            border-right: 1px solid var(--mist);
-        }
-
+        /* ─── STATS ROW ─── */
+        .stats-row { display: flex; gap: 0; width: 100%; max-width: 960px; }
+        .stat-block { flex: 1; text-align: center; padding: 3rem 2rem; border-right: 1px solid var(--mist); }
         .stat-block:last-child { border-right: none; }
-
-        .stat-block .num {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: var(--graphite);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-block .label {
-            font-size: 0.8rem;
-            color: var(--silver);
-            line-height: 1.4;
-            font-weight: 400;
-        }
+        .stat-block .num { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -0.03em; color: var(--graphite); line-height: 1; margin-bottom: 0.5rem; }
+        .stat-block .label { font-size: 0.8rem; color: var(--silver); line-height: 1.4; font-weight: 400; }
 
         /* ─── STORY ─── */
-        .story {
-            background: var(--white);
-            text-align: center;
-        }
-
-        .story-text {
-            max-width: 620px;
-            font-size: clamp(1.3rem, 2.5vw, 1.75rem);
-            line-height: 1.65;
-            font-weight: 300;
-            color: var(--graphite);
-            letter-spacing: -0.01em;
-        }
-
-        .story-text strong {
-            font-weight: 700;
-            color: var(--slate);
-        }
+        .story { background: var(--white); text-align: center; }
+        .story-text { max-width: 620px; font-size: clamp(1.3rem, 2.5vw, 1.75rem); line-height: 1.65; font-weight: 300; color: var(--graphite); letter-spacing: -0.01em; }
+        .story-text strong { font-weight: 700; color: var(--slate); }
 
         /* ─── CONTRAST ─── */
-        .contrast-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            max-width: 960px;
-            width: 100%;
-        }
-
-        .contrast-col {
-            padding: 4rem 3rem;
-        }
-
-        .contrast-col.before {
-            background: var(--ink);
-            color: var(--white);
-            border-radius: 20px 0 0 20px;
-        }
-
-        .contrast-col.after {
-            background: var(--white);
-            color: var(--graphite);
-            border-radius: 0 20px 20px 0;
-            border: 1px solid var(--mist);
-            border-left: none;
-        }
-
-        .contrast-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-
+        .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; max-width: 960px; width: 100%; }
+        .contrast-col { padding: 4rem 3rem; }
+        .contrast-col.before { background: var(--ink); color: var(--white); border-radius: 20px 0 0 20px; }
+        .contrast-col.after { background: var(--white); color: var(--graphite); border-radius: 0 20px 20px 0; border: 1px solid var(--mist); border-left: none; }
+        .contrast-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; margin-bottom: 2rem; }
         .before .contrast-label { color: var(--steel); }
         .after .contrast-label { color: var(--azure); }
-
-        .contrast-col h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-
-        .contrast-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .contrast-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
+        .contrast-col h3 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 2rem; line-height: 1.2; }
+        .contrast-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+        .contrast-list li { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; line-height: 1.5; }
         .before .contrast-list li { color: rgba(255,255,255,0.6); }
         .after .contrast-list li { color: var(--steel); }
+        .contrast-list .icon { font-size: 1.1rem; line-height: 1.4; flex-shrink: 0; }
 
-        .contrast-list .icon {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            flex-shrink: 0;
+        /* ─── HOW (5-step) ─── */
+        .how { background: var(--white); text-align: center; }
+        .how-flow {
+            display: flex; gap: 0; max-width: 1000px; width: 100%;
+            border-radius: 16px; overflow: hidden; border: 1px solid var(--mist);
+        }
+        .how-step {
+            flex: 1; padding: 2.5rem 1.5rem; text-align: center;
+            border-right: 1px solid var(--mist); position: relative;
+        }
+        .how-step:last-child { border-right: none; }
+        .how-step .step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--cloud); font-size: 0.7rem; font-weight: 700;
+            color: var(--azure); margin-bottom: 0.8rem;
+        }
+        .how-step h3 { font-size: 1rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; color: var(--graphite); }
+        .how-step p { font-size: 0.8rem; color: var(--silver); line-height: 1.5; }
+        .how-arrow {
+            position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+            width: 16px; height: 16px; z-index: 2;
+            color: var(--mist);
         }
 
-        /* ─── HOW ─── */
-        .how {
-            background: var(--white);
-            text-align: center;
+        /* ─── KIT ─── */
+        .kit { background: var(--ink); color: var(--white); text-align: center; }
+        .kit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 960px; width: 100%; margin-top: 1rem; }
+        .kit-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px; padding: 2.5rem 2rem; text-align: left;
+            transition: background 0.3s;
         }
+        .kit-card:hover { background: rgba(255,255,255,0.07); }
+        .kit-card-tag { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--sky); margin-bottom: 0.8rem; }
+        .kit-card h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+        .kit-card .kit-desc { font-size: 0.85rem; color: var(--silver); line-height: 1.6; margin-bottom: 1.5rem; }
+        .kit-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .kit-features li { font-size: 0.8rem; color: var(--steel); display: flex; align-items: center; gap: 0.5rem; }
+        .kit-features li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--fern); flex-shrink: 0; }
 
-        .section-tag {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--azure);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            max-width: 600px;
-            line-height: 1.08;
-            margin-bottom: 4rem;
-            color: var(--graphite);
-        }
-
-        .how-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            max-width: 840px;
-            width: 100%;
-        }
-
-        .how-item {
-            padding: 2.5rem 2rem;
-            text-align: center;
-            border-right: 1px solid var(--mist);
-        }
-
-        .how-item:last-child { border-right: none; }
-
-        .how-item .step-num {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--azure);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .how-item h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.6rem;
-            color: var(--graphite);
-        }
-
-        .how-item p {
-            font-size: 0.85rem;
-            color: var(--silver);
-            line-height: 1.55;
-        }
+        /* ─── APPROACH ─── */
+        .approach { background: var(--cloud); text-align: center; }
+        .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 840px; width: 100%; }
+        .approach-item { padding: 2.5rem 2rem; text-align: center; border-right: 1px solid var(--mist); }
+        .approach-item:last-child { border-right: none; }
+        .approach-item .a-num { font-size: 0.7rem; font-weight: 700; color: var(--azure); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+        .approach-item h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.6rem; color: var(--graphite); }
+        .approach-item p { font-size: 0.85rem; color: var(--silver); line-height: 1.55; }
 
         /* ─── KENYA ─── */
-        .kenya {
-            background: var(--ink);
-            color: var(--white);
-            text-align: center;
-        }
+        .kenya { background: var(--ink); color: var(--white); text-align: center; }
+        .kenya-body { font-size: 1.05rem; color: var(--silver); max-width: 480px; line-height: 1.7; font-weight: 300; margin-bottom: 3rem; }
+        .kenya-facts { display: flex; gap: 2.5rem; flex-wrap: wrap; justify-content: center; }
+        .kenya-fact { font-size: 0.85rem; color: var(--steel); display: flex; align-items: center; gap: 0.5rem; }
+        .kenya-fact .check { width: 18px; height: 18px; border-radius: 50%; background: rgba(115,163,50,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .kenya-fact .check svg { width: 10px; height: 10px; }
 
-        .kenya-body {
-            font-size: 1.05rem;
-            color: var(--silver);
-            max-width: 480px;
-            line-height: 1.7;
-            font-weight: 300;
-            margin-bottom: 3rem;
-        }
-
-        .kenya-facts {
-            display: flex;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .kenya-fact {
-            font-size: 0.85rem;
-            color: var(--steel);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .kenya-fact .check {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: rgba(115,163,50,0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .kenya-fact .check svg {
-            width: 10px;
-            height: 10px;
-        }
+        /* ─── IMPACT METRICS ─── */
+        .impact { background: var(--white); text-align: center; }
+        .impact-grid { display: flex; gap: 0; max-width: 840px; width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--mist); }
+        .impact-card { flex: 1; padding: 3rem 1.5rem; text-align: center; border-right: 1px solid var(--mist); }
+        .impact-card:last-child { border-right: none; }
+        .impact-card .imp-num { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.5rem; background: var(--grad-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .impact-card .imp-label { font-size: 0.8rem; color: var(--silver); line-height: 1.4; }
 
         /* ─── OUTCOMES ─── */
-        .outcomes {
-            background: var(--ink);
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .outcomes::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(77,186,217,0.06) 0%, transparent 70%);
-        }
-
-        .outcomes-headline {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            max-width: 700px;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .outcomes-body {
-            font-size: clamp(1rem, 1.6vw, 1.15rem);
-            color: var(--silver);
-            max-width: 560px;
-            line-height: 1.75;
-            font-weight: 300;
-            position: relative;
-            margin-bottom: 3.5rem;
-        }
-
-        .outcomes-body strong {
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .outcomes-strip {
-            display: flex;
-            gap: 0;
-            width: 100%;
-            max-width: 780px;
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .outcomes-stat {
-            flex: 1;
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            border-right: 1px solid rgba(255,255,255,0.06);
-            background: rgba(255,255,255,0.03);
-        }
-
+        .outcomes { background: var(--ink); color: var(--white); text-align: center; position: relative; overflow: hidden; }
+        .outcomes::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(77,186,217,0.06) 0%, transparent 70%); }
+        .outcomes-headline { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; max-width: 700px; margin-bottom: 2.5rem; position: relative; }
+        .outcomes-body { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--silver); max-width: 560px; line-height: 1.75; font-weight: 300; position: relative; margin-bottom: 3.5rem; }
+        .outcomes-body strong { font-weight: 600; color: var(--white); }
+        .outcomes-strip { display: flex; gap: 0; width: 100%; max-width: 780px; position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+        .outcomes-stat { flex: 1; padding: 2.5rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); }
         .outcomes-stat:last-child { border-right: none; }
-
-        .outcomes-stat .os-number {
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            background: var(--grad-brand);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .outcomes-stat .os-label {
-            font-size: 0.75rem;
-            color: var(--steel);
-            line-height: 1.4;
-        }
-
-        .outcomes-result {
-            margin-top: 3.5rem;
-            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 1.4;
-            position: relative;
-        }
-
-        .outcomes-result .brand-grad {
-            background: var(--grad-brand);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .outcomes-stat .os-number { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.5rem; background: var(--grad-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .outcomes-stat .os-label { font-size: 0.75rem; color: var(--steel); line-height: 1.4; }
+        .outcomes-result { margin-top: 3.5rem; font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.4; position: relative; }
 
         /* ─── QUOTE ─── */
-        .quote-panel {
-            background: var(--white);
-            text-align: center;
-        }
+        .quote-panel { background: var(--white); text-align: center; }
+        .quote-panel blockquote { font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.15; max-width: 700px; color: var(--graphite); }
+        .quote-panel .attribution { font-size: 0.9rem; color: var(--silver); font-weight: 400; line-height: 1.6; }
 
-        .quote-panel blockquote {
-            font-size: clamp(1.8rem, 4vw, 3.2rem);
-            font-weight: 800;
-            letter-spacing: -0.035em;
-            line-height: 1.15;
-            max-width: 700px;
-            color: var(--graphite);
-        }
-
-        .quote-panel blockquote .brand-grad {
-            background: var(--grad-brand);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .brand-bar {
-            width: 40px;
-            height: 3px;
-            background: var(--grad-brand);
-            margin: 2rem auto;
-            border-radius: 2px;
-        }
-
-        .quote-panel .attribution {
-            font-size: 0.9rem;
-            color: var(--silver);
-            font-weight: 400;
-            line-height: 1.6;
-        }
+        /* ─── VISION ─── */
+        .vision { background: var(--cloud); text-align: center; }
+        .vision-body { font-size: 1.1rem; color: var(--steel); max-width: 540px; line-height: 1.75; font-weight: 300; margin-bottom: 3rem; }
+        .values-row { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+        .value-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1.2rem; border-radius: 980px; background: var(--white); border: 1px solid var(--mist); font-size: 0.8rem; font-weight: 600; color: var(--slate); }
+        .value-pill .vdot { width: 6px; height: 6px; border-radius: 50%; background: var(--grad-brand); }
 
         /* ─── TEAM ─── */
-        .team {
-            background: var(--cloud);
-            text-align: center;
-        }
+        .team { background: var(--white); text-align: center; }
+        .team-sub { font-size: 1rem; color: var(--silver); max-width: 460px; line-height: 1.6; font-weight: 300; margin-bottom: 4rem; }
+        .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem 2rem; max-width: 960px; width: 100%; }
+        .team-card { text-align: center; }
+        .team-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; filter: grayscale(15%); transition: filter 0.3s, transform 0.3s; }
+        .team-card:hover .team-photo { filter: grayscale(0%); transform: scale(1.04); }
+        .team-card h3 { font-size: 0.9rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.15rem; color: var(--graphite); }
+        .team-card .role { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--azure); margin-bottom: 0.6rem; }
+        .team-card .bio { font-size: 0.75rem; color: var(--silver); line-height: 1.55; }
+        .team-divider { grid-column: 1 / -1; border: none; border-top: 1px solid var(--mist); margin: 0.5rem 0; }
+        .team-section-label { grid-column: 1 / -1; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--silver); font-weight: 600; text-align: left; padding-bottom: 0.5rem; }
 
-        .team-sub {
-            font-size: 1rem;
-            color: var(--silver);
-            max-width: 460px;
-            line-height: 1.6;
-            font-weight: 300;
-            margin-bottom: 4rem;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2.5rem 2rem;
-            max-width: 960px;
-            width: 100%;
-        }
-
-        .team-card {
-            text-align: center;
-        }
-
-        .team-photo {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1rem;
-            display: block;
-            filter: grayscale(15%);
-            transition: filter 0.3s, transform 0.3s;
-        }
-
-        .team-card:hover .team-photo {
-            filter: grayscale(0%);
-            transform: scale(1.04);
-        }
-
-        .team-initials {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--mist);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--silver);
-            letter-spacing: -0.02em;
-        }
-
-        .team-card h3 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            margin-bottom: 0.15rem;
-            color: var(--graphite);
-        }
-
-        .team-card .role {
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--azure);
-            margin-bottom: 0.6rem;
-        }
-
-        .team-card .bio {
-            font-size: 0.75rem;
-            color: var(--silver);
-            line-height: 1.55;
-        }
-
-        .team-divider {
-            grid-column: 1 / -1;
-            border: none;
-            border-top: 1px solid var(--mist);
-            margin: 0.5rem 0;
-        }
-
-        .team-section-label {
-            grid-column: 1 / -1;
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--silver);
-            font-weight: 600;
-            text-align: left;
-            padding-bottom: 0.5rem;
-        }
+        /* ─── PARTNERS ─── */
+        .partners { background: var(--ink); color: var(--white); text-align: center; }
+        .partners-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; max-width: 700px; margin-top: 0.5rem; }
+        .partner-tag { padding: 0.6rem 1.4rem; border-radius: 980px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; font-weight: 500; color: var(--silver); transition: border-color 0.3s; }
+        .partner-tag:hover { border-color: var(--sky); color: var(--white); }
 
         /* ─── CTA ─── */
-        .cta-panel {
-            background: var(--white);
-            text-align: center;
-        }
-
-        .cta-panel p {
-            font-size: 1rem;
-            color: var(--steel);
-            max-width: 420px;
-            line-height: 1.6;
-            font-weight: 300;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.9rem 2rem;
-            border-radius: 980px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-            letter-spacing: -0.01em;
-        }
-
-        .btn-brand {
-            background: var(--azure);
-            color: var(--white);
-        }
-
-        .btn-brand:hover {
-            background: var(--ocean);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--azure);
-            border: 1.5px solid var(--azure);
-        }
-
-        .btn-outline:hover {
-            background: var(--azure);
-            color: var(--white);
-        }
+        .cta-panel { background: var(--white); text-align: center; }
+        .cta-panel p { font-size: 1rem; color: var(--steel); max-width: 420px; line-height: 1.6; font-weight: 300; margin-bottom: 2.5rem; }
+        .cta-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; padding: 0.9rem 2rem; border-radius: 980px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; font-family: inherit; letter-spacing: -0.01em; }
+        .btn-brand { background: var(--azure); color: var(--white); }
+        .btn-brand:hover { background: var(--ocean); }
+        .btn-outline { background: transparent; color: var(--azure); border: 1.5px solid var(--azure); }
+        .btn-outline:hover { background: var(--azure); color: var(--white); }
 
         /* ─── FOOTER ─── */
-        footer {
-            background: var(--white);
-            padding: 2rem;
-            border-top: 1px solid var(--mist);
-        }
-
-        .footer-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-        }
-
-        .footer-brand img {
-            height: 18px;
-            width: auto;
-        }
-
-        .footer-brand span {
-            font-size: 0.75rem;
-            color: var(--silver);
-            font-weight: 500;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: var(--silver);
-            text-decoration: none;
-            font-size: 0.7rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
+        footer { background: var(--white); padding: 2rem; border-top: 1px solid var(--mist); }
+        .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-brand { display: flex; align-items: center; gap: 0.45rem; }
+        .footer-brand img { height: 18px; width: auto; }
+        .footer-brand span { font-size: 0.75rem; color: var(--silver); font-weight: 500; }
+        .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+        .footer-links a { color: var(--silver); text-decoration: none; font-size: 0.7rem; font-weight: 500; transition: color 0.2s; }
         .footer-links a:hover { color: var(--azure); }
-
-        .footer-copy {
-            font-size: 0.7rem;
-            color: var(--silver);
-        }
+        .footer-copy { font-size: 0.7rem; color: var(--silver); }
 
         /* ─── ANIMATIONS ─── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.12s; }
         .reveal-delay-2 { transition-delay: 0.24s; }
         .reveal-delay-3 { transition-delay: 0.36s; }
@@ -877,35 +280,35 @@
             .nav-links { display: none; position: absolute; top: 52px; left: 0; right: 0; background: rgba(250,252,253,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 1.5rem 2rem; gap: 1rem; }
             .nav-links.open { display: flex; }
             .hamburger { display: block; }
-
             .panel { padding: 5rem 1.5rem; min-height: auto; }
             .panel-short { padding: 4rem 1.5rem; }
-
             .hero h1 { font-size: 2.6rem; }
             .hero-logo img { height: 60px; }
             .stats-row { flex-direction: column; }
-            .stat-block { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 2rem; }
+            .stat-block { border-right: none; border-bottom: 1px solid var(--mist); padding: 2rem; }
             .stat-block:last-child { border-bottom: none; }
-
             .contrast-grid { grid-template-columns: 1fr; }
             .contrast-col.before { border-radius: 20px 20px 0 0; }
             .contrast-col.after { border-radius: 0 0 20px 20px; border-left: 1px solid var(--mist); border-top: none; }
             .contrast-col { padding: 3rem 2rem; }
-
-            .how-grid { grid-template-columns: 1fr; }
-            .how-item { border-right: none; border-bottom: 1px solid var(--mist); }
-            .how-item:last-child { border-bottom: none; }
-
+            .how-flow { flex-direction: column; }
+            .how-step { border-right: none; border-bottom: 1px solid var(--mist); }
+            .how-step:last-child { border-bottom: none; }
+            .how-arrow { display: none; }
+            .kit-grid { grid-template-columns: 1fr; }
+            .approach-grid { grid-template-columns: 1fr; }
+            .approach-item { border-right: none; border-bottom: 1px solid var(--mist); }
+            .approach-item:last-child { border-bottom: none; }
             .kenya-facts { flex-direction: column; align-items: center; gap: 1rem; }
-
+            .impact-grid { flex-direction: column; }
+            .impact-card { border-right: none; border-bottom: 1px solid var(--mist); }
+            .impact-card:last-child { border-bottom: none; }
             .outcomes-strip { flex-direction: column; }
             .outcomes-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
             .outcomes-stat:last-child { border-bottom: none; }
-
             .team-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; }
-
+            .values-row { gap: 0.8rem; }
             .cta-buttons { flex-direction: column; align-items: center; }
-
             .footer-inner { flex-direction: column; text-align: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; }
         }
@@ -923,9 +326,9 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#story">Story</a></li>
                 <li><a href="#problem">Problem</a></li>
-                <li><a href="#approach">Approach</a></li>
+                <li><a href="#kit">Solution</a></li>
+                <li><a href="#impact">Impact</a></li>
                 <li><a href="#kenya">Kenya</a></li>
-                <li><a href="#outcomes">Impact</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#involved">Get Involved</a></li>
             </ul>
@@ -937,18 +340,10 @@
 
     <!-- HERO -->
     <section class="panel hero" id="home">
-        <div class="hero-logo reveal">
-            <img src="logo.png" alt="BioKite Labs">
-        </div>
-        <h1 class="reveal reveal-delay-1">
-            Power that keeps<br>
-            people <span class="brand-grad">alive.</span>
-        </h1>
+        <div class="hero-logo reveal"><img src="logo.png" alt="BioKite Labs"></div>
+        <h1 class="reveal reveal-delay-1">Power that keeps<br>people <span class="brand-grad">alive.</span></h1>
         <p class="hero-sub reveal reveal-delay-2">When the grid fails, oxygen stops. Vaccines spoil. Lights go dark. We make sure the equipment that saves lives never loses power.</p>
-        <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
+        <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
     </section>
 
     <!-- OUTCOME -->
@@ -960,18 +355,9 @@
     <!-- STATS -->
     <section class="panel-short" style="background: var(--cloud);">
         <div class="stats-row reveal">
-            <div class="stat-block">
-                <div class="num">3 in 4</div>
-                <div class="label">health facilities have<br>unreliable power</div>
-            </div>
-            <div class="stat-block">
-                <div class="num">~9</div>
-                <div class="label">outages per month<br>averaging 5.7 hours each</div>
-            </div>
-            <div class="stat-block">
-                <div class="num">0</div>
-                <div class="label">backup systems in<br>most rural clinics</div>
-            </div>
+            <div class="stat-block"><div class="num">3 in 4</div><div class="label">health facilities have<br>unreliable power</div></div>
+            <div class="stat-block"><div class="num">~9</div><div class="label">outages per month<br>averaging 5.7 hours each</div></div>
+            <div class="stat-block"><div class="num">0</div><div class="label">backup systems in<br>most rural clinics</div></div>
         </div>
     </section>
 
@@ -1012,25 +398,77 @@
         </div>
     </section>
 
-    <!-- HOW -->
-    <section class="panel how" id="approach">
-        <div class="section-tag reveal">How it works</div>
-        <h2 class="section-title reveal reveal-delay-1">Three principles.<br>One outcome.</h2>
-        <div class="how-grid reveal reveal-delay-2">
-            <div class="how-item">
-                <div class="step-num">01</div>
-                <h3>Reserve</h3>
-                <p>Power is locked to life-saving equipment first and permanently. Oxygen, vaccines, surgical lights never compete with other loads.</p>
+    <!-- HOW BIOKITE WORKS (5-step from biokite.org) -->
+    <section class="panel how" id="how">
+        <div class="section-tag reveal">How BioKite Works</div>
+        <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 3rem;">Sense. Detect. Log.<br>Guide. Report.</h2>
+        <div class="how-flow reveal reveal-delay-2">
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <h3>Sense</h3>
+                <p>SensorClip monitors temperature, current draw, and equipment status in real-time.</p>
             </div>
-            <div class="how-item">
-                <div class="step-num">02</div>
-                <h3>Own</h3>
-                <p>The clinic owns the system. No contracts, no subscriptions, no dependencies that can be withdrawn. Maintained by a trained energy officer on site.</p>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <h3>Detect</h3>
+                <p>Automatically identifies outages, undervoltage, and temperature excursions that could harm equipment or samples.</p>
             </div>
-            <div class="how-item">
-                <div class="step-num">03</div>
-                <h3>Control</h3>
-                <p>Non-critical loads require deliberate activation. The power reserved for patients is never accidentally consumed.</p>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <h3>Log</h3>
+                <p>Creates timestamped proof of all incidents with photo evidence via ODK/KoBoCollect for offline capture.</p>
+            </div>
+            <div class="how-step">
+                <div class="step-num">4</div>
+                <h3>Guide</h3>
+                <p>Provides simple, actionable workflows staff can follow to respond to incidents and reduce downtime.</p>
+            </div>
+            <div class="how-step">
+                <div class="step-num">5</div>
+                <h3>Report</h3>
+                <p>Generates weekly clinic scorecards and monthly funder reports with KPI dashboards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLINIC READY MODE -->
+    <section class="panel kit" id="kit">
+        <div class="section-tag reveal" style="color: var(--sky);">Clinic Ready Mode</div>
+        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Opt-out power management<br>for rural clinics.</h2>
+        <p class="section-sub reveal reveal-delay-2" style="color: var(--silver); margin-bottom: 3rem;">Critical equipment is the default. Everything else opts in.</p>
+        <div class="kit-grid reveal reveal-delay-3">
+            <div class="kit-card">
+                <div class="kit-card-tag">Power Asset</div>
+                <h3>LiFePO4 Battery System</h3>
+                <p class="kit-desc">A facility-owned power asset that ensures life-saving equipment stays on through every outage. No contracts, no subscriptions, no dependencies that can be withdrawn.</p>
+                <ul class="kit-features">
+                    <li>Facility-owned — the clinic controls it</li>
+                    <li>Critical loads are always-on by default</li>
+                    <li>Non-critical loads require deliberate opt-in</li>
+                    <li>Locally serviceable, no vendor lock-in</li>
+                </ul>
+            </div>
+            <div class="kit-card">
+                <div class="kit-card-tag">Cold Chain</div>
+                <h3>Temperature & Voltage Monitor</h3>
+                <p class="kit-desc">Tracks temperature and voltage through every outage — ensuring vaccines, reagents, and samples are protected with timestamped proof.</p>
+                <ul class="kit-features">
+                    <li>Continuous temperature and voltage logging</li>
+                    <li>Outage detection and incident timestamps</li>
+                    <li>Works entirely offline</li>
+                    <li>Cold chain verification for compliance</li>
+                </ul>
+            </div>
+            <div class="kit-card">
+                <div class="kit-card-tag">Governance</div>
+                <h3>Certified Energy Officer</h3>
+                <p class="kit-desc">Every facility system is administered by a trained, certified energy officer on site — local expertise, local accountability, local control.</p>
+                <ul class="kit-features">
+                    <li>On-site trained energy officer</li>
+                    <li>Weekly clinic scorecards</li>
+                    <li>Monthly funder reports with KPIs</li>
+                    <li>Actionable incident response workflows</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1041,60 +479,57 @@
         <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Starting in Kenya.</h2>
         <p class="kenya-body reveal reveal-delay-2">Piloting with county health authorities to ensure clinics keep functioning when the grid fails. Built to fit within existing governance and maintenance structures.</p>
         <div class="kenya-facts reveal reveal-delay-3">
-            <div class="kenya-fact">
-                <span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                County health partnerships
-            </div>
-            <div class="kenya-fact">
-                <span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Trained energy officers
-            </div>
-            <div class="kenya-fact">
-                <span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Zero subscriptions
-            </div>
-            <div class="kenya-fact">
-                <span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Locally maintainable
-            </div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> County health partnerships</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Trained energy officers</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Zero subscriptions</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Locally maintainable</div>
+        </div>
+    </section>
+
+    <!-- IMPACT METRICS (from biokite.org) -->
+    <section class="panel impact" id="impact">
+        <div class="section-tag reveal">Measurable Impact</div>
+        <h2 class="section-title reveal reveal-delay-1">Targets that matter.</h2>
+        <div class="impact-grid reveal reveal-delay-2">
+            <div class="impact-card"><div class="imp-num">25%</div><div class="imp-label">Reduce equipment<br>downtime</div></div>
+            <div class="impact-card"><div class="imp-num">20%</div><div class="imp-label">Improve temperature<br>control compliance</div></div>
+            <div class="impact-card"><div class="imp-num">80%</div><div class="imp-label">Verified incident<br>compliance rate</div></div>
+            <div class="impact-card"><div class="imp-num">60%+</div><div class="imp-label">Fewer equipment<br>failures</div></div>
         </div>
     </section>
 
     <!-- OUTCOMES -->
     <section class="panel outcomes" id="outcomes">
-        <h2 class="outcomes-headline reveal">
-            Every day, <span class="brand-grad">100,000</span> rural African clinics lose power mid-delivery, mid-surgery, mid-breath.
-        </h2>
-        <p class="outcomes-body reveal reveal-delay-1">
-            When outages exceed two hours, <strong>mortality rises 43%</strong> — not because medicine failed, but because the lights went out.
-        </p>
+        <h2 class="outcomes-headline reveal">Every day, <span class="brand-grad">100,000</span> rural African clinics lose power mid-delivery, mid-surgery, mid-breath.</h2>
+        <p class="outcomes-body reveal reveal-delay-1">When outages exceed two hours, <strong>mortality rises 43%</strong> — not because medicine failed, but because the lights went out. BioKite's Clinic Ready Mode fixes that for <strong>$455–$556 per DALY averted</strong>.</p>
         <div class="outcomes-strip reveal reveal-delay-2">
-            <div class="outcomes-stat">
-                <div class="os-number">43%</div>
-                <div class="os-label">mortality increase<br>during extended outages</div>
-            </div>
-            <div class="outcomes-stat">
-                <div class="os-number">$455–556</div>
-                <div class="os-label">per DALY averted<br>with Clinic Ready Mode</div>
-            </div>
-            <div class="outcomes-stat">
-                <div class="os-number">100K</div>
-                <div class="os-label">clinics losing power<br>every single day</div>
-            </div>
+            <div class="outcomes-stat"><div class="os-number">43%</div><div class="os-label">mortality increase<br>during extended outages</div></div>
+            <div class="outcomes-stat"><div class="os-number">$455–556</div><div class="os-label">per DALY averted<br>with Clinic Ready Mode</div></div>
+            <div class="outcomes-stat"><div class="os-number">100K</div><div class="os-label">clinics losing power<br>every single day</div></div>
         </div>
-        <p class="outcomes-result reveal reveal-delay-3">
-            <span class="brand-grad">Mothers go home. Children grow up.</span>
+        <p class="outcomes-result reveal reveal-delay-3" style="max-width: 540px; line-height: 1.5;">
+            <span class="brand-grad">Mothers go home. Children grow up.<br>Families live longer, healthier lives.</span>
         </p>
     </section>
 
     <!-- QUOTE -->
     <section class="panel quote-panel">
-        <blockquote class="reveal">
-            The goal is not charity.<br>
-            It is <span class="brand-grad">sovereignty.</span>
-        </blockquote>
+        <blockquote class="reveal">The goal is not charity.<br>It is <span class="brand-grad">sovereignty.</span></blockquote>
         <div class="brand-bar"></div>
         <p class="attribution reveal reveal-delay-1">A clinic that controls its own power controls its ability<br>to care for the people who depend on it.</p>
+    </section>
+
+    <!-- VISION (from biokite.org) -->
+    <section class="panel-short vision">
+        <div class="section-tag reveal">Our Vision</div>
+        <h2 class="section-title reveal reveal-delay-1">Micro-labs across<br>the continent by 2030.</h2>
+        <p class="vision-body reveal reveal-delay-2">BioKite Labs aspires to facilitate a network of modular micro-labs across Africa, Asia, and other regions — each one locally maintained, offline-capable, and sovereign.</p>
+        <div class="values-row reveal reveal-delay-3">
+            <div class="value-pill"><span class="vdot"></span> Local Maintainability</div>
+            <div class="value-pill"><span class="vdot"></span> Open Innovation</div>
+            <div class="value-pill"><span class="vdot"></span> Cost Effectiveness</div>
+            <div class="value-pill"><span class="vdot"></span> Offline-First</div>
+        </div>
     </section>
 
     <!-- TEAM -->
@@ -1103,61 +538,63 @@
         <h2 class="section-title reveal reveal-delay-1">Built by people who<br>understand the stakes.</h2>
         <p class="team-sub reveal reveal-delay-2">Harvard, MIT, the United Nations, and field experience across four continents.</p>
         <div class="team-grid reveal reveal-delay-3">
-
             <div class="team-section-label">Leadership</div>
-
             <div class="team-card">
                 <img src="sarah.jpg" alt="Sarah Wang" class="team-photo">
                 <h3>Sarah Wang, MPH</h3>
                 <div class="role">Co-Founder & CEO</div>
                 <div class="bio">Harvard Chan MPH. Rose Fellow Scholar (top 1%), One Harvard Award (top 1%). MIT Applied Data Science & AI (top 1%). Coca-Cola Gold Scholar (top 50 of 6.4M). Co-led 20-person multi-country team to launch BioKite pilot. Asst. Director, Harvard&ndash;MIT Health Systems & AI Governance Initiative. Field research in Taiwan, Chile, and Kenya. Published in Int'l Journal of Infectious Diseases.</div>
             </div>
-
             <div class="team-card">
                 <img src="mary.jpg" alt="Mary Mugambi" class="team-photo">
                 <h3>Mary Mugambi</h3>
                 <div class="role">Chief Financial Officer</div>
                 <div class="bio">Harvard Kennedy School MPA (Edward Mason Fellow). 18+ years senior finance & operations across the UN system. Former Strategic Ops Advisor to the Treasurer at ILO Geneva. Regional Chief of Admin & Finance for Africa (11 countries). IPSAS compliance, Oracle ERP, risk governance. Board Member, Calestous Juma Legacy Foundation.</div>
             </div>
-
             <div class="team-card">
                 <img src="maison.jpg" alt="Maison Ole Kipila" class="team-photo">
                 <h3>Maison Ole Kipila</h3>
                 <div class="role">Chief of Partnerships</div>
                 <div class="bio">Partnerships Manager, ACOPPHE Nairobi. Africa Focal Point, Indigenous Peoples Caucus at the UN (COP30). UNFCCC COP29, UNCCD COP16, UNFCCC COP30 Delegate. Bridges grassroots community voices into global policy. Expertise in climate-health partnerships and Indigenous knowledge systems.</div>
             </div>
-
             <div class="team-card">
                 <img src="blerta.jpg" alt="Blerta Dodaj" class="team-photo">
                 <h3>Blerta Dodaj</h3>
                 <div class="role">Chief Marketing Officer</div>
                 <div class="bio">Harvard Innovation Labs, Climate Venture Class. Founder, Alex's Studio (Albania's largest casting group, 300+ members). Co-Founder, Virtuosa Albania. Design Lead, WIP Student Conference 2025, Harvard Kennedy School. 1st Prize, Tirana Bank Business Challenge. Expertise in branding and impact communications for early-stage ventures.</div>
             </div>
-
             <div class="team-divider"></div>
             <div class="team-section-label">Advisors & Regional Leads</div>
-
             <div class="team-card">
                 <img src="reward.jpg" alt="Reward Muzerengwa" class="team-photo">
                 <h3>Reward Muzerengwa</h3>
                 <div class="role">Biosecurity & Southern Africa Lead</div>
                 <div class="bio">Microbial genomics researcher. UN Youth for Biosecurity Fellow. Leads Southern Africa pilot feasibility, pathogen surveillance integration, and biosecurity alignment across the continent.</div>
             </div>
-
             <div class="team-card">
                 <img src="byron.jpg" alt="Byron Aho" class="team-photo">
                 <h3>Byron Aho</h3>
                 <div class="role">Board Advisor</div>
                 <div class="bio">Construction and power-grid infrastructure specialist. Advises on hardware deployment, electrical installation standards, and site-readiness for clinic solar+battery systems.</div>
             </div>
-
             <div class="team-card">
                 <img src="olabiyi.jpg" alt="Olabiyi Hezekiah Olaniran" class="team-photo">
                 <h3>Olabiyi Olaniran, PhD</h3>
                 <div class="role">Clinical Advisor & Nigeria Lead</div>
                 <div class="bio">Harvard T.H. Chan School of Public Health. Leads Nigeria pilot liaison and West Africa expansion site scouting. Develops QA checklists and clinical protocols ensuring pilot facilities meet health, safety, and compliance standards.</div>
             </div>
+        </div>
+    </section>
 
+    <!-- PARTNERS (from biokite.org) -->
+    <section class="panel-short partners">
+        <div class="section-tag reveal" style="color: var(--sky);">Collaboration</div>
+        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">We work with.</h2>
+        <div class="partners-grid reveal reveal-delay-2">
+            <div class="partner-tag">Implementation Partners</div>
+            <div class="partner-tag">Funding Partners</div>
+            <div class="partner-tag">Government Partners</div>
+            <div class="partner-tag">Technical Partners</div>
         </div>
     </section>
 
@@ -1174,14 +611,11 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="logo.png" alt="BioKite">
-                <span>BioKite Labs</span>
-            </div>
+            <div class="footer-brand"><img src="logo.png" alt="BioKite"><span>BioKite Labs</span></div>
             <ul class="footer-links">
                 <li><a href="#story">Story</a></li>
-                <li><a href="#problem">Problem</a></li>
-                <li><a href="#approach">Approach</a></li>
+                <li><a href="#kit">Kit</a></li>
+                <li><a href="#impact">Impact</a></li>
                 <li><a href="#kenya">Kenya</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="mailto:biokitelabs@gmail.com">Contact</a></li>
@@ -1197,11 +631,9 @@
         document.querySelectorAll('#navLinks a').forEach(a => {
             a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
         });
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
