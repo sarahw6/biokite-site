@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioKite Labs — Power Sovereignty for Health Clinics</title>
     <meta name="description" content="BioKite Labs builds sovereign power systems for rural health clinics. Starting in Kenya, we ensure life-saving equipment never loses electricity.">
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --white: #ffffff;
-            --off-white: #f8f7f4;
-            --light-gray: #e8e6e1;
-            --mid-gray: #9a9790;
-            --dark-gray: #3d3b37;
-            --near-black: #1a1917;
-            --accent: #2d6a4f;
-            --accent-light: #40916c;
-            --accent-pale: #d8f3dc;
-            --warm: #c9843a;
-            --warm-pale: #fdf0e0;
+            --off-white: #f5f8fa;
+            --light-gray: #dfe6ec;
+            --mid-gray: #7b8a96;
+            --dark-gray: #3a4550;
+            --near-black: #1c2631;
+            --blue: #1a7ab5;
+            --blue-deep: #145e8c;
+            --blue-pale: #e1f0fa;
+            --green: #6fa832;
+            --green-deep: #4a8c2a;
+            --green-pale: #eaf5dc;
+            --gradient: linear-gradient(135deg, #1a7ab5, #6fa832);
         }
 
         * {
@@ -70,15 +73,26 @@
             height: 64px;
         }
 
-        .logo {
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .logo-link img {
+            height: 38px;
+            width: auto;
+        }
+
+        .logo-text {
             font-weight: 700;
             font-size: 1.1rem;
-            color: var(--accent);
-            text-decoration: none;
+            color: var(--dark-gray);
             letter-spacing: -0.02em;
         }
 
-        .logo span {
+        .logo-text span {
             font-weight: 400;
             color: var(--mid-gray);
         }
@@ -98,7 +112,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--blue);
         }
 
         .hamburger {
@@ -139,7 +153,19 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-pale) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--blue-pale) 0%, transparent 70%);
+            opacity: 0.6;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--green-pale) 0%, transparent 70%);
             opacity: 0.5;
         }
 
@@ -149,16 +175,28 @@
             z-index: 1;
         }
 
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo img {
+            height: 56px;
+            width: auto;
+        }
+
         .hero-label {
             display: inline-block;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: var(--accent);
+            color: var(--blue);
             margin-bottom: 1.5rem;
             padding: 0.35rem 0.8rem;
-            background: var(--accent-pale);
+            background: var(--blue-pale);
             border-radius: 100px;
         }
 
@@ -174,7 +212,10 @@
 
         .hero h1 em {
             font-style: italic;
-            color: var(--accent);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-sub {
@@ -199,7 +240,7 @@
         .stat-number {
             font-size: 1.6rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--blue);
             letter-spacing: -0.02em;
         }
 
@@ -225,7 +266,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: var(--accent);
+            color: var(--blue);
             margin-bottom: 1rem;
         }
 
@@ -273,7 +314,7 @@
             line-height: 1;
             margin-right: 0.12em;
             margin-top: 0.06em;
-            color: var(--accent);
+            color: var(--blue);
             font-weight: 500;
         }
 
@@ -284,7 +325,7 @@
         }
 
         .problem .section-label {
-            color: var(--accent-light);
+            color: #5db8e8;
         }
 
         .problem .section-heading {
@@ -318,12 +359,11 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(45,106,79,0.25);
+            background: rgba(26,122,181,0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.2rem;
-            font-size: 1.2rem;
         }
 
         .problem-card h3 {
@@ -369,7 +409,7 @@
             height: 36px;
             min-width: 36px;
             border-radius: 8px;
-            background: var(--accent-pale);
+            background: var(--blue-pale);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -379,7 +419,7 @@
         .principle-marker svg {
             width: 18px;
             height: 18px;
-            color: var(--accent);
+            color: var(--blue);
         }
 
         .principle h3 {
@@ -407,7 +447,7 @@
         }
 
         .kenya-visual {
-            background: var(--accent);
+            background: var(--gradient);
             border-radius: 16px;
             padding: 3rem;
             color: var(--white);
@@ -483,7 +523,7 @@
             font-family: 'Newsreader', Georgia, serif;
             font-size: clamp(1.4rem, 3vw, 2rem);
             font-style: italic;
-            color: var(--accent);
+            color: var(--blue);
             max-width: 640px;
             margin: 2.5rem auto 0;
             line-height: 1.5;
@@ -492,9 +532,10 @@
 
         .sovereignty-line {
             width: 48px;
-            height: 2px;
-            background: var(--accent);
+            height: 3px;
+            background: var(--gradient);
             margin: 2rem auto;
+            border-radius: 2px;
         }
 
         .sovereignty-body {
@@ -507,14 +548,26 @@
 
         /* ─── CTA ─── */
         .cta {
-            background: var(--accent);
+            background: var(--near-black);
             color: var(--white);
             text-align: center;
             padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
         }
 
         .cta .section-label {
-            color: rgba(255,255,255,0.6);
+            color: #5db8e8;
         }
 
         .cta .section-heading {
@@ -524,7 +577,7 @@
         }
 
         .cta-body {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.7);
             max-width: 480px;
             margin: 0 auto 2.5rem;
             font-size: 1rem;
@@ -552,30 +605,30 @@
             font-family: inherit;
         }
 
-        .btn-white {
-            background: var(--white);
-            color: var(--accent);
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
         }
 
-        .btn-white:hover {
-            background: var(--off-white);
+        .btn-primary:hover {
+            opacity: 0.9;
             transform: translateY(-1px);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--white);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.25);
         }
 
         .btn-outline:hover {
-            border-color: rgba(255,255,255,0.6);
+            border-color: rgba(255,255,255,0.5);
             transform: translateY(-1px);
         }
 
         /* ─── FOOTER ─── */
         footer {
-            background: var(--near-black);
+            background: #141c25;
             color: rgba(255,255,255,0.5);
             padding: 3rem 2rem;
         }
@@ -590,13 +643,24 @@
             gap: 1rem;
         }
 
-        .footer-logo {
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand img {
+            height: 28px;
+            width: auto;
+        }
+
+        .footer-brand-text {
             color: var(--white);
             font-weight: 700;
             font-size: 1rem;
         }
 
-        .footer-logo span {
+        .footer-brand-text span {
             font-weight: 400;
             color: rgba(255,255,255,0.4);
         }
@@ -624,7 +688,7 @@
             text-align: center;
             margin-top: 2rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
         /* ─── ANIMATIONS ─── */
@@ -712,7 +776,10 @@
     <!-- NAV -->
     <nav id="nav">
         <div class="nav-inner">
-            <a href="#" class="logo">BioKite <span>Labs</span></a>
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="BioKite Labs">
+                <div class="logo-text">BioKite <span>Labs</span></div>
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#origin">Origin</a></li>
                 <li><a href="#problem">The Problem</a></li>
@@ -732,6 +799,9 @@
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-content fade-in">
+            <div class="hero-logo">
+                <img src="logo.png" alt="BioKite Labs">
+            </div>
             <div class="hero-label">Power Sovereignty for Health Clinics</div>
             <h1>A clinic that controls its own power controls its ability to <em>save lives</em></h1>
             <p class="hero-sub">BioKite Labs builds systems that ensure rural health clinics never lose power to the equipment that keeps patients alive. Starting in Kenya, working toward everywhere.</p>
@@ -778,28 +848,28 @@
             <div class="problem-grid fade-in">
                 <div class="problem-card">
                     <div class="problem-card-icon">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #40916c"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #5db8e8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                     </div>
                     <h3>Oxygen Stops Flowing</h3>
                     <p>Oxygen concentrators require continuous power. When the grid fails, patients on supplemental oxygen are left without it — sometimes for hours.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-card-icon">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #40916c"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0Z"/></svg>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #5db8e8"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0Z"/></svg>
                     </div>
                     <h3>Vaccines Spoil</h3>
                     <p>Cold chain breaks destroy temperature-sensitive vaccines and reagents. Once a cold chain is broken, those supplies cannot be recovered.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-card-icon">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #40916c"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #5db8e8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                     </div>
                     <h3>Surgical Lights Go Dark</h3>
                     <p>Procedures underway when the power drops leave clinicians operating by phone flashlight — or stopping entirely mid-intervention.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-card-icon">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #40916c"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #5db8e8"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                     </div>
                     <h3>Survival Becomes Chance</h3>
                     <p>Without reliable power, clinical outcomes depend on when the grid happens to be working — not on the quality of care a clinic can provide.</p>
@@ -928,7 +998,7 @@
             <h2 class="section-heading">Join us in building sovereign health infrastructure</h2>
             <p class="cta-body">Whether you're an engineer, a funder, a health authority, or an organization working in global health — there is a role for you in this work.</p>
             <div class="cta-buttons">
-                <a href="mailto:jchristoph@hks.harvard.edu" class="btn btn-white">Get in Touch</a>
+                <a href="mailto:jchristoph@hks.harvard.edu" class="btn btn-primary">Get in Touch</a>
                 <a href="https://www.linkedin.com/company/biokitelabs" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
@@ -937,7 +1007,10 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
-            <div class="footer-logo">BioKite <span>Labs</span></div>
+            <div class="footer-brand">
+                <img src="logo.png" alt="BioKite Labs">
+                <div class="footer-brand-text">BioKite <span>Labs</span></div>
+            </div>
             <ul class="footer-links">
                 <li><a href="#origin">Origin</a></li>
                 <li><a href="#problem">The Problem</a></li>
