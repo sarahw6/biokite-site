@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioKite Labs — Power That Keeps People Alive</title>
-    <meta name="description" content="BioKite Labs ensures rural health clinics never lose power to the equipment that saves lives. Starting in Kenya.">
+    <meta name="description" content="Monitor Power. Protect Patients. BioKite Labs ensures rural health clinics never lose power to the equipment that saves lives. Starting in Kenya.">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -308,6 +308,9 @@
             .outcomes-stat:last-child { border-bottom: none; }
             .team-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; }
             .values-row { gap: 0.8rem; }
+            .challenges-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .partners-detail-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .cta-audience-grid { grid-template-columns: 1fr !important; }
             .cta-buttons { flex-direction: column; align-items: center; }
             .footer-inner { flex-direction: column; text-align: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; }
@@ -324,11 +327,10 @@
                 <div class="nav-logo-text">BioKite <span class="labs">Labs</span></div>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#story">Story</a></li>
-                <li><a href="#problem">Problem</a></li>
+                <li><a href="#challenges">Problem</a></li>
                 <li><a href="#kit">Solution</a></li>
+                <li><a href="#how">How It Works</a></li>
                 <li><a href="#impact">Impact</a></li>
-                <li><a href="#kenya">Kenya</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#involved">Get Involved</a></li>
             </ul>
@@ -344,7 +346,8 @@
         <h1 class="reveal reveal-delay-1">
             <span class="brand-grad">Mothers go home.<br>Children grow up.</span>
         </h1>
-        <p class="hero-sub reveal reveal-delay-2">Every day, 100,000 rural African clinics lose power mid-delivery, mid-surgery, mid-breath — and when outages exceed two hours, mortality rises 43%. Not because medicine failed. Because the lights went out.</p>
+        <p class="hero-sub reveal reveal-delay-2" style="margin-bottom: 0.6rem;">Monitor Power. Protect Patients.</p>
+        <p class="hero-sub reveal reveal-delay-2" style="font-size: clamp(0.85rem, 1.4vw, 0.95rem); max-width: 440px;">Every day, 100,000 rural African clinics lose power mid-delivery, mid-surgery, mid-breath — and when outages exceed two hours, mortality rises 43%. Not because medicine failed. Because the lights went out.</p>
         <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
     </section>
 
@@ -365,6 +368,36 @@
             <div class="stat-block"><div class="num">3 in 4</div><div class="label">health facilities have<br>unreliable power</div></div>
             <div class="stat-block"><div class="num">~9</div><div class="label">outages per month<br>averaging 5.7 hours each</div></div>
             <div class="stat-block"><div class="num">0</div><div class="label">backup systems in<br>most rural clinics</div></div>
+        </div>
+    </section>
+
+    <!-- FOUR PROBLEMS (from biokite.org) -->
+    <section class="panel-short" id="challenges" style="background: var(--white); padding: 7rem 2rem;">
+        <div style="text-align: center; max-width: 960px; margin: 0 auto;">
+            <div class="section-tag reveal">Why This Matters</div>
+            <h2 class="section-title reveal reveal-delay-1" style="margin: 0 auto 3rem;">Four failures.<br>One root cause.</h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;" class="reveal reveal-delay-2 challenges-grid">
+                <div style="text-align: left; padding: 2rem 1.5rem; border: 1px solid var(--mist); border-radius: 12px;">
+                    <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--azure); margin-bottom: 0.8rem;">01</div>
+                    <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--graphite); letter-spacing: -0.02em;">Unreliable Electricity</h3>
+                    <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.55;">~25,000 facilities lack electricity entirely. 70,000+ suffer frequent outages causing equipment failures and spoiled vaccines.</p>
+                </div>
+                <div style="text-align: left; padding: 2rem 1.5rem; border: 1px solid var(--mist); border-radius: 12px;">
+                    <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--azure); margin-bottom: 0.8rem;">02</div>
+                    <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--graphite); letter-spacing: -0.02em;">Equipment Damage</h3>
+                    <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.55;">1 in 3 facilities report equipment damage from voltage fluctuations. ~30% of diagnostic test failures are linked to power problems.</p>
+                </div>
+                <div style="text-align: left; padding: 2rem 1.5rem; border: 1px solid var(--mist); border-radius: 12px;">
+                    <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--azure); margin-bottom: 0.8rem;">03</div>
+                    <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--graphite); letter-spacing: -0.02em;">Cold Chain Breaks</h3>
+                    <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.55;">Vaccine spoilage, reagent degradation, and inconsistent operation of oxygen concentrators and PCR machines compromise patient care.</p>
+                </div>
+                <div style="text-align: left; padding: 2rem 1.5rem; border: 1px solid var(--mist); border-radius: 12px;">
+                    <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--azure); margin-bottom: 0.8rem;">04</div>
+                    <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--graphite); letter-spacing: -0.02em;">No Documentation</h3>
+                    <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.55;">Missing logs, no review cadence, unclear response steps. Stockouts of basic parts drive preventable breakdowns that go unnoticed until too late.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -401,6 +434,20 @@
                     <li><span class="icon" style="color: var(--fern);">&#10003;</span> Critical power is reserved, never shared</li>
                     <li><span class="icon" style="color: var(--fern);">&#10003;</span> The clinic owns and controls its own power</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FUNDABLE PACKAGE CONCEPT -->
+    <section class="panel-short" style="background: var(--cloud); text-align: center; padding: 6rem 2rem;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div class="section-tag reveal">Our Approach</div>
+            <h2 class="section-title reveal reveal-delay-1" style="margin: 0 auto 1.5rem;">The smallest fundable<br>reliability package.</h2>
+            <p class="section-sub reveal reveal-delay-2" style="margin: 0 auto 2rem;">What is the smallest fundable and enforceable reliability package that ministries, NGOs, and donors can require — so critical clinic equipment stays operational and incident response is provably followed?</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;" class="reveal reveal-delay-3">
+                <div class="value-pill"><span class="vdot"></span> Vendor-neutral</div>
+                <div class="value-pill"><span class="vdot"></span> Offline-first</div>
+                <div class="value-pill"><span class="vdot"></span> Locally maintainable</div>
             </div>
         </div>
     </section>
@@ -469,6 +516,9 @@
             <div class="impact-card"><div class="imp-num">20%</div><div class="imp-label">Improve temperature<br>control compliance</div></div>
             <div class="impact-card"><div class="imp-num">80%</div><div class="imp-label">Verified incident<br>compliance rate</div></div>
             <div class="impact-card"><div class="imp-num">60%+</div><div class="imp-label">Fewer equipment<br>failures</div></div>
+        </div>
+        <div class="reveal reveal-delay-3" style="margin-top: 3rem; max-width: 520px;">
+            <p style="font-size: 0.75rem; color: var(--silver); line-height: 1.7; text-align: center; font-style: italic;">Evidence-based: monitoring paired with structured review teams improves cold-chain temperature performance (Lutukai et al., 2019) and audit-and-feedback interventions produce measurable improvements in professional practice (Ivers et al., 2012).</p>
         </div>
     </section>
 
@@ -560,21 +610,46 @@
     </section>
 
     <!-- PARTNERS (from biokite.org) -->
-    <section class="panel-short partners">
+    <section class="panel-short partners" style="padding: 7rem 2rem;">
         <div class="section-tag reveal" style="color: var(--sky);">Collaboration</div>
-        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">We work with.</h2>
-        <div class="partners-grid reveal reveal-delay-2">
-            <div class="partner-tag">Implementation Partners</div>
-            <div class="partner-tag">Funding Partners</div>
-            <div class="partner-tag">Government Partners</div>
-            <div class="partner-tag">Technical Partners</div>
+        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">We seek partners.</h2>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 960px; width: 100; margin-top: 2rem;" class="reveal reveal-delay-2 partners-detail-grid">
+            <div style="text-align: left; padding: 2rem 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;">
+                <h3 style="font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Implementation</h3>
+                <p style="font-size: 0.75rem; color: var(--steel); line-height: 1.55;">NGOs, health clinics, and diagnostic networks operating in low-resource settings who can pilot and scale.</p>
+            </div>
+            <div style="text-align: left; padding: 2rem 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;">
+                <h3 style="font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Funding</h3>
+                <p style="font-size: 0.75rem; color: var(--steel); line-height: 1.55;">Foundations, bilateral donors, and impact investors supporting global health innovation and infrastructure.</p>
+            </div>
+            <div style="text-align: left; padding: 2rem 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;">
+                <h3 style="font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Government</h3>
+                <p style="font-size: 0.75rem; color: var(--steel); line-height: 1.55;">Ministries of Health and national laboratory networks for program integration and sustainable scale-up.</p>
+            </div>
+            <div style="text-align: left; padding: 2rem 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;">
+                <h3 style="font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Technical</h3>
+                <p style="font-size: 0.75rem; color: var(--steel); line-height: 1.55;">Universities, engineering firms, and manufacturers who contribute expertise and production capacity.</p>
+            </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA — three audiences -->
     <section class="panel-short cta-panel" id="involved" style="padding: 7rem 2rem;">
-        <h2 class="section-title reveal">Join the work.</h2>
-        <p class="reveal reveal-delay-1">Engineer, funder, health authority, or organization — there is a role for you.</p>
+        <h2 class="section-title reveal">Get involved.</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 840px; width: 100%; margin: 0 auto 3rem;" class="reveal reveal-delay-1 cta-audience-grid">
+            <div style="text-align: center; padding: 2rem 1.5rem; border: 1px solid var(--mist); border-radius: 12px;">
+                <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--graphite); letter-spacing: -0.02em;">For Engineers</h3>
+                <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.55;">Apply technical skills to global health. Opportunities in hardware, embedded systems, and software.</p>
+            </div>
+            <div style="text-align: center; padding: 2rem 1.5rem; border: 1px solid var(--mist); border-radius: 12px;">
+                <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--graphite); letter-spacing: -0.02em;">For Organizations</h3>
+                <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.55;">NGOs, governments, and health systems facing power reliability challenges. Partner to pilot in your facilities.</p>
+            </div>
+            <div style="text-align: center; padding: 2rem 1.5rem; border: 1px solid var(--mist); border-radius: 12px;">
+                <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--graphite); letter-spacing: -0.02em;">For Funders</h3>
+                <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.55;">Foundations and donors focused on global health, appropriate technology, and health systems strengthening.</p>
+            </div>
+        </div>
         <div class="cta-buttons reveal reveal-delay-2">
             <a href="mailto:biokitelabs@gmail.com" class="btn btn-brand">Get in Touch</a>
             <a href="https://www.linkedin.com/company/biokitelabs" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
