@@ -74,14 +74,19 @@
         .nav-links { display: flex; gap: 1.8rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--steel); font-size: 0.8rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--azure); }
+        .nav-links a.active { color: var(--azure); }
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-        .hamburger span { display: block; width: 18px; height: 1.5px; background: var(--slate); margin: 4px 0; transition: all 0.3s; }
+        .hamburger span { display: block; width: 18px; height: 1.5px; background: var(--slate); margin: 4px 0; transition: all 0.3s; transform-origin: center; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(3.5px, 3.5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(3.5px, -3.5px); }
 
         /* ─── PANELS ─── */
         .panel {
             min-height: 100vh; display: flex; flex-direction: column;
             align-items: center; justify-content: center; padding: 7rem 2rem; position: relative;
         }
+        .panel-mid { min-height: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 7rem 2rem; }
         .panel-short { min-height: auto; padding: 7rem 2rem; }
 
         /* ─── REUSABLE ─── */
@@ -96,14 +101,20 @@
         .hero-logo { margin-bottom: 2.5rem; }
         .hero-logo img { height: 80px; width: auto; filter: drop-shadow(0 0 60px rgba(77,186,217,0.25)); }
         .hero h1 {
-            font-size: clamp(3rem, 7.5vw, 6rem); font-weight: 800;
-            line-height: 1.02; letter-spacing: -0.045em; max-width: 780px; margin-bottom: 1.5rem;
+            font-size: clamp(3rem, 7.5vw, 5.5rem); font-weight: 800;
+            line-height: 1.02; letter-spacing: -0.045em; max-width: 780px; margin-bottom: 1.2rem;
         }
-        .hero-sub { font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--silver); max-width: 460px; line-height: 1.65; font-weight: 300; }
+        .hero-descriptor { font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--sky); font-weight: 500; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+        .hero-sub { font-size: clamp(0.9rem, 1.5vw, 1.05rem); color: var(--silver); max-width: 460px; line-height: 1.65; font-weight: 300; }
         .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
         .hero-scroll span { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--steel); }
         .scroll-line { width: 1px; height: 28px; background: linear-gradient(to bottom, var(--steel), transparent); animation: pulse 2s ease-in-out infinite; }
         @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+        /* ─── DALY CALLOUT ─── */
+        .daly-strip { background: var(--ocean-dark); text-align: center; padding: 2.5rem 2rem; }
+        .daly-strip p { font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--silver); font-weight: 300; max-width: 600px; margin: 0 auto; }
+        .daly-strip strong { color: var(--white); font-weight: 700; }
 
         /* ─── OUTCOME ─── */
         .outcome { background: var(--white); text-align: center; }
@@ -194,6 +205,29 @@
         .kenya-fact { font-size: 0.85rem; color: var(--steel); display: flex; align-items: center; gap: 0.5rem; }
         .kenya-fact .check { width: 18px; height: 18px; border-radius: 50%; background: rgba(115,163,50,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .kenya-fact .check svg { width: 10px; height: 10px; }
+
+        /* ─── CERTIFICATION PROGRAM ─── */
+        .cert-path { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; max-width: 1000px; width: 100%; position: relative; }
+        .cert-step { text-align: center; padding: 2.5rem 1.2rem; position: relative; }
+        .cert-step::after { content: ''; position: absolute; top: 2.8rem; right: 0; width: 50%; height: 2px; background: var(--mist); }
+        .cert-step::before { content: ''; position: absolute; top: 2.8rem; left: 0; width: 50%; height: 2px; background: var(--mist); }
+        .cert-step:first-child::before { display: none; }
+        .cert-step:last-child::after { display: none; }
+        .cert-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--grad-brand); display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 1rem; position: relative; z-index: 1; }
+        .cert-step h3 { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; color: var(--graphite); }
+        .cert-step p { font-size: 0.75rem; color: var(--silver); line-height: 1.5; }
+
+        /* ─── PROTOCOL CHECKLIST ─── */
+        .protocol-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 780px; width: 100%; }
+        .protocol-card { padding: 2.5rem 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); text-align: left; transition: background 0.3s; }
+        .protocol-card:hover { background: rgba(255,255,255,0.06); }
+        .protocol-status { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 1rem; }
+        .protocol-status.pass { color: var(--leaf); }
+        .status-dot { width: 6px; height: 6px; border-radius: 50%; }
+        .status-dot.green { background: var(--leaf); box-shadow: 0 0 8px rgba(169,198,59,0.4); }
+        .protocol-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .protocol-card p { font-size: 0.85rem; color: var(--steel); line-height: 1.6; }
+        .protocol-card .threshold { margin-top: 1rem; font-size: 0.7rem; color: var(--sky); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
 
         /* ─── IMPACT METRICS ─── */
         .impact { background: var(--white); text-align: center; }
@@ -296,6 +330,9 @@
             .how-step:last-child { border-bottom: none; }
             .how-arrow { display: none; }
             .kit-grid { grid-template-columns: 1fr; }
+            .cert-path { grid-template-columns: 1fr; }
+            .cert-step::after, .cert-step::before { display: none; }
+            .protocol-grid { grid-template-columns: 1fr; }
             .approach-grid { grid-template-columns: 1fr; }
             .approach-item { border-right: none; border-bottom: 1px solid var(--mist); }
             .approach-item:last-child { border-bottom: none; }
@@ -338,143 +375,167 @@
         </div>
     </nav>
 
-    <!-- HERO — OUTCOMES FIRST -->
+    <!-- HERO -->
     <section class="panel hero" id="home">
         <div class="hero-logo reveal"><img src="logo.png" alt="BioKite Labs"></div>
         <h1 class="reveal reveal-delay-1">
             <span class="brand-grad">Mothers go home.<br>Children grow up.</span>
         </h1>
-        <p class="hero-sub reveal reveal-delay-2">Every day, 100,000 rural African clinics lose power mid-delivery, mid-surgery, mid-breath — and when outages exceed two hours, mortality rises 43%. Not because medicine failed. Because the lights went out.</p>
+        <p class="hero-descriptor reveal reveal-delay-2">Engineer Certification &amp; Clinical Readiness Protocol</p>
+        <p class="hero-sub reveal reveal-delay-2">100,000 rural African clinics lose power every day — mid-delivery, mid-surgery, mid-breath. When outages exceed two hours, mortality rises 43%.</p>
         <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
     </section>
 
-    <!-- THE COST OF INACTION -->
-    <section class="panel outcomes" id="outcomes">
-        <h2 class="outcomes-headline reveal">When the grid fails,<br><span class="brand-grad">survival becomes chance.</span></h2>
-        <div class="outcomes-strip reveal reveal-delay-1">
-            <div class="outcomes-stat"><div class="os-number">1B+</div><div class="os-label">patients served by clinics<br>with unreliable electricity</div></div>
-            <div class="outcomes-stat"><div class="os-number">43%</div><div class="os-label">mortality increase<br>during extended outages</div></div>
-            <div class="outcomes-stat"><div class="os-number">100K</div><div class="os-label">clinics losing power<br>every single day</div></div>
+    <!-- DALY STRIP -->
+    <div class="daly-strip">
+        <p class="reveal">BioKite's Clinic Ready Mode: <strong>$455–$556 per DALY averted.</strong> Families live longer, healthier lives.</p>
+    </div>
+
+    <!-- STATS -->
+    <section class="panel-short" style="background: var(--white);">
+        <div class="outcomes-strip reveal" style="max-width: 780px; margin: 0 auto; border: 1px solid var(--mist); border-radius: 16px; overflow: hidden;">
+            <div class="outcomes-stat" style="background: var(--white); border-right: 1px solid var(--mist);"><div class="os-number" data-count="1" style="-webkit-text-fill-color: var(--graphite); color: var(--graphite); font-size: clamp(2rem, 4vw, 3.2rem);">1B+</div><div class="os-label" style="color: var(--steel);">patients at clinics with<br>unreliable electricity</div></div>
+            <div class="outcomes-stat" style="background: var(--white); border-right: 1px solid var(--mist);"><div class="os-number" data-count="43" style="-webkit-text-fill-color: var(--graphite); color: var(--graphite); font-size: clamp(2rem, 4vw, 3.2rem);">43%</div><div class="os-label" style="color: var(--steel);">mortality increase during<br>extended power outages</div></div>
+            <div class="outcomes-stat" style="background: var(--white);"><div class="os-number" data-count="100" style="-webkit-text-fill-color: var(--graphite); color: var(--graphite); font-size: clamp(2rem, 4vw, 3.2rem);">100K</div><div class="os-label" style="color: var(--steel);">clinics losing power<br>every single day</div></div>
         </div>
-        <p class="outcomes-body reveal reveal-delay-2" style="margin-top: 3rem; margin-bottom: 0;">BioKite's Clinic Ready Mode fixes that for <strong>$455–$556 per DALY averted</strong> — so families live longer, healthier lives, and children get to pursue their dreams.</p>
     </section>
 
     <!-- STORY -->
-    <section class="panel story" id="story">
+    <section class="panel-mid story" id="story">
         <p class="story-text reveal">
-            Someone I loved nearly died because the systems meant to keep her alive were fragile. <strong>Machines failed. Power failed. Coordination failed.</strong> In those hours it became clear — survival depends not just on medicine, but on the invisible infrastructure around it.
+            Someone I loved nearly died because the systems meant to keep her alive were fragile. <strong>Machines failed. Power failed. Coordination failed.</strong>
         </p>
-        <div class="brand-bar" style="margin-top: 3rem;"></div>
+        <div class="brand-bar" style="margin-top: 2.5rem;"></div>
         <p class="story-text reveal reveal-delay-1" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--silver); margin-top: 1rem; max-width: 420px;">
-            That experience changed the course of my life. BioKite Labs exists to solve a problem that is both enormous and strangely ignored.
+            Survival depends not just on medicine, but on the invisible infrastructure around it. BioKite Labs exists to solve that.
         </p>
     </section>
 
-    <!-- BEFORE / AFTER — connected to outcomes -->
-    <section class="panel" id="problem" style="background: var(--cloud);">
-        <div class="contrast-grid reveal">
+    <!-- BEFORE / AFTER -->
+    <section class="panel-mid" id="problem" style="background: var(--cloud); padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="contrast-grid reveal" style="max-width: 860px;">
             <div class="contrast-col before">
                 <div class="contrast-label">Without reliable power</div>
                 <h3>Mothers don't come home.</h3>
                 <ul class="contrast-list">
                     <li><span class="icon">&times;</span> Oxygen concentrators shut off mid-delivery</li>
-                    <li><span class="icon">&times;</span> Vaccines spoil, cold chains break permanently</li>
+                    <li><span class="icon">&times;</span> Vaccines spoil, cold chains break</li>
                     <li><span class="icon">&times;</span> Surgical lights die during procedures</li>
-                    <li><span class="icon">&times;</span> Clinics depend on a grid they cannot control</li>
+                    <li><span class="icon">&times;</span> No backup, no protocol, no accountability</li>
                 </ul>
             </div>
             <div class="contrast-col after">
                 <div class="contrast-label">With BioKite Clinic Ready Mode</div>
                 <h3>Children grow up.</h3>
                 <ul class="contrast-list">
-                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> Life-saving equipment stays on — always</li>
-                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> Cold chain remains unbroken through outages</li>
-                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> Critical power is reserved, never shared</li>
-                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> The clinic owns and controls its own power</li>
+                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> Critical equipment stays on — always</li>
+                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> Cold chain verified through every outage</li>
+                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> Certified officer on site, accountable</li>
+                    <li><span class="icon" style="color: var(--fern);">&#10003;</span> The clinic owns and controls its power</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- CLINICAL READINESS PROTOCOL — how features create outcomes -->
+    <!-- CLINIC READY MODE — three pillars -->
     <section class="panel kit" id="kit">
         <div class="section-tag reveal" style="color: var(--sky);">Clinic Ready Mode</div>
-        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Opt-out power management.<br>Outcomes that last.</h2>
-        <p class="section-sub reveal reveal-delay-2" style="color: var(--silver); margin-bottom: 3rem;">Critical equipment is the default. Everything else opts in.</p>
+        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Three pillars.<br>One standard.</h2>
+        <p class="section-sub reveal reveal-delay-2" style="color: var(--silver); margin-bottom: 3rem;">Opt-out power management: critical equipment is the default. Everything else opts in.</p>
         <div class="kit-grid reveal reveal-delay-3">
             <div class="kit-card">
-                <div class="kit-card-tag">Why mothers go home</div>
+                <div class="kit-card-tag">Pillar 1 &middot; Power</div>
                 <h3>LiFePO4 Battery System</h3>
-                <p class="kit-desc">A facility-owned power asset that ensures oxygen concentrators, surgical lights, and delivery room equipment stay on through every outage.</p>
+                <p class="kit-desc">A facility-owned power asset. Oxygen concentrators, surgical lights, and delivery equipment stay on through every outage.</p>
                 <ul class="kit-features">
                     <li>Facility-owned — the clinic controls it</li>
-                    <li>Critical loads are always-on by default</li>
-                    <li>Non-critical loads require deliberate opt-in</li>
+                    <li>Critical loads always-on by default</li>
+                    <li>Non-critical loads opt in deliberately</li>
                     <li>Locally serviceable, no vendor lock-in</li>
                 </ul>
             </div>
             <div class="kit-card">
-                <div class="kit-card-tag">Why children stay healthy</div>
+                <div class="kit-card-tag">Pillar 2 &middot; Monitoring</div>
                 <h3>Cold Chain Monitor</h3>
-                <p class="kit-desc">Tracks temperature and voltage through every outage — ensuring vaccines that protect children from preventable disease are never lost to a power failure.</p>
+                <p class="kit-desc">Tracks temperature and voltage through every outage. Vaccines that protect children are never lost to a power failure.</p>
                 <ul class="kit-features">
-                    <li>Continuous temperature and voltage logging</li>
-                    <li>Outage detection and incident timestamps</li>
+                    <li>Continuous temperature + voltage logging</li>
+                    <li>Outage detection with timestamps</li>
                     <li>Works entirely offline</li>
-                    <li>Cold chain verification for compliance</li>
+                    <li>Compliance-ready verification</li>
                 </ul>
             </div>
             <div class="kit-card">
-                <div class="kit-card-tag">Why communities thrive</div>
+                <div class="kit-card-tag">Pillar 3 &middot; People</div>
                 <h3>Certified Energy Officer</h3>
-                <p class="kit-desc">Every system is administered by a trained, certified energy officer on site — building local capacity so communities control their own health infrastructure.</p>
+                <p class="kit-desc">Every system is administered by a trained, certified officer on site. Communities control their own health infrastructure.</p>
                 <ul class="kit-features">
-                    <li>On-site trained energy officer</li>
+                    <li>Trained and certified on-site</li>
                     <li>Weekly clinic scorecards</li>
                     <li>Monthly funder reports with KPIs</li>
-                    <li>Actionable incident response workflows</li>
+                    <li>Incident response workflows</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- ENGINEER CERTIFICATION -->
-    <section class="panel" id="certification" style="background: var(--cloud);">
+    <section class="panel-mid" id="certification" style="background: var(--cloud); padding: 7rem 2rem;">
         <div class="section-tag reveal">Engineer Certification</div>
         <h2 class="section-title reveal reveal-delay-1">Certified Facility<br>Energy Officer.</h2>
-        <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 3rem;">Every BioKite-equipped clinic is administered by a trained, certified energy officer — someone from the community who owns the system and the outcomes.</p>
-        <div class="how-flow reveal reveal-delay-3">
-            <div class="how-step"><div class="step-num">1</div><h3>Train</h3><p>On-site training in power management, load prioritization, and incident response.</p></div>
-            <div class="how-step"><div class="step-num">2</div><h3>Certify</h3><p>Hands-on assessment covering battery systems, cold chain protocols, and emergency procedures.</p></div>
-            <div class="how-step"><div class="step-num">3</div><h3>Deploy</h3><p>Certified officer takes ownership of the clinic's power system and clinical readiness status.</p></div>
-            <div class="how-step"><div class="step-num">4</div><h3>Report</h3><p>Weekly scorecards and monthly KPI reports demonstrating compliance and uptime.</p></div>
-            <div class="how-step"><div class="step-num">5</div><h3>Recertify</h3><p>Annual recertification ensures skills stay current and systems remain operational.</p></div>
+        <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 3.5rem;">Someone from the community — trained, assessed, deployed, and accountable. Not an outsider. An owner.</p>
+        <div class="cert-path reveal reveal-delay-3">
+            <div class="cert-step"><div class="cert-icon">1</div><h3>Train</h3><p>Power management, load prioritization, battery maintenance, incident response.</p></div>
+            <div class="cert-step"><div class="cert-icon">2</div><h3>Certify</h3><p>Hands-on assessment: battery systems, cold chain protocols, emergency procedures.</p></div>
+            <div class="cert-step"><div class="cert-icon">3</div><h3>Deploy</h3><p>Officer takes ownership of clinic power and clinical readiness status.</p></div>
+            <div class="cert-step"><div class="cert-icon">4</div><h3>Report</h3><p>Weekly scorecards, monthly KPI dashboards, incident documentation.</p></div>
+            <div class="cert-step"><div class="cert-icon">5</div><h3>Recertify</h3><p>Annual recertification keeps skills current and systems operational.</p></div>
         </div>
     </section>
 
     <!-- CLINICAL READINESS PROTOCOL -->
-    <section class="panel impact" id="protocol">
-        <div class="section-tag reveal">Clinical Readiness Protocol</div>
-        <h2 class="section-title reveal reveal-delay-1">What "clinic ready"<br>actually means.</h2>
-        <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 3rem;">A verifiable standard — not a hope. Every facility either meets the protocol or it doesn't.</p>
-        <div class="impact-grid reveal reveal-delay-3">
-            <div class="impact-card"><div class="imp-num" style="font-size: clamp(1.2rem, 2.5vw, 1.6rem);">Always-On</div><div class="imp-label">Critical loads — oxygen,<br>surgical lights, delivery —<br>never lose power</div></div>
-            <div class="impact-card"><div class="imp-num" style="font-size: clamp(1.2rem, 2.5vw, 1.6rem);">Cold Chain</div><div class="imp-label">Continuous temperature<br>and voltage logging<br>through every outage</div></div>
-            <div class="impact-card"><div class="imp-num" style="font-size: clamp(1.2rem, 2.5vw, 1.6rem);">Certified</div><div class="imp-label">On-site energy officer<br>trained, assessed,<br>and accountable</div></div>
-            <div class="impact-card"><div class="imp-num" style="font-size: clamp(1.2rem, 2.5vw, 1.6rem);">Verified</div><div class="imp-label">Weekly scorecards and<br>funder reports with<br>incident documentation</div></div>
+    <section class="panel" id="protocol" style="background: var(--ink); color: var(--white);">
+        <div class="section-tag reveal" style="color: var(--sky);">Clinical Readiness Protocol</div>
+        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">What "clinic ready"<br>actually means.</h2>
+        <p class="section-sub reveal reveal-delay-2" style="color: var(--silver); margin-bottom: 3rem;">A verifiable standard — not a hope. Pass or fail. Every facility, every week.</p>
+        <div class="protocol-grid reveal reveal-delay-3">
+            <div class="protocol-card">
+                <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <h3>Always-On Power</h3>
+                <p>Critical loads — oxygen concentrators, surgical lights, delivery room equipment — never lose power during an outage.</p>
+                <div class="threshold">Threshold: 0 minutes downtime on critical loads</div>
+            </div>
+            <div class="protocol-card">
+                <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <h3>Cold Chain Integrity</h3>
+                <p>Continuous temperature and voltage logging through every outage. No gaps in the record. No unverified excursions.</p>
+                <div class="threshold">Threshold: 100% logging uptime, zero unacknowledged excursions</div>
+            </div>
+            <div class="protocol-card">
+                <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <h3>Certified Officer On Site</h3>
+                <p>A trained, certified energy officer administers the system. Responsible for load management, incident response, and reporting.</p>
+                <div class="threshold">Threshold: Active certification, on-site presence</div>
+            </div>
+            <div class="protocol-card">
+                <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <h3>Verified Compliance</h3>
+                <p>Weekly scorecards document uptime, incidents, and response actions. Monthly reports go to funders with KPI dashboards.</p>
+                <div class="threshold">Threshold: Weekly scorecard submitted, monthly report delivered</div>
+            </div>
         </div>
     </section>
 
     <!-- KENYA -->
-    <section class="panel kenya" id="kenya">
-        <div class="section-tag reveal" style="color: var(--sky);">Where we begin</div>
-        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Starting in Kenya.</h2>
-        <p class="kenya-body reveal reveal-delay-2">Piloting with county health authorities to ensure clinics keep functioning when the grid fails. Built to fit within existing governance and maintenance structures.</p>
+    <section class="panel-mid kenya" id="kenya" style="padding: 7rem 2rem;">
+        <div class="section-tag reveal" style="color: var(--sky);">First Deployment</div>
+        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Kenya.</h2>
+        <p class="kenya-body reveal reveal-delay-2">Piloting with county health authorities. Built to work within existing governance, maintenance structures, and procurement channels.</p>
         <div class="kenya-facts reveal reveal-delay-3">
             <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> County health partnerships</div>
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Trained energy officers</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Officers from the community</div>
             <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Zero subscriptions</div>
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Locally maintainable</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Facility-owned assets</div>
         </div>
     </section>
 
@@ -541,7 +602,7 @@
 
     <!-- CTA -->
     <section class="panel-short cta-panel" id="involved" style="padding: 7rem 2rem;">
-        <h2 class="section-title reveal">Join the work.</h2>
+        <h2 class="section-title reveal" style="text-align: center;">So that mothers go home<br>and <span class="brand-grad">children grow up.</span></h2>
         <p class="reveal reveal-delay-1">Engineer, funder, health authority, or organization — there is a role for you.</p>
         <div class="cta-buttons reveal reveal-delay-2">
             <a href="mailto:biokitelabs@gmail.com" class="btn btn-brand">Get in Touch</a>
@@ -565,16 +626,40 @@
     </footer>
 
     <script>
-        document.getElementById('hamburger').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('open');
+        // Hamburger toggle with X animation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
         });
         document.querySelectorAll('#navLinks a').forEach(a => {
-            a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+            });
         });
-        const observer = new IntersectionObserver((entries) => {
+
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 100;
+                if (window.scrollY >= top) current = section.getAttribute('id');
+            });
+            navItems.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        }, { passive: true });
     </script>
 
 </body>
