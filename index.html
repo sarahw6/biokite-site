@@ -201,6 +201,24 @@
         .vision-body { max-width: 680px; font-size: 1.05rem; color: var(--white); opacity: 0.9; line-height: 1.8; font-weight: 400; }
         .vision-body p { margin-bottom: 1.2rem; }
         .vision-body p:last-child { margin-bottom: 0; }
+        .vision-cards { display: flex; flex-direction: column; gap: 4rem; max-width: 1100px; margin: 3rem auto 0; }
+        .vision-card { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .vision-card.reverse { direction: rtl; }
+        .vision-card.reverse > * { direction: ltr; }
+        .vision-card-img { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); aspect-ratio: 4/3; }
+        .vision-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+        .vision-card:hover .vision-card-img img { transform: scale(1.03); }
+        .vision-card-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(55,134,183,0.15) 0%, transparent 60%); pointer-events: none; }
+        .vision-card-text { font-size: 1.1rem; line-height: 1.85; color: rgba(255,255,255,0.9); }
+        .vision-card-text p { margin-bottom: 1rem; }
+        .vision-card-text .vision-label { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--lime-green); margin-bottom: 0.75rem; }
+        .vision-closing { max-width: 700px; margin: 4rem auto 0; text-align: center; font-size: 1.2rem; line-height: 1.9; color: rgba(255,255,255,0.92); }
+        .vision-closing p { margin-bottom: 1.2rem; }
+        @media (max-width: 768px) {
+            .vision-card { grid-template-columns: 1fr; gap: 1.5rem; }
+            .vision-card.reverse { direction: ltr; }
+            .vision-cards { gap: 3rem; }
+        }
 
         /* ─── TEAM ─── */
         .team { background: var(--white); text-align: center; }
@@ -512,11 +530,36 @@
         <div class="section-tag light reveal">Wildest Dreams</div>
         <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">What we see<br>when we <span class="highlight">close our eyes.</span></h2>
         <div class="brand-bar" style="margin: 1.5rem 0 2rem;"></div>
-        <div class="vision-body reveal reveal-delay-2">
-            <p>NuruGrid is built for 10,000 rural clinics. And the 75 million people who have nowhere else to go. The lights stay on.<br>20,000 certified energy officers. Deployed from their own communities across 31 regional hubs. A profession that didn't exist before.</p>
-            <p>NuruLoop riders earning living wages across Kenya, Uganda, Tanzania, Nigeria. A job the world didn't have a name for yet.<br>No dead battery reaches a landfill before it powers a rural clinic first.<br>Corporate teams budget this like carbon offsets. Except people don't die from carbon offsets.</p>
+
+        <div class="vision-cards">
+            <!-- Card 1: NuruGrid + Solar Engineer -->
+            <div class="vision-card reveal">
+                <div class="vision-card-img">
+                    <img src="solar_engineer.png" alt="Certified energy officer working on solar panels at sunset" loading="lazy">
+                </div>
+                <div class="vision-card-text">
+                    <div class="vision-label">NuruGrid</div>
+                    <p>Built for 10,000 rural clinics. And the 75 million people who have nowhere else to go. The lights stay on.</p>
+                    <p>20,000 certified energy officers. Deployed from their own communities across 31 regional hubs. A profession that didn't exist before.</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Africa Network Map -->
+            <div class="vision-card reverse reveal">
+                <div class="vision-card-img">
+                    <img src="split_0_1.png" alt="Africa at sunset with glowing network connecting rural clinics" loading="lazy">
+                </div>
+                <div class="vision-card-text">
+                    <div class="vision-label">NuruLoop</div>
+                    <p>Riders earning living wages across Kenya, Uganda, Tanzania, Nigeria. A job the world didn't have a name for yet.</p>
+                    <p>No dead battery reaches a landfill before it powers a rural clinic first. Corporate teams budget this like carbon offsets. Except people don't die from carbon offsets.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vision-closing reveal">
             <p>And the babies.<br>Born in lit rooms. With oxygen. With a nurse whose hands are free.<br>Not by candlelight because the generator died.</p>
-            <p>A 2AM power failure is a solvable problem. Not a death sentence.</p>
+            <p><strong>A 2AM power failure is a solvable problem. Not a death sentence.</strong></p>
         </div>
     </section>
 
