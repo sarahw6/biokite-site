@@ -56,6 +56,16 @@
         .nav-links a.nav-donate { background: var(--lime-green); color: var(--deep-navy); font-weight: 700; border-radius: 6px; }
         .nav-links a.nav-donate:hover { background: #c5d47a; }
         .donate-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-color: var(--lime-green) !important; cursor: pointer; }
+
+        /* ─── PROGRESS BAR ─── */
+        .progress-wrap { max-width: 500px; width: 100%; margin: 0 auto 2rem; }
+        .progress-bar-bg { width: 100%; height: 12px; background: rgba(255,255,255,0.15); border-radius: 6px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--lime-green), var(--kite-green)); border-radius: 6px; width: 0%; transition: width 2s ease-out; }
+        .progress-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.85rem; }
+
+        /* ─── COUNTER ANIMATION ─── */
+        .stat-card .num { opacity: 0; transition: opacity 0.5s; }
+        .stat-card .num.counted { opacity: 1; }
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; }
         .hamburger span { display: block; width: 25px; height: 3px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: all 0.3s; transform-origin: center; }
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
@@ -79,8 +89,10 @@
         .highlight { color: var(--lime-green); }
 
         /* ─── HERO ─── */
-        .hero { text-align: center; position: relative; padding-top: 80px; }
-        .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--deep-navy) 0%, var(--biokite-blue) 50%, var(--sky-blue) 100%); z-index: -2; }
+        .hero { text-align: center; position: relative; padding-top: 80px; overflow: hidden; }
+        .hero-video { position: absolute; inset: 0; z-index: -3; overflow: hidden; }
+        .hero-video video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(46,80,126,0.85) 0%, rgba(55,134,183,0.75) 50%, rgba(80,176,214,0.7) 100%); z-index: -2; }
         .hero-bg::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; z-index: -1; }
         .hero { color: var(--white); }
         .hero-logo { margin-bottom: 2rem; }
@@ -256,6 +268,7 @@
             .team-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
             .cta-buttons { flex-direction: column; width: 100%; }
             .btn { width: 100%; }
+            .hero-video video { height: 100%; width: auto; min-width: 100%; }
             .footer-inner { flex-direction: column; text-align: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; }
         }
@@ -288,6 +301,11 @@
 
     <!-- HERO -->
     <section class="panel hero" id="home">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/6130024/6130024-hd_1920_1080_30fps.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="hero-bg"></div>
         <div class="hero-logo reveal"><img src="logo.png" alt="BioKite Labs"></div>
         <h1 class="reveal reveal-delay-1">
@@ -348,7 +366,7 @@
             That experience broke something open in me. I promised myself: <em>I never want anyone to feel this much pain.</em> And I promised God I'd devote my life to making healthcare accessible to the people who need it most.
         </p>
         <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--charcoal); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            My dad taught me to fish. I can still feel the tug of the line in my hands, the quiet of the water at dawn. He taught me that the most lasting help isn't a handout. It's building someone's capacity to take care of themselves and their community. That principle became the foundation of BioKite.
+            At the lowest point of my life, my dad grabbed my shoulder and said, <em>"Your body is a temple for your soul."</em> He taught me that the most lasting help isn't a handout. It's building someone's capacity to take care of themselves and their community. That principle became the foundation of BioKite.
         </p>
         <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: var(--charcoal); opacity: 0.7; margin-top: 1.5rem; max-width: 420px; font-weight: 600;">
             Survival depends not just on medicine, but on the available power grid. BioKite Labs exists to solve that.
@@ -579,7 +597,18 @@
         <div style="max-width: 900px; width: 100%; text-align: center;">
             <h2 class="reveal" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">CHOOSE YOUR IMPACT</h2>
             <p class="reveal reveal-delay-1" style="font-size: 1.1rem; color: var(--white); opacity: 0.8; margin-bottom: 0.5rem;">Every dollar runs the pilot.</p>
-            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 3rem;">We need $60,000 in 10 days. Here is what each gift does, specifically.</p>
+            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2rem;">We need $60,000 in 10 days. Here is what each gift does, specifically.</p>
+
+            <!-- PROGRESS BAR -->
+            <div class="progress-wrap reveal reveal-delay-1">
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-labels">
+                    <span style="color: var(--lime-green); font-weight: 700;">$0 raised</span>
+                    <span style="color: var(--white); opacity: 0.6;">Goal: $60,000</span>
+                </div>
+            </div>
 
             <!-- EVERY GIFT MATTERS -->
             <p class="reveal" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--white); opacity: 0.5; font-weight: 600; margin-bottom: 1.5rem;">Every Gift Matters</p>
@@ -769,6 +798,39 @@
                 a.classList.remove('active');
                 if (a.getAttribute('href') === '#' + current) a.classList.add('active');
             });
+        }, { passive: true });
+
+        // Progress bar animation
+        const progressFill = document.getElementById('progressFill');
+        if (progressFill) {
+            const progressObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        // Update this percentage as donations come in (currently 0%)
+                        progressFill.style.width = '0%';
+                    }
+                });
+            }, { threshold: 0.3 });
+            progressObserver.observe(progressFill);
+        }
+
+        // Stat counter animation
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('counted');
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.stat-card .num').forEach(el => statObserver.observe(el));
+
+        // Parallax on hero video
+        window.addEventListener('scroll', () => {
+            const video = document.querySelector('.hero-video video');
+            if (video) {
+                const scrolled = window.scrollY;
+                video.style.transform = 'scale(1.1) translateY(' + scrolled * 0.3 + 'px)';
+            }
         }, { passive: true });
     </script>
 
