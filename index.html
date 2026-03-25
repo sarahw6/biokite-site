@@ -605,7 +605,7 @@
                     <div class="progress-bar-fill" id="progressFill"></div>
                 </div>
                 <div class="progress-labels">
-                    <span style="color: var(--lime-green); font-weight: 700;">$0 raised</span>
+                    <span style="color: var(--lime-green); font-weight: 700;">$298 raised</span>
                     <span style="color: var(--white); opacity: 0.6;">Goal: $60,000</span>
                 </div>
             </div>
@@ -806,8 +806,7 @@
             const progressObserver = new IntersectionObserver((entries) => {
                 entries.forEach(e => {
                     if (e.isIntersecting) {
-                        // Update this percentage as donations come in (currently 0%)
-                        progressFill.style.width = '0%';
+                        progressFill.style.width = '0.5%';
                     }
                 });
             }, { threshold: 0.3 });
