@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
             --biokite-blue: #3786B7;
@@ -47,7 +47,7 @@
         }
         .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .nav-logo img { height: 60px; width: auto; background: var(--white); padding: 6px 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 1px; }
+        .nav-logo-text { font-family: 'Cormorant Garamond', 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: 2px; font-style: italic; }
         .nav-logo-text .labs { font-weight: 400; opacity: 0.8; }
         .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 10px 16px; border-radius: 6px; transition: all 0.2s; }
@@ -170,16 +170,23 @@
         .cert-connector { width: 60px; height: 2px; background: linear-gradient(90deg, var(--biokite-blue), var(--sky-blue)); margin-top: 50px; flex-shrink: 0; }
 
         /* ─── PROTOCOL ─── */
-        .protocol-section { background: linear-gradient(135deg, var(--kite-green) 0%, var(--deep-navy) 100%); }
-        .protocol-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 900px; width: 100%; }
-        .protocol-card { padding: 40px 30px; border-radius: 16px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); text-align: left; transition: all 0.3s; color: var(--white); }
-        .protocol-card:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .protocol-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; }
+        .protocol-section { background: linear-gradient(135deg, #0f2027 0%, #203a43 40%, #2c5364 70%, #1a3a2a 100%); position: relative; overflow: hidden; }
+        .protocol-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(80,176,214,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(175,190,106,0.1) 0%, transparent 40%), radial-gradient(ellipse at 50% 80%, rgba(122,159,95,0.08) 0%, transparent 50%); pointer-events: none; }
+        .protocol-section::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent, transparent 120px, rgba(255,255,255,0.015) 120px, rgba(255,255,255,0.015) 121px), repeating-linear-gradient(0deg, transparent, transparent 120px, rgba(255,255,255,0.015) 120px, rgba(255,255,255,0.015) 121px); pointer-events: none; }
+        .protocol-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 900px; width: 100%; position: relative; z-index: 1; }
+        .protocol-card { padding: 40px 30px; border-radius: 16px; background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%); backdrop-filter: blur(20px); text-align: left; transition: all 0.4s ease; color: var(--white); border: 1px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; }
+        .protocol-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent, rgba(80,176,214,0.06), transparent, rgba(175,190,106,0.06), transparent, rgba(122,159,95,0.04), transparent); animation: holographic-shimmer 8s linear infinite; pointer-events: none; }
+        .protocol-card::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent); transform: skewX(-15deg); transition: left 0.6s ease; pointer-events: none; }
+        .protocol-card:hover::after { left: 150%; }
+        .protocol-card:hover { background: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, rgba(80,176,214,0.08) 100%); transform: translateY(-6px); border-color: rgba(80,176,214,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(80,176,214,0.08), inset 0 1px 0 rgba(255,255,255,0.1); }
+        @keyframes holographic-shimmer { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .protocol-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; position: relative; z-index: 1; }
         .protocol-status.pass { color: var(--lime-green); }
         .status-dot { width: 8px; height: 8px; border-radius: 50%; }
-        .status-dot.green { background: var(--lime-green); box-shadow: 0 0 10px rgba(175,190,106,0.5); }
-        .protocol-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-        .protocol-card p { font-size: 0.9rem; color: var(--white); opacity: 0.8; line-height: 1.6; }
+        .status-dot.green { background: var(--lime-green); box-shadow: 0 0 10px rgba(175,190,106,0.5), 0 0 20px rgba(175,190,106,0.2); animation: pulse-glow 2s ease-in-out infinite; }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 10px rgba(175,190,106,0.5), 0 0 20px rgba(175,190,106,0.2); } 50% { box-shadow: 0 0 15px rgba(175,190,106,0.7), 0 0 30px rgba(175,190,106,0.3); } }
+        .protocol-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 8px; position: relative; z-index: 1; }
+        .protocol-card p { font-size: 0.9rem; color: var(--white); opacity: 0.85; line-height: 1.6; position: relative; z-index: 1; }
         .protocol-card .threshold { margin-top: 16px; font-size: 0.75rem; color: var(--lime-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
 
         /* ─── KENYA ─── */
@@ -482,23 +489,27 @@
         <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">What "clinic ready"<br>actually means.</h2>
         <p class="section-sub reveal reveal-delay-2" style="color: var(--white); opacity: 0.9; margin-bottom: 50px;">A verifiable standard. Not a hope. Pass or fail. Every facility, every week.</p>
         <div class="protocol-grid reveal reveal-delay-3">
-            <div class="protocol-card">
+            <div class="protocol-card" style="animation-delay: 0s;">
                 <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: rgba(80,176,214,0.15); position: absolute; top: 12px; right: 20px; line-height: 1;">01</div>
                 <h3>Always-On Power</h3>
                 <p>Oxygen concentrators. Surgical lights. Delivery room equipment.<br>The things that keep people alive are designed to stay on.</p>
             </div>
-            <div class="protocol-card">
+            <div class="protocol-card" style="animation-delay: 0.1s;">
                 <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: rgba(80,176,214,0.15); position: absolute; top: 12px; right: 20px; line-height: 1;">02</div>
                 <h3>Cold Chain Integrity</h3>
                 <p>Every degree logged. Every outage recorded.<br>No gaps. No guesswork. Proof that the vaccines were safe.</p>
             </div>
-            <div class="protocol-card">
+            <div class="protocol-card" style="animation-delay: 0.2s;">
                 <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: rgba(80,176,214,0.15); position: absolute; top: 12px; right: 20px; line-height: 1;">03</div>
                 <h3>Certified Officer On Site</h3>
                 <p>Not a contractor. Someone who knows the staff by name.<br>Who takes it personally when the power goes out.</p>
             </div>
-            <div class="protocol-card">
+            <div class="protocol-card" style="animation-delay: 0.3s;">
                 <div class="protocol-status pass"><span class="status-dot green"></span> Required</div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: rgba(80,176,214,0.15); position: absolute; top: 12px; right: 20px; line-height: 1;">04</div>
                 <h3>Verified Compliance</h3>
                 <p>Not a promise. Proof.<br>Weekly scorecards. Monthly reports. What happened, and what was done about it.</p>
             </div>
@@ -603,22 +614,10 @@
             <div class="team-divider"></div>
             <div class="team-section-label">Advisors & Regional Leads</div>
             <div class="team-card">
-                <img src="reward.jpg" alt="Reward Muzerengwa" class="team-photo">
-                <h3>Reward Muzerengwa</h3>
-                <div class="role">Biosecurity & Southern Africa Lead</div>
-                <div class="bio">Microbial genomics researcher. UN Youth for Biosecurity Fellow. Leads Southern Africa pilot feasibility, pathogen surveillance integration, and biosecurity alignment across the continent.</div>
-            </div>
-            <div class="team-card">
                 <img src="byron.jpg" alt="Byron Aho" class="team-photo">
                 <h3>Byron Aho</h3>
                 <div class="role">Board Advisor</div>
                 <div class="bio">Construction and power-grid infrastructure specialist. Advises on hardware deployment, electrical installation standards, and site-readiness for clinic solar+battery systems.</div>
-            </div>
-            <div class="team-card">
-                <img src="olabiyi.jpg" alt="Olabiyi Hezekiah Olaniran" class="team-photo">
-                <h3>Olabiyi Olaniran, PhD</h3>
-                <div class="role">Clinical Advisor & Nigeria Lead</div>
-                <div class="bio">Harvard T.H. Chan School of Public Health. Leads Nigeria pilot liaison and West Africa expansion site scouting. Develops QA checklists and clinical protocols ensuring pilot facilities meet health, safety, and compliance standards.</div>
             </div>
             <div class="team-card">
                 <img src="brian.jpg" alt="Brian H. Potts" class="team-photo">
