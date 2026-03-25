@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --biokite-blue: #3786B7;
@@ -47,7 +47,7 @@
         }
         .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .nav-logo img { height: 60px; width: auto; background: var(--white); padding: 6px 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .nav-logo-text { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); letter-spacing: 0.5px; }
+        .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 1px; }
         .nav-logo-text .labs { font-weight: 400; opacity: 0.8; }
         .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 10px 16px; border-radius: 6px; transition: all 0.2s; }
@@ -95,8 +95,8 @@
         .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,46,69,0.92) 0%, rgba(46,80,126,0.88) 50%, rgba(55,134,183,0.85) 100%); z-index: -2; }
         .hero-bg::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; z-index: -1; }
         .hero { color: var(--white); }
-        .hero-logo { margin-top: 2rem; margin-bottom: 2.5rem; }
-        .hero-logo img { height: 100px; width: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); animation: float 6s ease-in-out infinite; }
+        .hero-logo { margin-top: 4rem; margin-bottom: 2.5rem; }
+        .hero-logo img { height: 140px; width: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); animation: float 6s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         .hero h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; color: var(--white); line-height: 1.15; max-width: 780px; margin: 0 auto 1.5rem; letter-spacing: -0.5px; }
         .hero-descriptor { font-size: clamp(0.95rem, 1.6vw, 1.1rem); color: var(--lime-green); font-weight: 600; margin: 0 auto 1.5rem; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; }
@@ -303,7 +303,7 @@
     <section class="panel hero" id="home">
         <div class="hero-video">
             <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/42776/42776-720.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/6130022/6130022-hd_1920_1080_30fps.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-bg"></div>
@@ -312,7 +312,7 @@
             Powering international healthcare,<br><span class="highlight">so the mother of the baby can come home.</span>
         </h1>
         <p class="hero-descriptor reveal reveal-delay-2">Engineer Certification &amp; Clinical Readiness Protocol</p>
-        <p class="hero-sub reveal reveal-delay-2">100,000 clinics lose power today. Some mid-delivery. Some mid-surgery. Some mid-breath.<br>After two hours, patients start dying. Not because medicine failed. Because the lights did.</p>
+        <p class="hero-sub reveal reveal-delay-2">BioKite Labs addresses power outages in rural health clinics. We started NuruGrid: a system of certifying in-facility engineers to build and maintain facility-owned batteries from retired battery parts, connected by NuruLoop, a youth delivery network closing the loop.</p>
         <div class="reveal reveal-delay-2" style="margin-top: 2rem; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
             <a href="#donate" style="display: inline-block; padding: 14px 36px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">Fund the Pilot</a>
             <a href="#story" style="display: inline-block; padding: 14px 36px; background: transparent; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s;">Our Story</a>
