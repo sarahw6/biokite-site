@@ -119,9 +119,10 @@
         .stat-card .label { font-size: 0.85rem; color: var(--charcoal); opacity: 0.8; }
 
         /* ─── STORY ─── */
-        .story { background: var(--white); text-align: center; }
-        .story-text { max-width: 620px; font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.7; font-weight: 400; color: var(--charcoal); }
-        .story-text strong { font-weight: 700; color: var(--deep-navy); }
+        .story { background: linear-gradient(160deg, #0d1b2a 0%, #1b2d45 40%, #1a3a2a 70%, #0d1b2a 100%); text-align: center; position: relative; overflow: hidden; }
+        .story::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 30%, rgba(175,190,106,0.06) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(55,134,183,0.08) 0%, transparent 45%); pointer-events: none; }
+        .story-text { max-width: 620px; font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.7; font-weight: 400; color: rgba(255,255,255,0.88); position: relative; z-index: 1; }
+        .story-text strong { font-weight: 700; color: var(--white); }
 
         /* ─── CONTRAST ─── */
         .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; max-width: 960px; width: 100%; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
@@ -141,33 +142,43 @@
         .contrast-list .icon { font-size: 1.1rem; line-height: 1.4; flex-shrink: 0; }
 
         /* ─── KIT / PILLARS ─── */
-        .kit { background: linear-gradient(135deg, var(--biokite-blue) 0%, var(--deep-navy) 100%); color: var(--white); text-align: center; }
-        .kit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; width: 100%; margin-top: 1rem; }
+        .kit { background: linear-gradient(160deg, #0d1b2a 0%, #162a3a 30%, #1a3a2a 60%, #1b2d45 100%); color: var(--white); text-align: center; position: relative; overflow: hidden; }
+        .kit::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 30%, rgba(55,134,183,0.1) 0%, transparent 50%), radial-gradient(ellipse at 75% 70%, rgba(175,190,106,0.08) 0%, transparent 45%), radial-gradient(ellipse at 50% 50%, rgba(122,159,95,0.04) 0%, transparent 60%); pointer-events: none; }
+        .kit::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent, transparent 150px, rgba(255,255,255,0.01) 150px, rgba(255,255,255,0.01) 151px), repeating-linear-gradient(0deg, transparent, transparent 150px, rgba(255,255,255,0.01) 150px, rgba(255,255,255,0.01) 151px); pointer-events: none; }
+        .kit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; width: 100%; margin-top: 1rem; position: relative; z-index: 1; }
         .kit-card {
-            background: var(--white); border-radius: 16px; overflow: hidden;
-            text-align: left; transition: all 0.3s; box-shadow: var(--shadow-md);
+            background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border-radius: 16px; overflow: hidden;
+            text-align: left; transition: all 0.4s; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);
         }
-        .kit-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
-        .kit-card-header { padding: 24px 28px; color: var(--white); }
-        .kit-card:nth-child(1) .kit-card-header { background: linear-gradient(135deg, var(--biokite-blue), var(--sky-blue)); }
-        .kit-card:nth-child(2) .kit-card-header { background: linear-gradient(135deg, var(--kite-green), var(--lime-green)); }
-        .kit-card:nth-child(3) .kit-card-header { background: linear-gradient(135deg, var(--deep-navy), var(--biokite-blue)); }
+        .kit-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(80,176,214,0.06); border-color: rgba(80,176,214,0.2); }
+        .kit-card-header { padding: 24px 28px; color: var(--white); position: relative; }
+        .kit-card:nth-child(1) .kit-card-header { background: linear-gradient(135deg, rgba(55,134,183,0.3), rgba(80,176,214,0.15)); }
+        .kit-card:nth-child(2) .kit-card-header { background: linear-gradient(135deg, rgba(122,159,95,0.3), rgba(175,190,106,0.15)); }
+        .kit-card:nth-child(3) .kit-card-header { background: linear-gradient(135deg, rgba(46,80,126,0.3), rgba(55,134,183,0.15)); }
         .kit-card-tag { font-size: 0.8rem; opacity: 0.9; margin-bottom: 4px; }
         .kit-card h3 { font-size: 1.4rem; color: var(--white); }
         .kit-card-body { padding: 28px; }
-        .kit-card .kit-desc { font-size: 0.9rem; color: var(--charcoal); line-height: 1.6; margin-bottom: 20px; }
+        .kit-card .kit-desc { font-size: 0.9rem; color: rgba(255,255,255,0.78); line-height: 1.6; margin-bottom: 20px; }
         .kit-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .kit-features li { font-size: 0.9rem; color: var(--charcoal); display: flex; align-items: center; gap: 10px; position: relative; padding-left: 0; }
-        .kit-features li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--lime-green); flex-shrink: 0; }
+        .kit-features li { font-size: 0.9rem; color: rgba(255,255,255,0.72); display: flex; align-items: center; gap: 10px; position: relative; padding-left: 0; }
+        .kit-features li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--lime-green); flex-shrink: 0; box-shadow: 0 0 8px rgba(175,190,106,0.4); }
 
         /* ─── CERTIFICATION PROGRAM ─── */
-        .cert-section { background: var(--off-white); }
-        .cert-path { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; max-width: 1000px; width: 100%; }
-        .cert-step { flex: 1; text-align: center; padding: 20px; position: relative; }
-        .cert-icon { width: 60px; height: 60px; border-radius: 50%; background: var(--lime-green); display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 16px; position: relative; z-index: 1; }
-        .cert-step h3 { font-size: 1.1rem; margin-bottom: 8px; }
-        .cert-step p { font-size: 0.9rem; color: var(--charcoal); opacity: 0.8; }
-        .cert-connector { width: 60px; height: 2px; background: linear-gradient(90deg, var(--biokite-blue), var(--sky-blue)); margin-top: 50px; flex-shrink: 0; }
+        .cert-section { background: linear-gradient(160deg, #0d1b2a 0%, #1b2d45 35%, #1a3a2a 65%, #162a3a 100%); position: relative; overflow: hidden; }
+        .cert-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 20%, rgba(175,190,106,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 70%, rgba(55,134,183,0.1) 0%, transparent 45%), radial-gradient(ellipse at 50% 50%, rgba(122,159,95,0.05) 0%, transparent 60%); pointer-events: none; }
+        .cert-section .section-title { color: var(--white) !important; }
+        .cert-section .section-sub { color: rgba(255,255,255,0.85) !important; }
+        .cert-path { display: flex; align-items: stretch; justify-content: center; gap: 0; max-width: 1100px; width: 100%; position: relative; z-index: 1; }
+        .cert-step { flex: 1; text-align: center; padding: 36px 24px 32px; position: relative; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.07); transition: all 0.4s ease; overflow: hidden; }
+        .cert-step:first-child { border-radius: 16px 0 0 16px; }
+        .cert-step:last-child { border-radius: 0 16px 16px 0; }
+        .cert-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--biokite-blue), var(--kite-green), var(--lime-green)); opacity: 0; transition: opacity 0.4s; }
+        .cert-step:hover::before { opacity: 1; }
+        .cert-step:hover { background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(80,176,214,0.06) 100%); border-color: rgba(80,176,214,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 20px rgba(80,176,214,0.06); transform: translateY(-4px); z-index: 2; border-radius: 16px; }
+        .cert-icon { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(175,190,106,0.25), rgba(80,176,214,0.2)); border: 2px solid rgba(175,190,106,0.4); display: inline-flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--lime-green); margin-bottom: 16px; position: relative; z-index: 1; box-shadow: 0 0 20px rgba(175,190,106,0.15); }
+        .cert-step h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--white); }
+        .cert-step p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+        .cert-connector { width: 0; height: 0; margin: 0; flex-shrink: 0; display: none; }
 
         /* ─── PROTOCOL ─── */
         .protocol-section { background: linear-gradient(135deg, #0f2027 0%, #203a43 40%, #2c5364 70%, #1a3a2a 100%); position: relative; overflow: hidden; }
@@ -286,8 +297,9 @@
             .contrast-grid { grid-template-columns: 1fr; }
             .contrast-col { padding: 30px; }
             .kit-grid { grid-template-columns: 1fr; }
-            .cert-path { flex-direction: column; align-items: center; }
-            .cert-connector { width: 2px; height: 30px; margin: 0; }
+            .cert-path { flex-direction: column; align-items: stretch; gap: 12px; }
+            .cert-step { border-radius: 12px !important; }
+            .cert-step:hover { border-radius: 12px !important; }
             .protocol-grid { grid-template-columns: 1fr; }
             .kenya-facts { flex-direction: column; align-items: center; gap: 12px; }
             .team-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -380,23 +392,24 @@
 
     <!-- STORY -->
     <section class="panel-mid story" id="story">
+        <div class="section-tag light reveal">The Founder</div>
         <p class="story-text reveal">
             Someone I loved nearly died, not because medicine failed her, but because the power grid did. <strong>The hum of the machines cut to silence. The lights went dark. The room went cold. No one had a plan.</strong>
         </p>
-        <div class="brand-bar" style="margin-top: 2.5rem;"></div>
-        <p class="story-text reveal reveal-delay-1" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--charcoal); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
+        <div class="brand-bar" style="margin-top: 2.5rem; position: relative; z-index: 1;"></div>
+        <p class="story-text reveal reveal-delay-1" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
             I was 19 years old, working $15 an hour at an Italian flatbread shop. My hands still smelled like olive oil and rosemary at the end of every shift. Someone I loved got really sick. I couldn't afford the medical bill. I felt powerless. A friend stepped in and helped me find a way to take care of her. After five sleepless nights on a cold kitchen floor, she unexpectedly got better.
         </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--charcoal); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            That experience broke something open in me. I promised myself: <em>I never want anyone to feel this much pain.</em> And I promised God I'd devote my life to making healthcare accessible to the people who need it most.
+        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
+            That experience broke something open in me. I promised myself: <em style="color: var(--lime-green);">I never want anyone to feel this much pain.</em> And I promised God I'd devote my life to making healthcare accessible to the people who need it most.
         </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--charcoal); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            At the lowest point of my life, my dad grabbed my shoulder and said, <em>"Your body is a temple for your soul."</em> He taught me that the most lasting help isn't a handout. It's building someone's capacity to take care of themselves and their community. That principle became the foundation of BioKite.
+        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
+            At the lowest point of my life, my dad grabbed my shoulder and said, <em style="color: var(--lime-green);">"Your body is a temple for your soul."</em> He taught me that the most lasting help isn't a handout. It's building someone's capacity to take care of themselves and their community. That principle became the foundation of BioKite.
         </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: var(--charcoal); opacity: 0.7; margin-top: 1.5rem; max-width: 420px; font-weight: 600;">
+        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: rgba(255,255,255,0.5); margin-top: 1.5rem; max-width: 420px; font-weight: 600;">
             Survival depends not just on medicine, but on the available power grid. BioKite Labs exists to solve that.
         </p>
-        <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: var(--deep-navy); margin-top: 1.5rem; font-style: italic;">&mdash; Sarah Wang, CEO, BioKite Labs</p>
+        <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.6); margin-top: 1.5rem; font-style: italic; position: relative; z-index: 1;">Sarah Wang, CEO, BioKite Labs</p>
     </section>
 
     <!-- BEFORE / AFTER -->
@@ -430,6 +443,7 @@
         <div class="section-tag light reveal">Clinic Ready Mode</div>
         <h2 class="section-title reveal" style="color: var(--white); font-style: italic; font-size: 1.6rem; opacity: 0.9; margin-bottom: 10px;">Teach the child to fish. <span class="highlight">Feed the village forever.</span></h2>
         <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Three pillars.<br>One standard.</h2>
+        <div class="brand-bar" style="margin: 1.5rem 0 1.5rem;"></div>
         <p class="section-sub reveal reveal-delay-2" style="color: var(--white); opacity: 0.9; margin-bottom: 50px;">Critical equipment stays on. Everything else asks permission.</p>
         <div class="kit-grid reveal reveal-delay-3">
             <div class="kit-card">
@@ -467,18 +481,15 @@
 
     <!-- ENGINEER CERTIFICATION -->
     <section class="panel-mid cert-section" id="certification" style="padding: 100px 20px;">
-        <div class="section-tag reveal">Engineer Certification</div>
-        <h2 class="section-title reveal reveal-delay-1">Proud Certified Facility Energy Officer.</h2>
+        <div class="section-tag light reveal">Engineer Certification</div>
+        <h2 class="section-title reveal reveal-delay-1">Proud Certified Facility<br>Energy Officer.</h2>
+        <div class="brand-bar" style="margin: 1.5rem 0 1.5rem;"></div>
         <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 60px;">Someone from the community. Trained, assessed, deployed, accountable.<br>Not an outsider. A local owner.</p>
         <div class="cert-path reveal reveal-delay-3">
             <div class="cert-step"><div class="cert-icon">1</div><h3>Train</h3><p>Learn to manage power. Prioritize what keeps people alive. Respond when it matters.</p></div>
-            <div class="cert-connector"></div>
             <div class="cert-step"><div class="cert-icon">2</div><h3>Certify</h3><p>Prove it. Hands-on. Battery systems, cold chain, emergency response.</p></div>
-            <div class="cert-connector"></div>
             <div class="cert-step"><div class="cert-icon">3</div><h3>Deploy</h3><p>Take ownership. The clinic's power system is now theirs to run.</p></div>
-            <div class="cert-connector"></div>
             <div class="cert-step"><div class="cert-icon">4</div><h3>Report</h3><p>Show the results. Weekly scorecards. Monthly reports. Real data, no gaps.</p></div>
-            <div class="cert-connector"></div>
             <div class="cert-step"><div class="cert-icon">5</div><h3>Recertify</h3><p>Stay sharp. Every year. Because the patients don't stop coming.</p></div>
         </div>
     </section>
