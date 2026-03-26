@@ -201,11 +201,16 @@
         .protocol-card .threshold { margin-top: 16px; font-size: 0.75rem; color: var(--lime-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
 
         /* ─── KENYA ─── */
-        .kenya { background: var(--dark-bg); color: var(--white); text-align: center; }
-        .kenya-body { font-size: 1.1rem; color: var(--white); opacity: 0.9; max-width: 500px; line-height: 1.7; font-weight: 400; margin-bottom: 40px; }
-        .kenya-facts { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-        .kenya-fact { font-size: 0.9rem; color: var(--white); opacity: 0.8; display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: rgba(255,255,255,0.1); border-radius: 12px; backdrop-filter: blur(10px); }
-        .kenya-fact .check { width: 24px; height: 24px; border-radius: 50%; background: var(--lime-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .kenya { background: linear-gradient(160deg, #0d1b2a 0%, #1b2d45 35%, #1a3a2a 65%, #162a3a 100%); color: var(--white); text-align: center; position: relative; overflow: hidden; }
+        .kenya::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 40% 20%, rgba(175,190,106,0.1) 0%, transparent 50%), radial-gradient(ellipse at 60% 80%, rgba(55,134,183,0.08) 0%, transparent 45%), radial-gradient(ellipse at 80% 40%, rgba(122,159,95,0.06) 0%, transparent 50%); pointer-events: none; }
+        .kenya::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent, transparent 140px, rgba(255,255,255,0.012) 140px, rgba(255,255,255,0.012) 141px), repeating-linear-gradient(0deg, transparent, transparent 140px, rgba(255,255,255,0.012) 140px, rgba(255,255,255,0.012) 141px); pointer-events: none; }
+        .kenya-body { font-size: 1.1rem; color: var(--white); opacity: 0.9; max-width: 500px; line-height: 1.7; font-weight: 400; margin-bottom: 40px; position: relative; z-index: 1; }
+        .kenya-facts { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
+        .kenya-fact { font-size: 0.9rem; color: var(--white); display: flex; align-items: center; gap: 10px; padding: 16px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border-radius: 14px; backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .kenya-fact::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent); transform: skewX(-15deg); transition: left 0.6s ease; pointer-events: none; }
+        .kenya-fact:hover::after { left: 150%; }
+        .kenya-fact:hover { background: linear-gradient(135deg, rgba(255,255,255,0.13) 0%, rgba(80,176,214,0.07) 100%); border-color: rgba(80,176,214,0.2); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3), 0 0 15px rgba(80,176,214,0.06); }
+        .kenya-fact .check { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, rgba(175,190,106,0.25), rgba(80,176,214,0.2)); border: 2px solid rgba(175,190,106,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 12px rgba(175,190,106,0.2); }
         .kenya-fact .check svg { width: 12px; height: 12px; }
 
         /* ─── QUOTE ─── */
@@ -531,12 +536,13 @@
     <section class="panel-mid kenya" id="kenya" style="padding: 7rem 2rem;">
         <div class="section-tag light reveal">First Deployment</div>
         <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Kenya.</h2>
+        <div class="brand-bar" style="margin: 1.5rem 0 1.5rem; position: relative; z-index: 1;"></div>
         <p class="kenya-body reveal reveal-delay-2">Our first deployment.<br>Working with county health authorities. Within the systems already in place, not the ones we wish existed.</p>
         <div class="kenya-facts reveal reveal-delay-3">
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> County partnerships</div>
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Community officers</div>
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Zero subscriptions</div>
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#73A332" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Facility-owned assets</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> County partnerships</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Community officers</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Zero subscriptions</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Facility-owned assets</div>
         </div>
     </section>
 
