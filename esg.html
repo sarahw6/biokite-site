@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioKite Labs | For ESG Partners</title>
+    <meta name="description" content="Turn your end-of-life batteries into powered clinics. Verifiable impact. Reportable outcomes. Partner with BioKite Labs for measurable ESG impact.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --biokite-blue: #3786B7;
+            --sky-blue: #50B0D6;
+            --kite-green: #7A9F5F;
+            --lime-green: #AFBE6A;
+            --deep-navy: #2E507E;
+            --charcoal: #4E4F4F;
+            --light-gray: #D8E1D3;
+            --off-white: #F8FAF7;
+            --dark-bg: #1a2e45;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--charcoal); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; color: var(--deep-navy); }
+        a { text-decoration: none; color: inherit; }
+
+        /* ─── NAV ─── */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(135deg, var(--biokite-blue) 0%, var(--deep-navy) 100%); box-shadow: none; transition: box-shadow 0.3s; }
+        nav.scrolled { box-shadow: var(--shadow-md); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 80px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo img { height: 60px; width: auto; background: var(--white); padding: 6px 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-logo-text { font-family: 'Cormorant Garamond', 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: 2px; font-style: italic; }
+        .nav-logo-text .labs { font-weight: 400; opacity: 0.8; }
+        .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 10px 16px; border-radius: 6px; transition: all 0.2s; text-align: center; }
+        .nav-links a:hover { color: var(--lime-green); background: rgba(255,255,255,0.1); }
+        .nav-links a.active { color: var(--lime-green); background: rgba(255,255,255,0.1); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; }
+        .hamburger span { display: block; width: 25px; height: 3px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: all 0.3s; transform-origin: center; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+        /* ─── HERO ─── */
+        .page-hero {
+            padding: 160px 20px 100px;
+            background: linear-gradient(160deg, #0d1b2a 0%, #162a3a 30%, #1a3a2a 60%, #1b2d45 100%);
+            text-align: center; color: var(--white); position: relative; overflow: hidden;
+        }
+        .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 30%, rgba(175,190,106,0.08) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(55,134,183,0.1) 0%, transparent 45%); pointer-events: none; }
+        .page-hero .tag { display: inline-block; padding: 6px 16px; background: rgba(175,190,106,0.2); color: var(--lime-green); font-size: 0.85rem; font-weight: 600; border-radius: 20px; margin-bottom: 24px; }
+        .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; max-width: 750px; margin: 0 auto 1.5rem; line-height: 1.15; }
+        .page-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+        /* ─── SECTIONS ─── */
+        .section { padding: 80px 20px; }
+        .section-dark { background: linear-gradient(160deg, #0d1b2a 0%, #1b2d45 50%, #1a3a2a 100%); color: var(--white); }
+        .section-light { background: var(--off-white); }
+        .section-white { background: var(--white); }
+        .section-inner { max-width: 900px; margin: 0 auto; }
+        .section-label { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; color: var(--biokite-blue); margin-bottom: 12px; }
+        .section-dark .section-label { color: var(--lime-green); }
+        .section h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 16px; }
+        .section-dark h2 { color: var(--white); }
+        .section p.lead { font-size: 1.05rem; opacity: 0.85; line-height: 1.7; max-width: 640px; margin-bottom: 2rem; }
+        .brand-bar { width: 40px; height: 3px; background: linear-gradient(135deg, var(--biokite-blue), var(--kite-green)); margin: 1.5rem 0; border-radius: 2px; }
+
+        /* ─── IMPACT METRICS ─── */
+        .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 2rem; }
+        .metric-card { background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 32px 24px; text-align: center; backdrop-filter: blur(16px); transition: all 0.4s; }
+        .metric-card:hover { border-color: rgba(175,190,106,0.3); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+        .metric-num { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--lime-green); margin-bottom: 8px; }
+        .metric-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
+        .metric-sublabel { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 6px; font-weight: 500; }
+
+        /* ─── ESG REPORT PREVIEW ─── */
+        .report-preview { background: var(--white); border-radius: 14px; padding: 36px; box-shadow: var(--shadow-lg); margin-top: 2rem; border: 1px solid var(--light-gray); }
+        .report-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 2px solid var(--light-gray); }
+        .report-header h3 { font-size: 1.1rem; color: var(--deep-navy); }
+        .report-header .period { font-size: 0.8rem; color: var(--charcoal); opacity: 0.5; font-weight: 500; }
+        .report-row { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); align-items: center; }
+        .report-row:last-child { border-bottom: none; }
+        .report-metric { font-size: 0.9rem; color: var(--charcoal); }
+        .report-value { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--deep-navy); text-align: right; }
+        .report-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--biokite-blue); margin-top: 20px; margin-bottom: 8px; }
+        .report-note { font-size: 0.8rem; color: var(--charcoal); opacity: 0.5; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--light-gray); font-style: italic; }
+
+        /* ─── REGISTRIES ─── */
+        .registry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 2rem; }
+        .registry-card { padding: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; backdrop-filter: blur(16px); }
+        .registry-card h3 { font-size: 1.1rem; color: var(--white); margin-bottom: 8px; }
+        .registry-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+        .registry-card .status { font-size: 0.75rem; color: var(--lime-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .registry-card .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lime-green); box-shadow: 0 0 10px rgba(175,190,106,0.5); }
+
+        /* ─── LOOP DIAGRAM ─── */
+        .loop-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 2rem; }
+        .loop-step { text-align: center; position: relative; }
+        .loop-step::after { content: '\2192'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--lime-green); opacity: 0.5; }
+        .loop-step:last-child::after { display: none; }
+        .loop-num { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--biokite-blue), var(--kite-green)); display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 12px; }
+        .loop-step h3 { font-size: 0.95rem; margin-bottom: 6px; }
+        .loop-step p { font-size: 0.85rem; opacity: 0.75; line-height: 1.5; }
+
+        /* ─── CTA FORM ─── */
+        .cta-section { padding: 80px 20px; background: linear-gradient(135deg, var(--deep-navy) 0%, var(--biokite-blue) 100%); text-align: center; color: var(--white); }
+        .cta-section h2 { color: var(--white); font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 12px; }
+        .cta-section p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 2.5rem; }
+        .contact-form { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+        .contact-form input, .contact-form select, .contact-form textarea { padding: 14px 18px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.95rem; border-radius: 8px; outline: none; transition: border-color 0.2s; }
+        .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,0.4); }
+        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--lime-green); }
+        .contact-form select { appearance: none; cursor: pointer; }
+        .contact-form select option { background: var(--deep-navy); color: var(--white); }
+        .contact-form textarea { resize: vertical; min-height: 80px; }
+        .contact-form button { padding: 16px 32px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+        .contact-form button:hover { background: #c5d47a; transform: translateY(-2px); }
+
+        /* ─── FOOTER ─── */
+        footer { background: var(--deep-navy); padding: 60px 20px 30px; color: var(--white); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { height: 30px; width: auto; }
+        .footer-brand span { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; }
+        .footer-links { display: flex; gap: 20px; list-style: none; }
+        .footer-links a { color: var(--white); opacity: 0.7; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s; }
+        .footer-links a:hover { opacity: 1; color: var(--lime-green); }
+        .footer-copy { font-size: 0.85rem; opacity: 0.6; }
+
+        /* ─── ANIMATIONS ─── */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.12s; }
+        .reveal-delay-2 { transition-delay: 0.24s; }
+        .reveal-delay-3 { transition-delay: 0.36s; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .nav-inner { height: 70px; }
+            .nav-logo img { height: 50px; }
+            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 20px 25px rgba(0,0,0,0.15); z-index: 1000; }
+            .nav-links.open { display: flex; }
+            .nav-links a { color: var(--deep-navy); padding: 15px 20px; text-align: center; border-bottom: 1px solid var(--light-gray); font-size: 1rem; }
+            .hamburger { display: flex; flex-direction: column; gap: 5px; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            .registry-grid { grid-template-columns: 1fr; }
+            .loop-steps { grid-template-columns: 1fr 1fr; }
+            .loop-step::after { display: none; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="BioKite Labs">
+                <div class="nav-logo-text">BioKite <span class="labs">Labs</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="partners.html">For Health Directors</a></li>
+                <li><a href="esg.html" class="active">For ESG Partners</a></li>
+                <li><a href="invest.html">For Investors</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="tag reveal">For Corporate ESG Partners</div>
+        <h1 class="reveal reveal-delay-1">Turn your end-of-life batteries into powered clinics.<br><span style="color: var(--lime-green);">Verifiable impact. Reportable outcomes.</span></h1>
+        <p class="reveal reveal-delay-2">Your retired batteries become the infrastructure that keeps oxygen flowing in rural clinics. Measurable health impact. Auditable environmental data. One partnership, two reporting lines.</p>
+    </section>
+
+    <!-- THE LOOP -->
+    <section class="section section-light">
+        <div class="section-inner">
+            <div class="section-label reveal">How It Works</div>
+            <h2 class="reveal reveal-delay-1">From end-of-life to saving lives.</h2>
+            <div class="brand-bar reveal"></div>
+            <p class="lead reveal reveal-delay-2">Your company's retired batteries are tested, refurbished into clinic-grade power systems, and installed in rural health facilities. Every step is tracked. Every outcome is reportable.</p>
+            <div class="loop-steps reveal reveal-delay-3">
+                <div class="loop-step">
+                    <div class="loop-num">1</div>
+                    <h3>Collect</h3>
+                    <p>Retired batteries collected from your facilities. Tested at WEEE Centre in Nairobi. Cells graded for second-life use.</p>
+                </div>
+                <div class="loop-step">
+                    <div class="loop-num">2</div>
+                    <h3>Rebuild</h3>
+                    <p>Certified engineers assemble clinic-grade LiFePO4 battery systems. Built locally. Owned by the community.</p>
+                </div>
+                <div class="loop-step">
+                    <div class="loop-num">3</div>
+                    <h3>Deploy</h3>
+                    <p>Installed in rural clinics. Connected to critical equipment. Solar charged. Oxygen concentrators stay on.</p>
+                </div>
+                <div class="loop-step">
+                    <div class="loop-num">4</div>
+                    <h3>Report</h3>
+                    <p>Quarterly impact data delivered to your team. Battery diversion volume, CO2 offset, health outcomes. Audit-ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT METRICS -->
+    <section class="section section-dark">
+        <div class="section-inner">
+            <div class="section-label reveal">Impact Metrics</div>
+            <h2 class="reveal reveal-delay-1">Numbers your board can report.</h2>
+            <div class="brand-bar reveal"></div>
+            <div class="metrics-grid reveal reveal-delay-2">
+                <div class="metric-card">
+                    <div class="metric-num">85 kg</div>
+                    <div class="metric-label">CO2 offset per battery diverted from landfill</div>
+                    <div class="metric-sublabel">Based on lifecycle analysis of LiFePO4 cells</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">&lt;$105</div>
+                    <div class="metric-label">Per life-year saved</div>
+                    <div class="metric-sublabel">1/21 the WHO cost-effectiveness threshold. Methodology available.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">10,000+</div>
+                    <div class="metric-label">Patients served per clinic per year</div>
+                    <div class="metric-sublabel">Average for Narok County dispensaries</div>
+                </div>
+            </div>
+            <div class="metrics-grid reveal reveal-delay-3" style="margin-top: 24px;">
+                <div class="metric-card">
+                    <div class="metric-num">340</div>
+                    <div class="metric-label">Vaccine doses protected per clinic per week</div>
+                    <div class="metric-sublabel">Cold chain integrity maintained through outages</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">0</div>
+                    <div class="metric-label">Subscriptions or recurring fees</div>
+                    <div class="metric-sublabel">One-time investment. Permanent community ownership.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">5+ yrs</div>
+                    <div class="metric-label">Second-life battery lifespan</div>
+                    <div class="metric-sublabel">Continued value after primary use ends</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMPLE ESG REPORT -->
+    <section class="section section-white">
+        <div class="section-inner">
+            <div class="section-label reveal">Reporting</div>
+            <h2 class="reveal reveal-delay-1">Sample ESG reporting output.</h2>
+            <div class="brand-bar reveal"></div>
+            <p class="lead reveal reveal-delay-2">We deliver a quarterly one-page impact summary formatted for your sustainability report. Here is what it looks like.</p>
+            <div class="report-preview reveal reveal-delay-3">
+                <div class="report-header">
+                    <div>
+                        <h3>BioKite Partnership Impact Summary</h3>
+                        <div class="period">Q1 2026 &mdash; [Partner Company Name]</div>
+                    </div>
+                    <img src="logo.png" alt="BioKite" style="height: 28px; opacity: 0.6;">
+                </div>
+
+                <div class="report-category">Environmental Impact</div>
+                <div class="report-row"><span class="report-metric">Batteries diverted from landfill</span><span class="report-value">48 units</span></div>
+                <div class="report-row"><span class="report-metric">Total weight diverted</span><span class="report-value">1,440 kg</span></div>
+                <div class="report-row"><span class="report-metric">CO2 equivalent offset</span><span class="report-value">4,080 kg</span></div>
+                <div class="report-row"><span class="report-metric">Hazardous waste diverted</span><span class="report-value">576 kg</span></div>
+
+                <div class="report-category">Health Impact</div>
+                <div class="report-row"><span class="report-metric">Clinics powered</span><span class="report-value">6</span></div>
+                <div class="report-row"><span class="report-metric">Patient population served</span><span class="report-value">60,000</span></div>
+                <div class="report-row"><span class="report-metric">Critical equipment uptime</span><span class="report-value">99.7%</span></div>
+                <div class="report-row"><span class="report-metric">Vaccine doses protected</span><span class="report-value">8,160</span></div>
+
+                <div class="report-category">Social Impact</div>
+                <div class="report-row"><span class="report-metric">Certified energy officers employed</span><span class="report-value">6</span></div>
+                <div class="report-row"><span class="report-metric">NuruLoop delivery riders employed</span><span class="report-value">4</span></div>
+                <div class="report-row"><span class="report-metric">Community ownership transfers</span><span class="report-value">6 facilities</span></div>
+
+                <div class="report-note">Data collected via weekly scorecards submitted by Certified Energy Officers. Full methodology documentation available. Aligned with GRI 305, GRI 413, and SDGs 3, 7, 11, and 13.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARBON REGISTRIES -->
+    <section class="section section-dark">
+        <div class="section-inner">
+            <div class="section-label reveal">Validation</div>
+            <h2 class="reveal reveal-delay-1">Methodology aligned with leading carbon registries.</h2>
+            <div class="brand-bar reveal"></div>
+            <p class="lead reveal reveal-delay-2" style="color: rgba(255,255,255,0.8);">BioKite's methodology is aligned with standards used by the world's leading carbon credit registries. We track battery diversion, energy displacement, and health outcomes using auditable data from certified officers in the field.</p>
+            <div class="registry-grid reveal reveal-delay-3">
+                <div class="registry-card">
+                    <div class="status"><span class="status-dot"></span> Methodology Aligned</div>
+                    <h3>Verra (VCS)</h3>
+                    <p>Battery second-life methodology aligned with Verra's Verified Carbon Standard for energy access and waste diversion in developing regions.</p>
+                </div>
+                <div class="registry-card">
+                    <div class="status"><span class="status-dot"></span> Methodology Aligned</div>
+                    <h3>Gold Standard</h3>
+                    <p>Health and energy co-benefit tracking aligned with Gold Standard's framework for SDG impact quantification and verification.</p>
+                </div>
+            </div>
+            <p class="reveal" style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 1.5rem;">Full methodology documentation available to partners. Third-party verification pathway in development.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="reveal">Contact our partnerships team.</h2>
+        <p class="reveal reveal-delay-1">Tell us about your battery volume and reporting needs. We will show you exactly what the partnership looks like.</p>
+        <form class="contact-form reveal reveal-delay-2" action="https://formspree.io/f/biokitelabs@gmail.com" method="POST">
+            <input type="text" name="company" placeholder="Company name" required>
+            <input type="text" name="name" placeholder="Your name and title" required>
+            <input type="email" name="email" placeholder="Work email" required>
+            <input type="text" name="battery_volume" placeholder="Estimated annual battery volume (units or kg)">
+            <select name="framework" required>
+                <option value="" disabled selected style="color: rgba(255,255,255,0.4);">Reporting framework used</option>
+                <option value="GRI">GRI Standards</option>
+                <option value="SASB">SASB</option>
+                <option value="CDP">CDP</option>
+                <option value="TCFD">TCFD</option>
+                <option value="CSRD">CSRD / EU Taxonomy</option>
+                <option value="other">Other / Not sure</option>
+            </select>
+            <button type="submit">Contact Partnerships Team</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand"><img src="logo.png" alt="BioKite"><span>BioKite Labs</span></div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="partners.html">For Health Directors</a></li>
+                <li><a href="esg.html">For ESG Partners</a></li>
+                <li><a href="invest.html">For Investors</a></li>
+                <li><a href="mailto:biokitelabs@gmail.com">Contact</a></li>
+            </ul>
+            <div class="footer-copy">&copy; 2026 BioKite Labs</div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); hamburger.classList.toggle('active'); });
+        document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('click', () => { navLinks.classList.remove('open'); hamburger.classList.remove('active'); }); });
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
+        const revealObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

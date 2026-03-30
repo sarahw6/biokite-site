@@ -50,7 +50,7 @@
         .nav-logo-text { font-family: 'Cormorant Garamond', 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: 2px; font-style: italic; }
         .nav-logo-text .labs { font-weight: 400; opacity: 0.8; }
         .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 10px 16px; border-radius: 6px; transition: all 0.2s; }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 10px 16px; border-radius: 6px; transition: all 0.2s; text-align: center; }
         .nav-links a:hover { color: var(--lime-green); background: rgba(255,255,255,0.1); }
         .nav-links a.active { color: var(--lime-green); background: rgba(255,255,255,0.1); }
         .nav-links a.nav-donate { background: var(--lime-green); color: var(--deep-navy); font-weight: 700; border-radius: 6px; }
@@ -98,7 +98,17 @@
         .hero-logo { margin-top: 4rem; margin-bottom: 2.5rem; }
         .hero-logo img { height: 140px; width: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); animation: float 6s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .hero h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; color: var(--white); line-height: 1.15; max-width: 780px; margin: 0 auto 1.5rem; letter-spacing: -0.5px; }
+        .hero h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; color: var(--white); line-height: 1.15; max-width: 780px; margin: 0 auto 1.5rem; letter-spacing: -0.5px; text-shadow: 0 2px 30px rgba(0,0,0,0.3); }
+
+        /* ─── CREDIBILITY BAR ─── */
+        .cred-bar { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.15); max-width: 600px; }
+        .cred-item { text-align: center; }
+        .cred-item .cred-num { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); }
+        .cred-item .cred-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600; margin-top: 2px; }
+
+        /* ─── BUDGET ROW HOVER ─── */
+        .budget-row { transition: background 0.2s; }
+        .budget-row:hover { background: rgba(175,190,106,0.06); }
         .hero-descriptor { font-size: clamp(0.95rem, 1.6vw, 1.1rem); color: var(--lime-green); font-weight: 600; margin: 0 auto 1.5rem; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; }
         .hero-sub { font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--white); opacity: 0.9; max-width: 520px; margin: 0 auto; line-height: 1.7; font-weight: 400; letter-spacing: 0.2px; }
         .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; color: var(--white); opacity: 0.7; }
@@ -294,6 +304,8 @@
             .nav-links a { color: var(--deep-navy); padding: 15px 20px; text-align: center; border-bottom: 1px solid var(--light-gray); font-size: 1rem; }
             .nav-links a:hover { background: rgba(55,134,183,0.1); color: var(--biokite-blue); }
             .hamburger { display: flex; flex-direction: column; gap: 5px; }
+            .cred-bar { gap: 20px; }
+            .cred-item .cred-num { font-size: 1.2rem; }
             .panel { padding: 80px 16px; min-height: auto; }
             .panel-mid, .panel-short { padding: 60px 16px; }
             .hero h1 { font-size: 2.2rem; }
@@ -333,6 +345,7 @@
                 <li><a href="#kenya">Kenya</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#donate" class="nav-donate">Donate</a></li>
+                <li><a href="#partnerships">Partners</a></li>
                 <li><a href="#involved">Get Involved</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -351,28 +364,43 @@
         <div class="hero-bg"></div>
         <div class="hero-logo reveal"><img src="logo.png" alt="BioKite Labs"></div>
         <h1 class="reveal reveal-delay-1">
-            Powering international healthcare,<br><span class="highlight">so the mother of the baby can come home.</span>
+            87% of donated health infrastructure fails.<br><span class="highlight">We fix that.</span>
         </h1>
-        <p class="hero-descriptor reveal reveal-delay-2">Engineer Certification &amp; Clinical Readiness Protocol</p>
-        <p class="hero-sub reveal reveal-delay-2">BioKite Labs addresses power outages in rural health clinics. We started NuruGrid: a system of certifying in-facility engineers to build and maintain facility-owned batteries from retired battery parts, connected by NuruLoop, a youth delivery network closing the loop.</p>
+        <p class="hero-descriptor reveal reveal-delay-2">Retired EV batteries. Certified local engineers. Clinics that never go dark.</p>
+        <p class="hero-sub reveal reveal-delay-2">BioKite trains community engineers to rebuild discarded EV batteries into clinic-owned power systems at 8% the cost of commercial solutions. When the lights stay on, mothers come home.</p>
         <div class="reveal reveal-delay-2" style="margin-top: 2rem; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-            <a href="#donate" style="display: inline-block; padding: 14px 36px; background: rgba(175,190,106,0.4); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 8px; text-decoration: none; opacity: 0.7;">Donations Opening Soon</a>
-            <a href="#story" style="display: inline-block; padding: 14px 36px; background: transparent; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s;">Our Story</a>
+            <a href="#partnerships" style="display: inline-block; padding: 16px 40px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">Partner With Us</a>
+            <a href="#donate" style="display: inline-block; padding: 16px 40px; background: transparent; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s;">Donate Now</a>
+        </div>
+        <div class="cred-bar reveal reveal-delay-3">
+            <div class="cred-item"><div class="cred-num">8%</div><div class="cred-label">Cost of Commercial</div></div>
+            <div class="cred-item"><div class="cred-num">&lt;$105</div><div class="cred-label">Per Life-Year Saved</div></div>
+            <div class="cred-item"><div class="cred-num">3</div><div class="cred-label">Clinics, Year One</div></div>
+            <div class="cred-item"><div class="cred-num">15</div><div class="cred-label">Engineers Trained</div></div>
         </div>
         <div class="hero-scroll"><span>Scroll to explore</span><div class="scroll-arrow"></div></div>
     </section>
 
     <!-- DALY STRIP -->
     <div class="daly-strip">
-        <p class="reveal">BioKite keeps the power on. So families stay together.<br><strong>$455 per life-year saved.</strong></p>
+        <p class="reveal">BioKite keeps the power on. So families stay together.<br><strong>&lt;$105 per life-year saved.</strong> <span style="opacity: 0.7; font-size: 0.85em;">1/21 the cost WHO considers worth paying.</span></p>
     </div>
 
     <!-- STATS -->
-    <section class="stats-section">
-        <div class="stats-grid reveal">
-            <div class="stat-card"><div class="num">1B+</div><div class="label">Over a billion people. Their clinic runs out of power.</div></div>
-            <div class="stat-card"><div class="num">2hrs</div><div class="label">Outages beyond two hours. Patients start dying.</div></div>
-            <div class="stat-card"><div class="num">100K</div><div class="label">100,000 clinics. The lights go out today.</div></div>
+    <section style="background: linear-gradient(135deg, #0d1b2a 0%, #1b2d45 100%); padding: 60px 20px;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto;" class="reveal">
+            <div style="text-align: center; padding: 36px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--lime-green); margin-bottom: 8px; text-shadow: 0 0 30px rgba(175,190,106,0.3);">1B+</div>
+                <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;">people depend on clinics<br>that lose power</div>
+            </div>
+            <div style="text-align: center; padding: 36px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--lime-green); margin-bottom: 8px; text-shadow: 0 0 30px rgba(175,190,106,0.3);">2 hrs</div>
+                <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;">after a power outage<br>patients start dying</div>
+            </div>
+            <div style="text-align: center; padding: 36px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--lime-green); margin-bottom: 8px; text-shadow: 0 0 30px rgba(175,190,106,0.3);">100K</div>
+                <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;">clinics across Africa<br>lost power today</div>
+            </div>
         </div>
     </section>
 
@@ -391,7 +419,7 @@
                 In the sudden silence, the only sound is the mother's breathing. A nurse fumbles in the dark, her fingers finding her phone. The glow from the screen barely reaches the delivery table.<br><br>
                 This isn't a fictional story. It happened four times last week. It will occur four times next week. It's the difference between a mother who goes home and one who cannot, independent of the skill of the nurse. It is whether the lights stay on.
             </p>
-            <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: #fff; opacity: 0.5; margin-top: 1.5rem; font-style: italic;">&mdash; Narok County Family</p>
+            <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: #fff; opacity: 0.5; margin-top: 1.5rem; font-style: italic;"> — Narok County Family</p>
         </div>
     </section>
 
@@ -399,20 +427,29 @@
     <section class="panel-mid story" id="story">
         <div class="section-tag light reveal">The Founder</div>
         <p class="story-text reveal">
-            Someone I loved nearly died, not because medicine failed her, but because the power grid did. <strong>The hum of the machines cut to silence. The lights went dark. The room went cold. No one had a plan.</strong>
+            I was raised by immigrant parents who experienced rural health clinics where bad practices were the norm. Growing up with a bone tumor I couldn't get properly diagnosed, I learned early: <strong>knowledge is power. But knowledge without resources means nothing.</strong>
         </p>
         <div class="brand-bar" style="margin-top: 2.5rem; position: relative; z-index: 1;"></div>
         <p class="story-text reveal reveal-delay-1" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            I was 19 years old, working $15 an hour at an Italian flatbread shop. My hands still smelled like olive oil and rosemary at the end of every shift. Someone I loved got really sick. I couldn't afford the medical bill. I felt powerless. A friend stepped in and helped me find a way to take care of her. After five sleepless nights on a cold kitchen floor, she unexpectedly got better.
+            I was 19, working $15 an hour at an Italian flatbread shop. The one thing I was most insecure about, not having money, became the thing that built BioKite. When my best friend Penelope got really sick, I couldn't afford to help her. She'd been there for me when I was 10 and getting bullied. Now I couldn't be there for her.
         </p>
         <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            That experience broke something open in me. I promised myself: <em style="color: var(--lime-green);">I never want anyone to feel this much pain.</em> And I promised God I'd devote my life to making healthcare accessible to the people who need it most.
+            Then something changed. My friend Darrin reached out after his mom passed away from cancer. He taught me holistic medicine to treat Penelope. By the grace of God, a miracle happened: <em style="color: var(--lime-green);">she survived.</em> That moment showed me I could make a difference. It inspired me to devote my entire life to public health.
         </p>
         <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            At the lowest point of my life, my dad grabbed my shoulder and said, <em style="color: var(--lime-green);">"Your body is a temple for your soul."</em> He taught me that the most lasting help isn't a handout. It's building someone's capacity to take care of themselves and their community. That principle became the foundation of BioKite.
+            During the lowest point of my life, I made myself a promise: <em style="color: var(--lime-green);">"I never want anyone to feel this much pain."</em> My dad grabbed my shoulder and said, <em style="color: var(--lime-green);">"Your body is a temple for your soul."</em> He taught me to fish. That principle, teach someone to fish, feed them for life, became how I lead.
         </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: rgba(255,255,255,0.5); margin-top: 1.5rem; max-width: 420px; font-weight: 600;">
-            Survival depends not just on medicine, but on the available power grid. BioKite Labs exists to solve that.
+        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
+            My faith deepened my commitment to the inherent value of every life. Those roots helped me build trust in Kenya, where my friendship with Maison, a Kenyan from the Maasai tribe, became the foundation for BioKite. Together, we focused on the "teach to fish" principle and interviewed several rural clinic doctors: equipping local engineers to build and maintain their own power systems, not importing solutions that leave when the funding does.
+        </p>
+        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
+            I later lost Penelope to inaccessible healthcare: the kind that happens when clinics can't keep the lights on. I promised God: <strong>I'll devote my entire life to lifting BioKite to success.</strong>
+        </p>
+        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
+            That's why I'm dedicating myself full-time to BioKite. The people who need healthcare most are often the ones who can't access it.
+        </p>
+        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: var(--lime-green); margin-top: 1.5rem; max-width: 420px; font-weight: 700; letter-spacing: 0.3px;">
+            Power isn't optional. It's whether they come home.
         </p>
         <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.6); margin-top: 1.5rem; font-style: italic; position: relative; z-index: 1;">Sarah Wang, CEO, BioKite Labs</p>
     </section>
@@ -608,46 +645,46 @@
             <div class="team-card">
                 <img src="sarah.jpg" alt="Sarah Wang" class="team-photo">
                 <h3>Sarah Wang, MPH</h3>
-                <div class="role">Co-Founder & CEO</div>
-                <div class="bio">Harvard Chan MPH. Rose Fellow Scholar (top 1%), One Harvard Award (top 1%). MIT Applied Data Science & AI (top 1%). Coca-Cola Gold Scholar (top 50 of 6.4M). Co-led 20-person multi-country team to launch BioKite pilot. Asst. Director, Harvard&ndash;MIT Health Systems & AI Governance Initiative. Field research in Taiwan, Chile, and Kenya. Published in Int'l Journal of Infectious Diseases.</div>
+                <div class="role">Co-Founder &amp; CEO</div>
+                <div class="bio">Doing this full-time. Harvard MPH (Coca-Cola Gold Scholar, top 1%). MIT AI Certificate. 10+ years leading global health research and policy advocacy. Managed a $690K budget, organized 30,000 people, and secured a corporate pledge to transform 7,200 restaurants. Led 20-person teams across 3 countries.</div>
             </div>
             <div class="team-card">
                 <img src="maison.jpg" alt="Maison Ole Kipila" class="team-photo">
                 <h3>Maison Ole Kipila</h3>
-                <div class="role">Chief of Partnerships</div>
-                <div class="bio">Partnerships Manager, ACOPPHE Nairobi. Africa Focal Point, Indigenous Peoples Caucus at the UN (COP30). UNFCCC COP29, UNCCD COP16, UNFCCC COP30 Delegate. Bridges grassroots community voices into global policy. Expertise in climate-health partnerships and Indigenous knowledge systems.</div>
+                <div class="role">Co-Founder &amp; Chief of Partnerships</div>
+                <div class="bio">8+ years as an established Maasai community leader. Government relationships across Narok County. UN Indigenous Peoples Caucus (COP30). The reason BioKite has community trust in Kenya.</div>
             </div>
             <div class="team-card">
                 <img src="blerta.jpg" alt="Blerta Dodaj" class="team-photo">
                 <h3>Blerta Dodaj</h3>
-                <div class="role">Chief Marketing Officer</div>
-                <div class="bio">Harvard Innovation Labs, Climate Venture Class. Founder, Alex's Studio (Albania's largest casting group, 300+ members). Co-Founder, Virtuosa Albania. Design Lead, WIP Student Conference 2025, Harvard Kennedy School. 1st Prize, Tirana Bank Business Challenge. Expertise in branding and impact communications for early-stage ventures.</div>
+                <div class="role">Co-Founder &amp; Chief Marketing Officer</div>
+                <div class="bio">10+ years as a branding &amp; impact communications expert. Harvard Innovation Labs. Founder, Alex's Studio (Albania's largest casting group, 300+ members).</div>
             </div>
             <div class="team-card">
                 <img src="mike.jpg" alt="Mike Tuffour Amirikah" class="team-photo">
-                <h3>Mike Tuffour Amirikah, MD</h3>
-                <div class="role">Vice President</div>
-                <div class="bio">Harvard MPH. Executive MBA in Healthcare Management. Physician and global health strategist with 5+ years of frontline clinical experience in resource-limited settings across Africa. Leads clinical voice in product design, ensuring solutions are built around what actually happens in ground-level clinics.</div>
+                <h3>Mike Tuffour Amirikah, MD, MPH, MBA</h3>
+                <div class="role">Co-Founder &amp; Vice President</div>
+                <div class="bio">Harvard MPH. Physician with 10+ years of rural clinical experience in Africa. The clinical voice in product design, ensuring everything we build works where it matters most.</div>
             </div>
             <div class="team-divider"></div>
-            <div class="team-section-label">Advisors & Regional Leads</div>
+            <div class="team-section-label">Advisors</div>
             <div class="team-card">
                 <img src="byron.jpg" alt="Byron Aho" class="team-photo">
                 <h3>Byron Aho</h3>
-                <div class="role">Board Advisor</div>
-                <div class="bio">Construction and power-grid infrastructure specialist. Advises on hardware deployment, electrical installation standards, and site-readiness for clinic solar+battery systems.</div>
+                <div class="role">Advisor</div>
+                <div class="bio">25+ years in infrastructure: electrical installation, power-grid deployment, and site-readiness for clinic solar+battery systems.</div>
             </div>
             <div class="team-card">
                 <img src="brian.jpg" alt="Brian H. Potts" class="team-photo">
-                <h3>Brian H. Potts</h3>
+                <h3>Brian H. Potts, JD, LLM</h3>
                 <div class="role">Advisor</div>
-                <div class="bio">5x entrepreneur and energy markets attorney at Husch Blackwell. UC Berkeley Law. Professor of Energy Markets & Project Finance. Has developed billions of dollars of energy and infrastructure projects. Founder of the Legal Mentor Network. Forbes and Wall Street Journal contributor.</div>
+                <div class="bio">25+ years in nonprofit strategy, business, and energy markets law. UC Berkeley Law. Billions in energy and infrastructure projects developed.</div>
             </div>
             <div class="team-card">
                 <img src="tony.jpg" alt="Tony Medrano" class="team-photo">
-                <h3>Tony Medrano</h3>
+                <h3>Tony Medrano, JD, MBA</h3>
                 <div class="role">Advisor</div>
-                <div class="bio">3x startup CEO/co-founder with 2 exits. Stanford JD/MBA, Columbia MA, Harvard AB. CEO of LongevityPlan.AI. Former VP at Cue Health ($500M ARR). US Naval Officer. Co-authored one of the first issued patents for mobile applications. 3x Ironman Triathlon finisher.</div>
+                <div class="bio">25+ years in nonprofit, law, and business strategy. 3&times; startup CEO with 2 exits. Stanford JD/MBA. Former VP at Cue Health ($500M ARR).</div>
             </div>
         </div>
     </section>
@@ -667,8 +704,8 @@
     <section class="panel-mid" id="donate" style="background: var(--deep-navy); padding: 80px 20px; color: var(--white);">
         <div style="max-width: 900px; width: 100%; text-align: center;">
             <h2 class="reveal" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">CHOOSE YOUR IMPACT</h2>
-            <p class="reveal reveal-delay-1" style="font-size: 1.1rem; color: var(--white); opacity: 0.8; margin-bottom: 0.5rem;">Every dollar runs the pilot.</p>
-            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2rem;">We need $60,000 in 10 days. Here is what each gift does, specifically.</p>
+            <p class="reveal reveal-delay-1" style="font-size: 1.1rem; color: var(--white); opacity: 0.8; margin-bottom: 0.5rem;">Every dollar runs the pilot. Tax-deductible (501(c)(3) in process).</p>
+            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2rem;">$75,000. 12 months. 3 clinics. 15 engineers. 1 published study.</p>
 
             <!-- PROGRESS BAR -->
             <div class="progress-wrap reveal reveal-delay-1">
@@ -677,35 +714,35 @@
                 </div>
                 <div class="progress-labels">
                     <span style="color: var(--lime-green); font-weight: 700;">$298 raised</span>
-                    <span style="color: var(--white); opacity: 0.6;">Goal: $60,000</span>
+                    <span style="color: var(--white); opacity: 0.6;">Goal: $75,000</span>
                 </div>
             </div>
 
             <!-- EVERY GIFT MATTERS -->
             <p class="reveal" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--white); opacity: 0.5; font-weight: 600; margin-bottom: 1.5rem;">Every Gift Matters</p>
             <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 3rem;">
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$50</div>
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; opacity: 0.6; margin-bottom: 8px;">First Step</div>
                     <div style="font-size: 0.85rem; line-height: 1.5; opacity: 0.85;">One week of pay for an engineering student. She is not a trainee. She is the future infrastructure of her community.</div>
                 </a>
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(175,190,106,0.5); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(175,190,106,0.5); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;">
                     <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--lime-green); color: var(--deep-navy); font-size: 0.65rem; font-weight: 700; padding: 2px 10px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Most Common</div>
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$100</div>
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; opacity: 0.6; margin-bottom: 8px;">Most Common</div>
                     <div style="font-size: 0.85rem; line-height: 1.5; opacity: 0.85;">Two and a half months of a student's stipend. When she graduates, the clinic never goes dark during a delivery.</div>
                 </a>
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$150</div>
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; opacity: 0.6; margin-bottom: 8px;">Tangible</div>
                     <div style="font-size: 0.85rem; line-height: 1.5; opacity: 0.85;">The kit to build one complete battery from scratch. This is the hardware that keeps oxygen flowing when the grid fails.</div>
                 </a>
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$200</div>
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; opacity: 0.6; margin-bottom: 8px;">Moves the Chain</div>
                     <div style="font-size: 0.85rem; line-height: 1.5; opacity: 0.85;">A rider delivers batteries for a full month. She earns a living wage. The clinic stays powered. A job that did not exist before.</div>
                 </a>
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$250</div>
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; opacity: 0.6; margin-bottom: 8px;">High Leverage</div>
                     <div style="font-size: 0.85rem; line-height: 1.5; opacity: 0.85;">One engineer reaches 83% of full certification. One certified engineer protects a clinic serving 10,000 people, every year.</div>
@@ -715,22 +752,22 @@
             <!-- ANCHOR THE CAMPAIGN -->
             <p class="reveal" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--white); opacity: 0.5; font-weight: 600; margin-bottom: 1.5rem;">Anchor the Campaign</p>
             <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 3rem;">
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(175,190,106,0.1); border: 1px solid rgba(175,190,106,0.3); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(175,190,106,0.1); border: 1px solid rgba(175,190,106,0.3); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--lime-green); margin-bottom: 2px;">$500 &middot; <span style="font-size: 0.8rem; font-weight: 600;">FULL CERTIFICATION</span></div>
                     <div style="font-size: 0.95rem; font-weight: 600; margin: 8px 0 6px;">One certified engineer. One clinic protected.</div>
                     <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">Training, materials, field exam, and credential. She belongs to this community. She stays.</div>
                 </a>
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(175,190,106,0.1); border: 1px solid rgba(175,190,106,0.3); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(175,190,106,0.1); border: 1px solid rgba(175,190,106,0.3); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--lime-green); margin-bottom: 2px;">$1,000 &middot; <span style="font-size: 0.8rem; font-weight: 600;">COMMUNITY OWNERSHIP</span></div>
                     <div style="font-size: 0.95rem; font-weight: 600; margin: 8px 0 6px;">Three engineers. Three clinics. Sovereignty.</div>
                     <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">The community owns the infrastructure. When we leave, the power stays.</div>
                 </a>
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(175,190,106,0.1); border: 1px solid rgba(175,190,106,0.3); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(175,190,106,0.1); border: 1px solid rgba(175,190,106,0.3); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--lime-green); margin-bottom: 2px;">$2,500 &middot; <span style="font-size: 0.8rem; font-weight: 600;">MOMENTUM GIFT</span></div>
                     <div style="font-size: 0.95rem; font-weight: 600; margin: 8px 0 6px;">Half of the first 15-student engineer class.</div>
                     <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">Eight clinics protected. Eight families who will not lose a mother to a power outage.</div>
                 </a>
-                <a href="#donate" onclick="return false;" style="cursor: default; opacity: 0.5; pointer-events: none;" style="background: rgba(175,190,106,0.15); border: 2px solid var(--lime-green); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="background: rgba(175,190,106,0.15); border: 2px solid var(--lime-green); border-radius: 12px; padding: 28px 20px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; text-align: left;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--lime-green); margin-bottom: 2px;">$5,000 &middot; <span style="font-size: 0.8rem; font-weight: 600;">ANCHOR GIFT</span></div>
                     <div style="font-size: 0.95rem; font-weight: 600; margin: 8px 0 6px;">The complete first pilot.</div>
                     <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">Batteries collected, rebuilt, installed, documented. Published data. One clinic that never goes dark again. A model for 95,000 rural clinics.</div>
@@ -739,70 +776,183 @@
 
             <!-- WHAT HAPPENS -->
             <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-                <h3 style="font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.3rem;">WHAT HAPPENS WHEN WE HIT $60,000</h3>
+                <h3 style="font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.3rem;">WHAT HAPPENS WHEN WE HIT $75,000</h3>
                 <p style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2.5rem;">One pilot. One proof. A model to light up Africa's 95,000 clinics.</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left;">
-                    <div style="padding: 20px;">
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--lime-green); margin-bottom: 8px;">01</div>
-                        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">Batteries collected.</div>
-                        <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">Retired EV batteries from Nairobi, tested at WEEE Centre. Nothing imported. Everything local.</div>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: left; max-width: 820px; margin: 0 auto;">
+                    <div style="padding: 28px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(16px); transition: all 0.4s; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--lime-green), var(--kite-green));"></div>
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, rgba(175,190,106,0.25), rgba(80,176,214,0.2)); border: 2px solid rgba(175,190,106,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--lime-green); flex-shrink: 0; box-shadow: 0 0 15px rgba(175,190,106,0.2);">01</div>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white);">Batteries collected.</div>
+                        </div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; line-height: 1.65; padding-left: 62px;">Retired EV batteries from Nairobi, tested at WEEE Centre. Nothing imported. Everything local.</div>
                     </div>
-                    <div style="padding: 20px;">
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--lime-green); margin-bottom: 8px;">02</div>
-                        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">Engineers trained.</div>
-                        <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">15 students from Maasai Mara University complete a 160-hour certification. They build the systems. They own the credential. They stay.</div>
+                    <div style="padding: 28px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(16px); transition: all 0.4s; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--biokite-blue), var(--sky-blue));"></div>
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, rgba(175,190,106,0.25), rgba(80,176,214,0.2)); border: 2px solid rgba(175,190,106,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--lime-green); flex-shrink: 0; box-shadow: 0 0 15px rgba(175,190,106,0.2);">02</div>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white);">Engineers trained.</div>
+                        </div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; line-height: 1.65; padding-left: 62px;">15 students from Maasai Mara University complete a 160-hour certification. They build the systems. They own the credential. They stay.</div>
                     </div>
-                    <div style="padding: 20px;">
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--lime-green); margin-bottom: 8px;">03</div>
-                        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">Clinics powered.</div>
-                        <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">Three dispensaries in Narok County receive facility-owned backup power. The clinic owns it permanently. No contract. No expiry.</div>
+                    <div style="padding: 28px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(16px); transition: all 0.4s; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--kite-green), var(--lime-green));"></div>
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, rgba(175,190,106,0.25), rgba(80,176,214,0.2)); border: 2px solid rgba(175,190,106,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--lime-green); flex-shrink: 0; box-shadow: 0 0 15px rgba(175,190,106,0.2);">03</div>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white);">Clinics powered.</div>
+                        </div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; line-height: 1.65; padding-left: 62px;">Three dispensaries in Narok County receive facility-owned backup power. The clinic owns it permanently. No contract. No expiry.</div>
                     </div>
-                    <div style="padding: 20px;">
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--lime-green); margin-bottom: 8px;">04</div>
-                        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">Data published.</div>
-                        <div style="font-size: 0.85rem; opacity: 0.75; line-height: 1.5;">Before-and-after uptime data from three real sites, published openly. A local pilot becomes a model for 95,000 clinics across Africa.</div>
+                    <div style="padding: 28px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(16px); transition: all 0.4s; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--biokite-blue), var(--lime-green));"></div>
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, rgba(175,190,106,0.25), rgba(80,176,214,0.2)); border: 2px solid rgba(175,190,106,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--lime-green); flex-shrink: 0; box-shadow: 0 0 15px rgba(175,190,106,0.2);">04</div>
+                            <div style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white);">Data published.</div>
+                        </div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; line-height: 1.65; padding-left: 62px;">Before-and-after uptime data from three real sites, published openly. A local pilot becomes a model for 95,000 clinics across Africa.</div>
                     </div>
                 </div>
             </div>
 
-            <!-- FUNDING TABLE -->
-            <div class="reveal" style="max-width: 600px; margin: 0 auto;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-                    <thead>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
-                            <th style="text-align: left; padding: 10px 8px; font-weight: 600; opacity: 0.6; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Tier</th>
-                            <th style="text-align: center; padding: 10px 8px; font-weight: 600; opacity: 0.6; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Donors</th>
-                            <th style="text-align: right; padding: 10px 8px; font-weight: 600; opacity: 0.6; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                            <td style="padding: 10px 8px;">Anchor gifts</td>
-                            <td style="padding: 10px 8px; text-align: center;">6 &times; $5,000</td>
-                            <td style="padding: 10px 8px; text-align: right; font-weight: 600;">$30,000</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                            <td style="padding: 10px 8px;">Major gifts</td>
-                            <td style="padding: 10px 8px; text-align: center;">10 &times; $2,000</td>
-                            <td style="padding: 10px 8px; text-align: right; font-weight: 600;">$20,000</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                            <td style="padding: 10px 8px;">Community gifts</td>
-                            <td style="padding: 10px 8px; text-align: center;">20 &times; $500</td>
-                            <td style="padding: 10px 8px; text-align: right; font-weight: 600;">$10,000</td>
-                        </tr>
-                        <tr style="border-top: 2px solid var(--lime-green);">
-                            <td style="padding: 12px 8px; font-weight: 700; color: var(--lime-green);">Total</td>
-                            <td style="padding: 12px 8px; text-align: center; font-weight: 700; color: var(--lime-green);">36 donors</td>
-                            <td style="padding: 12px 8px; text-align: right; font-weight: 700; color: var(--lime-green); font-size: 1.1rem;">$60,000</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- WHERE EVERY DOLLAR GOES -->
+            <div class="reveal" style="max-width: 700px; margin: 0 auto;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; color: var(--lime-green); margin-bottom: 8px; text-align: center;">Transparent Budget</h3>
+                <h2 style="font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800; color: var(--white); margin-bottom: 1.5rem; text-align: center;">Where Every Dollar Goes</h2>
+
+                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; backdrop-filter: blur(16px); overflow: hidden;">
+                    <!-- Header -->
+                    <div style="display: flex; justify-content: space-between; padding: 16px 24px; background: rgba(175,190,106,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; color: rgba(255,255,255,0.5);">Line Item</span>
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; color: rgba(255,255,255,0.5);">Amount</span>
+                    </div>
+
+                    <!-- Rows with percentage bars -->
+                    <div style="padding: 0 24px;">
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 24%; height: 2px; background: linear-gradient(90deg, var(--lime-green), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--lime-green); opacity: 0.6; min-width: 30px;">24%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Running three clinics for 12 months</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$18,000</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 16%; height: 2px; background: linear-gradient(90deg, var(--lime-green), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--lime-green); opacity: 0.6; min-width: 30px;">16%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Sarah on the ground in Kenya, 2 trips</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$12,000</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 11.3%; height: 2px; background: linear-gradient(90deg, var(--biokite-blue), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--biokite-blue); opacity: 0.6; min-width: 30px;">11%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Battery collection and testing</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$8,500</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 10%; height: 2px; background: linear-gradient(90deg, var(--biokite-blue), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--biokite-blue); opacity: 0.6; min-width: 30px;">10%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Writing and publishing the study</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$7,500</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 8%; height: 2px; background: linear-gradient(90deg, var(--kite-green), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--kite-green); opacity: 0.6; min-width: 30px;">8%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Installing power at all 3 sites</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$6,000</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 8%; height: 2px; background: linear-gradient(90deg, var(--kite-green), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--kite-green); opacity: 0.6; min-width: 30px;">8%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Festues &amp; Naeku field stipends, 12 months</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$6,000</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 6.7%; height: 2px; background: linear-gradient(90deg, var(--sky-blue), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--sky-blue); opacity: 0.6; min-width: 30px;">7%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">CHAI team coordination</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$5,000</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 6%; height: 2px; background: linear-gradient(90deg, var(--sky-blue), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--sky-blue); opacity: 0.6; min-width: 30px;">6%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Training 15 engineers</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$4,500</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 5.3%; height: 2px; background: linear-gradient(90deg, var(--sky-blue), transparent); opacity: 0.5;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--sky-blue); opacity: 0.6; min-width: 30px;">5%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.85);">Bicycle delivery network, 6 months</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--lime-green); white-space: nowrap; margin-left: 16px;">$4,000</span>
+                        </div>
+                        <div class="budget-row" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8px; margin: 0 -8px; border-radius: 8px; position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 8px; width: 4.7%; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.3), transparent); opacity: 0.4;"></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 700; color: rgba(255,255,255,0.3); min-width: 30px;">5%</span><span style="font-size: 0.92rem; color: rgba(255,255,255,0.4);">Buffer</span></div>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; color: rgba(255,255,255,0.4); white-space: nowrap; margin-left: 16px;">$3,500</span>
+                        </div>
+                    </div>
+
+                    <!-- Total row -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: linear-gradient(90deg, rgba(175,190,106,0.15), rgba(175,190,106,0.05)); border-top: 2px solid var(--lime-green);">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 800; color: var(--white);">Total &middot; 12 months</span>
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--lime-green);">$75,000</span>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.85rem; color: var(--white); opacity: 0.45; margin-top: 1.2rem; text-align: center;">This is not a round guess. Every dollar is accounted for. We welcome split-pay arrangements.</p>
             </div>
 
             <!-- DONATE BUTTON -->
             <div class="reveal" style="margin-top: 3rem;">
-                <div style="display: inline-block; padding: 16px 48px; background: rgba(175,190,106,0.3); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; border-radius: 8px; opacity: 0.6;">Donations Opening Soon</div>
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Donation" style="display: inline-block; padding: 16px 48px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIPS -->
+    <section class="panel-mid" id="partnerships" style="background: linear-gradient(160deg, #0d1b2a 0%, #1a3a2a 50%, #1b2d45 100%); padding: 100px 20px; color: var(--white);">
+        <div style="max-width: 900px; width: 100%; text-align: center;">
+            <div class="section-tag light reveal">For Partners</div>
+            <h2 class="reveal reveal-delay-1" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">Partner With Us</h2>
+            <div class="brand-bar" style="margin: 1.5rem auto 1.5rem;"></div>
+            <p class="reveal reveal-delay-2" style="font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 3rem; line-height: 1.7;">
+                We're looking for institutional partners who want to put their name on a pilot that produces real data, real infrastructure, and a published study. Three ways to get involved.
+            </p>
+
+            <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; text-align: left; margin-bottom: 3rem;">
+                <!-- RECOMMENDED -->
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Partnership%20%E2%80%93%20Single-Site%20Pilot%20(%2425%2C000)" style="background: rgba(175,190,106,0.12); border: 2px solid var(--lime-green); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;" class="donate-card">
+                    <div style="position: absolute; top: -12px; left: 24px; background: var(--lime-green); color: var(--deep-navy); font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Recommended</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$25,000</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Single-Site Pilot</div>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Three clinics powered</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Fifteen engineers trained &amp; certified</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Published before-and-after data</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> A named dispensary partner for Kenya</li>
+                    </ul>
+                    <div style="margin-top: 16px; font-size: 0.8rem; opacity: 0.5; font-style: italic;">Split-pay available: $25,000 over 3 years</div>
+                </a>
+
+                <!-- MINIMAL -->
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Partnership%20%E2%80%93%20Proof-of-Concept%20(%2415%2C000)" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$15,000</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Proof-of-Concept</div>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> One clinic powered</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> First engineer class trained</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Full uptime and outcome data</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Expansion proposal delivered at Day 90</li>
+                    </ul>
+                </a>
+
+                <!-- INTRODUCTIONS ONLY -->
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Partnership%20%E2%80%93%20Introductions" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--white); opacity: 0.7; margin-bottom: 4px;">$0</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Introductions Only</div>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5; opacity: 0.8;">
+                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> Introduce us to funders</li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> BioKite runs the pilot independently</li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> Review findings, option to co-publish</li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> If compelling: co-author paper &amp; co-pitch funders for 50-clinic expansion</li>
+                    </ul>
+                </a>
+            </div>
+
+            <!-- THE FULL ASK -->
+            <div class="reveal" style="max-width: 640px; margin: 0 auto; padding: 36px 32px; background: rgba(175,190,106,0.08); border: 1px solid rgba(175,190,106,0.25); border-radius: 16px;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 8px;">The Full Ask: $75,000</h3>
+                <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 12px;">12 months. 3 clinics. 15 engineers. 1 published study.</p>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6;">Tax-deductible (501(c)(3) in process). We welcome split-pay arrangements, such as $25,000 per year over three years. Every dollar is accounted for in the budget above.</p>
+                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Partnership%20Inquiry" style="display: inline-block; margin-top: 20px; padding: 14px 36px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">Start the Conversation</a>
             </div>
         </div>
     </section>
@@ -827,6 +977,7 @@
                 <li><a href="#protocol">Protocol</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#donate">Donate</a></li>
+                <li><a href="#partnerships">Partners</a></li>
                 <li><a href="mailto:biokitelabs@gmail.com">Contact</a></li>
             </ul>
             <div class="footer-copy">&copy; 2026 BioKite Labs</div>
