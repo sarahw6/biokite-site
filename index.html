@@ -288,6 +288,109 @@
         .footer-links a:hover { opacity: 1; color: var(--lime-green); }
         .footer-copy { font-size: 0.85rem; opacity: 0.6; }
 
+        /* ─── LIGHTS OUT ─── */
+        .lights-out { position: relative; overflow: hidden; }
+        .lights-out-hero { position: relative; width: 100%; max-height: 72vh; overflow: hidden; }
+        .lights-out-hero img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.7) saturate(1.1); }
+        .lights-out-hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 55%; background: linear-gradient(to top, #0d1b2a 0%, transparent 100%); pointer-events: none; }
+        .lights-out-hero-text { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); text-align: center; width: 90%; max-width: 800px; }
+        .lights-out-hero-text h2 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--white); text-shadow: 0 2px 20px rgba(0,0,0,0.5); margin: 0 0 0.5rem; }
+        .lights-out-hero-text .lo-location { font-family: 'Inter', sans-serif; font-size: clamp(0.8rem, 1.6vw, 1rem); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime-green); text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
+        .lights-out-body { background: linear-gradient(175deg, #0d1b2a 0%, #1b2d45 40%, #0d1b2a 100%); position: relative; }
+        .lights-out-body::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(55,134,183,0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(175,190,106,0.05) 0%, transparent 50%); pointer-events: none; }
+        .lo-inner { max-width: 820px; margin: 0 auto; padding: 4rem 2rem 5rem; position: relative; z-index: 1; }
+        .lo-stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 0 0 3rem; padding: 0 0 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .lo-stat { text-align: center; min-width: 130px; }
+        .lo-stat-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--sky-blue); line-height: 1; margin-bottom: 0.3rem; }
+        .lo-stat-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+        .lo-narrative { font-family: 'Inter', sans-serif; font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.85; color: rgba(255,255,255,0.82); margin-bottom: 3rem; }
+        .lo-narrative p { margin: 0 0 1.25rem; }
+        .lo-punch { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.1rem, 2.2vw, 1.35rem); color: var(--white); margin-top: 1.5rem; }
+        .lo-divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--biokite-blue), var(--lime-green)); margin: 3rem auto; border: none; }
+        .lo-h2 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.4rem, 3vw, 2rem); color: var(--white); margin: 0 0 1.75rem; line-height: 1.2; }
+        .lo-h2 .accent { color: var(--lime-green); }
+        .lo-chain { margin: 0 0 3rem; padding: 0; list-style: none; }
+        .lo-chain li { position: relative; padding: 1.5rem 1.75rem; margin-bottom: 1rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-left: 3px solid var(--sky-blue); border-radius: 8px; backdrop-filter: blur(4px); transition: transform 0.3s ease, border-color 0.3s ease; }
+        .lo-chain li:hover { transform: translateX(4px); border-left-color: var(--lime-green); }
+        .lo-chain li strong { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--white); display: block; margin-bottom: 0.35rem; font-size: 1.05rem; }
+        .lo-chain li span { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.65); }
+        .lo-math { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 0 0 1.25rem; }
+        .lo-math-card { padding: 2rem 1.5rem; border-radius: 12px; text-align: center; backdrop-filter: blur(8px); }
+        .lo-math-card.budget { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+        .lo-math-card.cost { background: rgba(255, 80, 80, 0.06); border: 1px solid rgba(255, 80, 80, 0.15); }
+        .lo-math-amount { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; margin-bottom: 0.5rem; }
+        .lo-math-card.budget .lo-math-amount { color: var(--sky-blue); }
+        .lo-math-card.cost .lo-math-amount { color: #e85c5c; }
+        .lo-math-label { font-family: 'Inter', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); }
+        .lo-verdict { text-align: center; font-family: 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.5); margin-bottom: 3rem; font-style: italic; }
+        .lo-solutions { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0 3rem; }
+        .lo-card { position: relative; padding: 2.25rem 1.75rem; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; backdrop-filter: blur(16px); transition: transform 0.4s ease, box-shadow 0.4s ease; overflow: hidden; }
+        .lo-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0; }
+        .lo-card.nurugrid::before { background: linear-gradient(90deg, var(--kite-green), var(--lime-green)); }
+        .lo-card.nuruloop::before { background: linear-gradient(90deg, var(--biokite-blue), var(--sky-blue)); }
+        .lo-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 20px rgba(80,176,214,0.06); border-color: rgba(80,176,214,0.2); }
+        .lo-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.3rem; margin: 0 0 0.25rem; }
+        .lo-card.nurugrid h3 { color: var(--lime-green); }
+        .lo-card.nuruloop h3 { color: var(--sky-blue); }
+        .lo-card .lo-sub { font-family: 'Inter', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
+        .lo-card p { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.72); margin: 0 0 1rem; }
+        .lo-card .lo-stat-big { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.6rem; margin: 0.75rem 0 0.2rem; line-height: 1; }
+        .lo-card.nurugrid .lo-stat-big { color: var(--lime-green); }
+        .lo-card.nuruloop .lo-stat-big { color: var(--sky-blue); }
+        .lo-card .lo-stat-ctx { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        .lo-impact { text-align: center; padding: 2.5rem 1.5rem; margin: 0 0 3rem; background: rgba(175, 190, 106, 0.06); border: 1px solid rgba(175, 190, 106, 0.12); border-radius: 14px; }
+        .lo-impact-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); color: var(--lime-green); margin-bottom: 0.25rem; }
+        .lo-impact-label { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
+        .lo-impact-ctx { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+        .lo-close { text-align: center; padding: 2rem 0; }
+        .lo-close blockquote { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--white); line-height: 1.5; margin: 0 0 1rem; padding: 0; border: none; }
+        .lo-close .lo-attr { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+        .lo-scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 0 0 3rem; }
+        .lo-scale-card { padding: 2rem 1.25rem; border-radius: 14px; text-align: center; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px); transition: all 0.4s ease; }
+        .lo-scale-card:hover { transform: translateY(-3px); border-color: rgba(80,176,214,0.2); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+        .lo-scale-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--lime-green); line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 0 25px rgba(175,190,106,0.25); }
+        .lo-scale-label { font-family: 'Inter', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+        .lo-prose { font-family: 'Inter', sans-serif; font-size: clamp(1rem, 1.8vw, 1.1rem); line-height: 1.85; color: rgba(255,255,255,0.78); margin-bottom: 1.5rem; }
+        .lo-prose strong { color: var(--white); font-weight: 600; }
+        .lo-prose em { color: var(--lime-green); font-style: normal; font-weight: 600; }
+        .lo-tag { display: inline-block; padding: 5px 14px; background: rgba(175,190,106,0.12); color: var(--lime-green); font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 20px; margin-bottom: 1rem; }
+        .lo-baseline { padding: 2rem 1.75rem; margin: 0 0 3rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+        .lo-baseline-header { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--white); margin-bottom: 0.75rem; }
+        .lo-baseline-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .lo-baseline-item { min-width: 120px; }
+        .lo-baseline-item .lo-bl-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--sky-blue); }
+        .lo-baseline-item .lo-bl-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; }
+        .lo-mortality { padding: 2.5rem 2rem; margin: 0 0 3rem; background: rgba(255, 80, 80, 0.04); border: 1px solid rgba(255, 80, 80, 0.1); border-radius: 14px; border-left: 3px solid #e85c5c; }
+        .lo-mortality-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3vw, 2rem); color: #e85c5c; margin-bottom: 0.4rem; }
+        .lo-mortality p { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.7); margin: 0 0 0.75rem; }
+        .lo-mortality p:last-child { margin: 0; }
+        .lo-neglect { margin: 0 0 3rem; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .lo-neglect li { font-family: 'Inter', sans-serif; font-size: 0.78rem; padding: 6px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; color: rgba(255,255,255,0.45); }
+        .lo-solution-simple { margin: 0 0 1.5rem; padding: 2rem 1.75rem; background: rgba(175,190,106,0.04); border: 1px solid rgba(175,190,106,0.1); border-left: 3px solid var(--lime-green); border-radius: 12px; }
+        .lo-solution-simple h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--lime-green); margin: 0 0 0.75rem; }
+        .lo-solution-simple p { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.75); margin: 0 0 0.75rem; }
+        .lo-solution-simple p:last-child { margin: 0; }
+        .lo-devices { display: flex; gap: 1.25rem; flex-wrap: wrap; margin: 1rem 0; }
+        .lo-device { flex: 1; min-width: 130px; padding: 1rem; text-align: center; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); }
+        .lo-device-icon { font-size: 1.6rem; margin-bottom: 0.35rem; }
+        .lo-device-name { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.78rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.06em; }
+        .lo-ask { text-align: center; padding: 3rem 2rem; margin: 0 0 2.5rem; background: linear-gradient(135deg, rgba(175,190,106,0.08) 0%, rgba(55,134,183,0.06) 100%); border: 1px solid rgba(175,190,106,0.15); border-radius: 16px; position: relative; overflow: hidden; }
+        .lo-ask::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--lime-green), var(--sky-blue)); }
+        .lo-ask-amount { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3rem); color: var(--lime-green); margin-bottom: 0.5rem; text-shadow: 0 0 30px rgba(175,190,106,0.2); }
+        .lo-ask-desc { font-family: 'Inter', sans-serif; font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 500px; margin: 0 auto 1.5rem; }
+        .lo-ask-items { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        .lo-ask-item { text-align: center; min-width: 100px; }
+        .lo-ask-item-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--sky-blue); }
+        .lo-ask-item-label { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; }
+        @media (max-width: 600px) {
+            .lo-math { grid-template-columns: 1fr; }
+            .lo-solutions { grid-template-columns: 1fr; }
+            .lo-stats { gap: 1.25rem; }
+            .lo-scale { grid-template-columns: 1fr; }
+            .lo-baseline-stats { flex-direction: column; gap: 1rem; }
+            .lo-devices { flex-direction: column; }
+        }
+
         /* ─── ANIMATIONS ─── */
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -338,6 +441,7 @@
                 <div class="nav-logo-text">BioKite <span class="labs">Labs</span></div>
             </a>
             <ul class="nav-links" id="navLinks">
+                <li><a href="#lights-out">Lights Out</a></li>
                 <li><a href="#story">Story</a></li>
                 <li><a href="#kit">Clinic Ready Mode</a></li>
                 <li><a href="#certification">Certification</a></li>
@@ -385,6 +489,230 @@
     <div class="daly-strip">
         <p class="reveal">BioKite keeps the power on. So families stay together.<br><strong>$350&ndash;$525 per life-year saved</strong> for the first pilot. <strong>&lt;$105 at scale</strong> after 10 years. <span style="opacity: 0.7; font-size: 0.85em;">WHO considers anything under $2,200 cost-effective.</span></p>
     </div>
+
+    <!-- LIGHTS OUT -->
+    <section class="lights-out" id="lights-out">
+        <div class="lights-out-hero">
+            <img src="olosho-clinic.jpg" alt="Olosho-Oibor Dispensary at dusk. Patients wait on benches outside weathered walls. A fading solar panel leans nearby. A bicycle rests in the dirt." loading="lazy">
+            <div class="lights-out-hero-overlay"></div>
+            <div class="lights-out-hero-text">
+                <h2 class="reveal">When the Lights Go Out</h2>
+                <div class="lo-location reveal reveal-delay-1">Olosho-Oibor Dispensary &middot; Narok County, Kenya</div>
+            </div>
+        </div>
+        <div class="lights-out-body">
+            <div class="lo-inner">
+
+                <div class="lo-stats reveal">
+                    <div class="lo-stat">
+                        <div class="lo-stat-num">3,000</div>
+                        <div class="lo-stat-label">Patients</div>
+                    </div>
+                    <div class="lo-stat">
+                        <div class="lo-stat-num">1</div>
+                        <div class="lo-stat-label">Nurse Midwife</div>
+                    </div>
+                    <div class="lo-stat">
+                        <div class="lo-stat-num">4&ndash;6</div>
+                        <div class="lo-stat-label">Outages / Week</div>
+                    </div>
+                    <div class="lo-stat">
+                        <div class="lo-stat-num">2&ndash;6 hrs</div>
+                        <div class="lo-stat-label">Each Blackout</div>
+                    </div>
+                </div>
+
+                <div class="lo-narrative reveal">
+                    <p>The vaccine fridge goes warm. The phone charging for the ambulance call dies. A woman in labor delivers by headlamp, if the batteries in that work, too.</p>
+                    <p class="lo-punch">This is not a crisis. This is a schedule.</p>
+                </div>
+
+                <!-- SCALE -->
+                <div class="lo-scale reveal">
+                    <div class="lo-scale-card">
+                        <div class="lo-scale-num">1B+</div>
+                        <div class="lo-scale-label">people depend on clinics<br>that lose power</div>
+                    </div>
+                    <div class="lo-scale-card">
+                        <div class="lo-scale-num">182,000</div>
+                        <div class="lo-scale-label">maternal deaths per year<br>in Sub-Saharan Africa</div>
+                    </div>
+                    <div class="lo-scale-card">
+                        <div class="lo-scale-num">$28B</div>
+                        <div class="lo-scale-label">in medical hardware<br>underperforming globally</div>
+                    </div>
+                </div>
+
+                <p class="lo-prose reveal">One of the world's most significant, readily solvable problems is <strong>power outages in health facilities</strong> and what they do to the people inside. Over one billion people receive care in clinics where the lights can cut out at any moment. Across Sub-Saharan Africa, 182,000 mothers die every year. In Kenya alone, more than 5,000. $28 billion in medical hardware sits in clinics worldwide, underperforming or idle, because <em>no one owns the operational layer that keeps it running.</em></p>
+
+                <p class="lo-prose reveal">We target Kenya because the problem occurs frequently here and with catastrophic consequences.</p>
+
+                <!-- BASELINE -->
+                <div class="lo-baseline reveal">
+                    <div class="lo-baseline-header">Olosho-Oibor Dispensary, Narok County. Baseline monitoring data:</div>
+                    <div class="lo-baseline-stats">
+                        <div class="lo-baseline-item">
+                            <div class="lo-bl-num">208</div>
+                            <div class="lo-bl-label">Outages / Year</div>
+                        </div>
+                        <div class="lo-baseline-item">
+                            <div class="lo-bl-num">416&ndash;1,248</div>
+                            <div class="lo-bl-label">Hours Without Power</div>
+                        </div>
+                        <div class="lo-baseline-item">
+                            <div class="lo-bl-num">58&times;</div>
+                            <div class="lo-bl-label">Kenya's National Average</div>
+                        </div>
+                        <div class="lo-baseline-item">
+                            <div class="lo-bl-num">$2K&ndash;$8K</div>
+                            <div class="lo-bl-label">Annual Clinic Budget</div>
+                        </div>
+                        <div class="lo-baseline-item">
+                            <div class="lo-bl-num">$125&ndash;$500</div>
+                            <div class="lo-bl-label">Discretionary Spending</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MORTALITY -->
+                <div class="lo-mortality reveal">
+                    <div class="lo-mortality-num">43% mortality increase</div>
+                    <p>Every day a power outage persists beyond two hours, patient mortality rises by 43%. At Olosho-Oibor, 208 outages last year. Each one lasting two to six hours. That is 208 windows where a woman on the delivery table, a newborn under an oxygen mask, or a child waiting for a refrigerated vaccine faced sharply elevated risk of death.</p>
+                    <p>Across Sub-Saharan Africa, 182,000 mothers die every year. <strong style="color: #e85c5c;">More than 5,000 of them in Kenya.</strong> Power outages do not cause every one of those deaths. But in a clinic running on prayer and a dead generator, they turn survivable emergencies into fatal ones.</p>
+                </div>
+
+                <!-- TRACTABLE -->
+                <div class="lo-tag reveal">Tractable</div>
+                <p class="lo-prose reveal"><strong>No new hardware. No solar installation. No internet required.</strong> One certified energy officer can implement and maintain the full protocol at a single facility. The intervention operates at the device level: when the power fails, unplug non-essential equipment and route the backup battery to the three devices that determine whether patients live or die.</p>
+
+                <div class="lo-devices reveal">
+                    <div class="lo-device">
+                        <div class="lo-device-icon">&#129656;</div>
+                        <div class="lo-device-name">Oxygen Compressor</div>
+                    </div>
+                    <div class="lo-device">
+                        <div class="lo-device-icon">&#10052;</div>
+                        <div class="lo-device-name">Vaccine Refrigerator</div>
+                    </div>
+                    <div class="lo-device">
+                        <div class="lo-device-icon">&#9879;</div>
+                        <div class="lo-device-name">Surgical Sterilizer</div>
+                    </div>
+                </div>
+
+                <p class="lo-prose reveal">Remote sensors detect the outage and alert personnel wherever they are. The officer returns, launches the backup battery, and the three life-saving devices stay on. No wrap-around program. No complex installation. Just the power that keeps people alive.</p>
+
+                <!-- NEGLECTED -->
+                <div class="lo-tag reveal">Neglected</div>
+                <p class="lo-prose reveal">No existing organization conducts device-level behavioral audits, deploys visual readiness protocols, or certifies facility energy officers at rural clinics. Not one:</p>
+                <ul class="lo-neglect reveal">
+                    <li>Clean Energy Group</li>
+                    <li>Direct Relief</li>
+                    <li>ASHE</li>
+                    <li>Health Care Without Harm</li>
+                    <li>WHO</li>
+                    <li>USAID HETA</li>
+                </ul>
+
+                <hr class="lo-divider">
+
+                <h2 class="lo-h2 reveal">Why the Power <span class="accent">Never</span> Stays On</h2>
+
+                <ul class="lo-chain reveal">
+                    <li>
+                        <strong>The grid wasn't built to reach here.</strong>
+                        <span>Hydro drops in dry season. Diesel runs out. Transmission lines stretch thin across hundreds of kilometers, and rural clinics sit at the very end. Last served, first cut.</span>
+                    </li>
+                    <li>
+                        <strong>No one comes to fix it.</strong>
+                        <span>The utility doesn't prioritize a dispensary. The county points to the utility. The utility points to the county. The clinic waits.</span>
+                    </li>
+                    <li>
+                        <strong>Donor solar was the answer. Then 87% of it broke.</strong>
+                        <span>Installed by outside organizations. Maintained by no one. Owned by no one. Batteries degraded. Inverters failed. No one local had parts, training, or a reason to repair what wasn't theirs. Five years later: dead panels, dead batteries, back to the generator. If there's fuel.</span>
+                    </li>
+                    <li>
+                        <strong>The pattern repeats.</strong>
+                        <span>Equipment arrives, the funder leaves, maintenance doesn't exist, the system dies.</span>
+                    </li>
+                </ul>
+
+                <h2 class="lo-h2 reveal">The <span class="accent">Math</span></h2>
+
+                <div class="lo-math reveal">
+                    <div class="lo-math-card budget">
+                        <div class="lo-math-amount">$250</div>
+                        <div class="lo-math-label">Clinic's annual budget</div>
+                    </div>
+                    <div class="lo-math-card cost">
+                        <div class="lo-math-amount">$450</div>
+                        <div class="lo-math-label">Commercial backup battery</div>
+                    </div>
+                </div>
+                <p class="lo-verdict reveal">The clinic cannot buy the solution, even if one existed that could be repaired locally. None does.</p>
+
+                <hr class="lo-divider">
+
+                <h2 class="lo-h2 reveal">What <span class="accent">Changes</span></h2>
+
+                <div class="lo-solution-simple reveal">
+                    <h3>The protocol is simple.</h3>
+                    <p>When the power fails, the certified energy officer unplugs non-essential devices and connects the backup battery to the three machines that determine who lives: the oxygen compressor, the vaccine refrigerator, and the surgical sterilizer kit. Remote sensors detect the outage and summon personnel from their homes or elsewhere in the facility. No wrap-around program. No complex infrastructure. The lights stay on where it matters.</p>
+                </div>
+
+                <div class="lo-solutions reveal">
+                    <div class="lo-card nurugrid">
+                        <h3>NuruGrid</h3>
+                        <div class="lo-sub">Power from what others threw away</div>
+                        <p>Discarded EV batteries still hold 70 to 80% capacity. NuruGrid collects them. Locally trained women engineers, paid $300 to train, test, rebuild, and reassemble them into clinic-grade backup systems.</p>
+                        <p>The woman who builds the system lives down the road. When it breaks, she fixes it. No contractor from Nairobi. No six-month warranty ticket. A neighbor.</p>
+                        <div class="lo-stat-big">$36</div>
+                        <div class="lo-stat-ctx">8% of the $450 commercial cost</div>
+                    </div>
+                    <div class="lo-card nuruloop">
+                        <h3>NuruLoop</h3>
+                        <div class="lo-sub">Batteries that move</div>
+                        <p>A clinic battery dies. A trained motorcycle rider delivers a charged replacement the same day. The dead battery cycles back to the hub for reconditioning.</p>
+                        <p>No clinic waits. No battery sits on a shelf. Power circulates.</p>
+                        <div class="lo-stat-big">Same day</div>
+                        <div class="lo-stat-ctx">Continuous loop. Always charged. Always local.</div>
+                    </div>
+                </div>
+
+                <div class="lo-impact reveal">
+                    <div class="lo-impact-num">&lt; $105</div>
+                    <div class="lo-impact-label">Per life-year saved</div>
+                    <div class="lo-impact-ctx">WHO cost-effectiveness threshold: $2,100</div>
+                </div>
+
+                <!-- THE ASK -->
+                <div class="lo-ask reveal">
+                    <div class="lo-ask-amount">$400,000</div>
+                    <div class="lo-ask-desc">The solution is readily available. With this funding, we manufacture, ship, and install the battery kit and full protocol at three hospitals.</div>
+                    <div class="lo-ask-items">
+                        <div class="lo-ask-item">
+                            <div class="lo-ask-item-num">3</div>
+                            <div class="lo-ask-item-label">Hospitals</div>
+                        </div>
+                        <div class="lo-ask-item">
+                            <div class="lo-ask-item-num">15</div>
+                            <div class="lo-ask-item-label">Engineers Certified</div>
+                        </div>
+                        <div class="lo-ask-item">
+                            <div class="lo-ask-item-num">9,000+</div>
+                            <div class="lo-ask-item-label">Patients Protected</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lo-close reveal">
+                    <blockquote>"Power is not optional.<br>It is whether she goes home."</blockquote>
+                    <div class="lo-attr">BioKite Labs &middot; Olosho-Oibor Dispensary &middot; Narok County Health Authority</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- STATS -->
     <section style="background: linear-gradient(135deg, #0d1b2a 0%, #1b2d45 100%); padding: 60px 20px;">
