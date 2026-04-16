@@ -121,6 +121,19 @@
         .daly-strip p { font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--white); opacity: 0.9; font-weight: 400; max-width: 600px; margin: 0 auto; }
         .daly-strip strong { color: var(--lime-green); font-weight: 700; }
 
+        /* ─── LIVE NOW STRIP ─── */
+        .live-strip { background: linear-gradient(90deg, rgba(175,190,106,0.08) 0%, rgba(80,176,214,0.06) 100%); border-top: 1px solid rgba(175,190,106,0.2); border-bottom: 1px solid rgba(175,190,106,0.2); padding: 1rem 20px; }
+        .live-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; font-family: 'Inter', sans-serif; font-size: clamp(0.85rem, 1.5vw, 0.98rem); color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .live-dot { width: 9px; height: 9px; border-radius: 50%; background: #e85c5c; box-shadow: 0 0 10px rgba(232,92,92,0.6); animation: live-pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
+        @keyframes live-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+        .live-label { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime-green); }
+        .live-sep { color: rgba(255,255,255,0.3); }
+        .live-text strong { color: var(--white); font-weight: 700; }
+        @media (max-width: 600px) {
+            .live-inner { gap: 8px; }
+            .live-sep { display: none; }
+        }
+
         /* ─── STATS ─── */
         .stats-section { background: var(--off-white); padding: 60px 20px; }
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 800px; margin: 0 auto; }
@@ -543,13 +556,23 @@
             <a href="#partnerships" style="display: inline-block; padding: 16px 40px; background: transparent; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s;">Partner With Us</a>
         </div>
         <div class="cred-bar reveal reveal-delay-3">
+            <div class="cred-item"><div class="cred-num">24</div><div class="cred-label">Narok Stakeholders Engaged</div></div>
+            <div class="cred-item"><div class="cred-num">18</div><div class="cred-label">Local Engineers on the Table</div></div>
             <div class="cred-item"><div class="cred-num">8%</div><div class="cred-label">Target Cost vs. Commercial</div></div>
             <div class="cred-item"><div class="cred-num">&lt;$105</div><div class="cred-label">Per Life-Year at Scale</div></div>
-            <div class="cred-item"><div class="cred-num">3</div><div class="cred-label">Clinics, Year One Goal</div></div>
-            <div class="cred-item"><div class="cred-num">15</div><div class="cred-label">Engineers to Train</div></div>
         </div>
         <div class="hero-scroll"><span>Scroll to explore</span><div class="scroll-arrow"></div></div>
     </section>
+
+    <!-- LIVE NOW STRIP -->
+    <div class="live-strip">
+        <div class="live-inner reveal">
+            <span class="live-dot"></span>
+            <span class="live-label">Live in Narok County</span>
+            <span class="live-sep">&middot;</span>
+            <span class="live-text"><strong>24 local stakeholders</strong> engaged, including <strong>18 Kenyan engineers</strong> co-designing the pilot with us</span>
+        </div>
+    </div>
 
     <!-- DALY STRIP -->
     <div class="daly-strip">
@@ -1200,7 +1223,7 @@
                 <a target="_blank" rel="noopener" href="https://buy.stripe.com/dRm8wQficfth0UXaKx8bS0a" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$10</div>
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; opacity: 0.6; margin-bottom: 8px;">Start Here</div>
-                    <div style="font-size: 0.85rem; line-height: 1.5; opacity: 0.85;">Two days of pay for an engineering student. She joins a team that believes in her. You'll be the first to hear what she builds.</div>
+                    <div style="font-size: 0.85rem; line-height: 1.5; opacity: 0.85;">Two days of pay for an engineering student. She joins a team that believes in her.</div>
                 </a>
                 <a target="_blank" rel="noopener" href="https://buy.stripe.com/fZu28s5HC4ODcDFdWJ8bS09" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px 16px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$25</div>
