@@ -345,11 +345,16 @@
         .lo-close { text-align: center; padding: 2rem 0; }
         .lo-close blockquote { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--white); line-height: 1.5; margin: 0 0 1rem; padding: 0; border: none; }
         .lo-close .lo-attr { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-        .lo-scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 0 0 3rem; }
-        .lo-scale-card { padding: 2rem 1.25rem; border-radius: 14px; text-align: center; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px); transition: all 0.4s ease; }
-        .lo-scale-card:hover { transform: translateY(-3px); border-color: rgba(80,176,214,0.2); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
-        .lo-scale-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--lime-green); line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 0 25px rgba(175,190,106,0.25); }
-        .lo-scale-label { font-family: 'Inter', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+        .lo-scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 0 0 3rem; }
+        .lo-scale-card { padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .lo-scale-card:hover { transform: translateY(-5px); border-color: rgba(80,176,214,0.25); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+        .lo-scale-card.danger { border-color: rgba(232, 92, 92, 0.2); background: linear-gradient(135deg, rgba(232,92,92,0.08) 0%, rgba(232,92,92,0.02) 100%); }
+        .lo-scale-card.danger:hover { border-color: rgba(232, 92, 92, 0.35); box-shadow: 0 16px 40px rgba(232,92,92,0.15); }
+        .lo-scale-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--lime-green); line-height: 1; margin-bottom: 0.6rem; text-shadow: 0 0 30px rgba(175,190,106,0.3); }
+        .lo-scale-card.danger .lo-scale-num { color: #e85c5c; text-shadow: 0 0 30px rgba(232,92,92,0.35); animation: pulse-glow 2.5s ease-in-out infinite; }
+        @keyframes pulse-glow { 0%, 100% { text-shadow: 0 0 30px rgba(232,92,92,0.35); } 50% { text-shadow: 0 0 50px rgba(232,92,92,0.6), 0 0 80px rgba(232,92,92,0.2); } }
+        .lo-scale-label { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.55; font-weight: 500; }
+        .lo-scale-context { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 0.6rem; line-height: 1.4; font-style: italic; }
         .lo-prose { font-family: 'Inter', sans-serif; font-size: clamp(1rem, 1.8vw, 1.1rem); line-height: 1.85; color: rgba(255,255,255,0.78); margin-bottom: 1.5rem; }
         .lo-prose strong { color: var(--white); font-weight: 600; }
         .lo-prose em { color: var(--lime-green); font-style: normal; font-weight: 600; }
@@ -360,9 +365,10 @@
         .lo-baseline-item { min-width: 120px; }
         .lo-baseline-item .lo-bl-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--sky-blue); }
         .lo-baseline-item .lo-bl-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; }
-        .lo-mortality { padding: 2.5rem 2rem; margin: 0 0 3rem; background: rgba(255, 80, 80, 0.04); border: 1px solid rgba(255, 80, 80, 0.1); border-radius: 14px; border-left: 3px solid #e85c5c; }
-        .lo-mortality-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3vw, 2rem); color: #e85c5c; margin-bottom: 0.4rem; }
-        .lo-mortality p { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.7); margin: 0 0 0.75rem; }
+        .lo-mortality { padding: 3rem 2.25rem; margin: 0 0 3rem; background: linear-gradient(135deg, rgba(232,92,92,0.08) 0%, rgba(232,92,92,0.02) 100%); border: 1px solid rgba(232, 92, 92, 0.15); border-radius: 16px; border-left: 4px solid #e85c5c; position: relative; overflow: hidden; }
+        .lo-mortality::after { content: ''; position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: radial-gradient(circle, rgba(232,92,92,0.08) 0%, transparent 70%); pointer-events: none; }
+        .lo-mortality-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(1.6rem, 3vw, 2rem); color: #e85c5c; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .lo-mortality p { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.7); margin: 0 0 0.85rem; }
         .lo-mortality p:last-child { margin: 0; }
         .lo-neglect { margin: 0 0 3rem; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .lo-neglect li { font-family: 'Inter', sans-serif; font-size: 0.78rem; padding: 6px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; color: rgba(255,255,255,0.45); }
@@ -386,7 +392,8 @@
             .lo-math { grid-template-columns: 1fr; }
             .lo-solutions { grid-template-columns: 1fr; }
             .lo-stats { gap: 1.25rem; }
-            .lo-scale { grid-template-columns: 1fr; }
+            .lo-scale { grid-template-columns: 1fr; gap: 1rem; }
+            .lo-scale-num { font-size: clamp(2rem, 8vw, 2.8rem); }
             .lo-baseline-stats { flex-direction: column; gap: 1rem; }
             .lo-devices { flex-direction: column; }
             .floating-donate { bottom: 16px; right: 16px; }
@@ -567,12 +574,12 @@
                         <div class="lo-stat-num">3,000</div>
                         <div class="lo-stat-label">Patients</div>
                     </div>
-                    <div class="lo-stat">
-                        <div class="lo-stat-num">1</div>
+                    <div class="lo-stat" style="border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); padding: 0 2rem;">
+                        <div class="lo-stat-num" style="color: #e85c5c;">1</div>
                         <div class="lo-stat-label">Nurse Midwife</div>
                     </div>
                     <div class="lo-stat">
-                        <div class="lo-stat-num">4&ndash;6</div>
+                        <div class="lo-stat-num" style="color: #e85c5c;">4&ndash;6</div>
                         <div class="lo-stat-label">Outages / Week</div>
                     </div>
                     <div class="lo-stat">
@@ -586,41 +593,58 @@
                     <p class="lo-punch">This is not a crisis. This is a schedule.</p>
                 </div>
 
-                <!-- REAL-TIME MORTALITY -->
-                <div class="reveal" style="padding: 2rem 1.75rem; margin: 0 0 3rem; background: rgba(255, 80, 80, 0.04); border: 1px solid rgba(255, 80, 80, 0.1); border-radius: 14px; text-align: center;">
-                    <p style="font-family: 'Inter', sans-serif; font-size: clamp(0.95rem, 1.8vw, 1.05rem); color: rgba(255,255,255,0.7); line-height: 1.8; margin: 0 0 1.5rem;">By the time you finish reading this page, another mother has been lost.</p>
-                    <div style="display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                        <div style="text-align: center;">
-                            <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.4rem, 3vw, 1.8rem); color: #e85c5c;">499</div>
-                            <div style="font-family: 'Inter', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4);">Deaths per day</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.4rem, 3vw, 1.8rem); color: #e85c5c;">21</div>
-                            <div style="font-family: 'Inter', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4);">Deaths per hour</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.4rem, 3vw, 1.8rem); color: #e85c5c;">1 every 2.9 min</div>
-                            <div style="font-family: 'Inter', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4);">One mother lost</div>
-                        </div>
-                    </div>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 560px; margin: 0 auto;">182,000 &divide; 365 days &divide; 24 hours. Most of these deaths are preventable with basic interventions: a skilled attendant, access to emergency care, or simply the power to keep life-saving equipment running.</p>
-                </div>
-
                 <!-- SCALE -->
                 <div class="lo-scale reveal">
                     <div class="lo-scale-card">
                         <div class="lo-scale-num">1B+</div>
-                        <div class="lo-scale-label">people depend on clinics<br>that lose power</div>
+                        <div class="lo-scale-label">people receive care where<br>the power can cut out at any moment</div>
                     </div>
-                    <div class="lo-scale-card">
+                    <div class="lo-scale-card danger">
                         <div class="lo-scale-num">182,000</div>
-                        <div class="lo-scale-label">maternal deaths per year<br>in Sub-Saharan Africa</div>
+                        <div class="lo-scale-label">mothers die every year<br>in Sub-Saharan Africa</div>
+                        <div class="lo-scale-context">499 per day. 21 per hour. 1 every 2.9 minutes.</div>
                     </div>
                     <div class="lo-scale-card">
                         <div class="lo-scale-num">$28B</div>
-                        <div class="lo-scale-label">in medical hardware<br>underperforming globally</div>
+                        <div class="lo-scale-label">in medical equipment sits idle<br>because no one keeps the power on</div>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AMINA'S STORY -->
+    <section class="panel amina" id="the-moment" style="padding: 100px 20px;">
+        <div class="amina-inner">
+            <p class="amina-prose reveal">Amina grips the wooden bedframe. The contractions started at sunrise. Outside, her three-year-old chases a chicken through red dust. The smell of charcoal smoke. A radio playing somewhere.</p>
+            <p class="amina-prose reveal">Her sister-in-law wipes her forehead with a damp cloth. Cool against the heat. The nearest clinic is two hours by foot. The baby is coming now.</p>
+            <p class="amina-prose reveal"><em>Something is wrong.</em> Too much blood, soaking through the fabric, pooling on the packed earth floor. The metallic smell fills the room. Her sister-in-law runs for help. The radio keeps playing.</p>
+            <p class="amina-prose reveal"><strong>By the time the motorbike arrives, Amina's eyes have closed.</strong> Her hand still warm. The baby crying.</p>
+            <p class="amina-prose dim reveal" style="margin-top: 2.5rem;">Her daughter will grow up being told: <em style="color: rgba(255,255,255,0.7);">your mother loved you so much.</em></p>
+
+            <div class="amina-break reveal"><span></span><span></span><span></span></div>
+
+            <p class="amina-remember reveal">While you read Amina's story, approximately 3 minutes passed.<br>In that time, somewhere in Sub-Saharan Africa, another mother died.</p>
+
+            <div class="amina-counter reveal">
+                <div class="amina-clock"><span class="tick"></span> <span id="pageTimer">0:00</span></div>
+                <p class="amina-elapsed">Since you opened this page, <span id="liveLost">0</span> mothers have been lost.</p>
+                <p class="amina-rate">21 mothers die every hour &middot; 499 every day</p>
+                <div class="amina-big">182,000</div>
+                <div class="amina-big-label">mothers lost every year</div>
+                <p class="amina-each">Each one had a name. A hand someone held. A child who would remember.</p>
+                <div style="margin-top: 2.5rem;">
+                    <a href="#donate" style="display: inline-block; padding: 14px 36px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">It takes 30 seconds to help save a life</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTS OUT CONTINUED -->
+    <section class="lights-out" style="padding: 0;">
+        <div class="lights-out-body">
+            <div class="lo-inner" style="padding-top: 4rem;">
 
                 <p class="lo-prose reveal">One of the world's most significant, readily solvable problems is <strong>power outages in health facilities</strong> and what they do to the people inside. Over one billion people receive care in clinics where the lights can cut out at any moment. Across Sub-Saharan Africa, 182,000 mothers die every year. In Kenya alone, more than 5,000. $28 billion in medical hardware sits in clinics worldwide, underperforming or idle, because <em>no one owns the operational layer that keeps it running.</em></p>
 
@@ -655,9 +679,10 @@
 
                 <!-- MORTALITY -->
                 <div class="lo-mortality reveal">
-                    <div class="lo-mortality-num">43% mortality increase</div>
-                    <p>Every day a power outage persists beyond two hours, patient mortality rises by 43%. At Olosho-Oibor, 208 outages last year. Each one lasting two to six hours. That is 208 windows where a woman on the delivery table, a newborn under an oxygen mask, or a child waiting for a refrigerated vaccine faced sharply elevated risk of death.</p>
-                    <p>Across Sub-Saharan Africa, 182,000 mothers die every year. <strong style="color: #e85c5c;">More than 5,000 of them in Kenya.</strong> Power outages do not cause every one of those deaths. But in a clinic running on prayer and a dead generator, they turn survivable emergencies into fatal ones.</p>
+                    <div class="lo-mortality-num" style="font-size: clamp(2rem, 4vw, 2.8rem);">43%</div>
+                    <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); font-weight: 500;">Every day a power outage lasts beyond two hours, patient mortality rises by 43%.</p>
+                    <p>At Olosho-Oibor: 208 outages last year. Each one, two to six hours. That is 208 windows where a woman on the delivery table, a newborn under an oxygen mask, or a child waiting for a refrigerated vaccine faced sharply elevated risk of death.</p>
+                    <p><strong style="color: #e85c5c; font-size: 1.05rem;">More than 5,000 mothers die in Kenya every year.</strong> Power outages do not cause every death. But in a clinic running on prayer and a dead generator, they turn survivable emergencies into fatal ones.</p>
                 </div>
 
                 <!-- TRACTABLE -->
@@ -790,68 +815,6 @@
                 </div>
 
             </div>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <section style="background: linear-gradient(135deg, #0d1b2a 0%, #1b2d45 100%); padding: 60px 20px;">
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto;" class="reveal">
-            <div style="text-align: center; padding: 36px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
-                <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--lime-green); margin-bottom: 8px; text-shadow: 0 0 30px rgba(175,190,106,0.3);">1B+</div>
-                <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;">people depend on clinics<br>that lose power</div>
-            </div>
-            <div style="text-align: center; padding: 36px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
-                <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--lime-green); margin-bottom: 8px; text-shadow: 0 0 30px rgba(175,190,106,0.3);">2 hrs</div>
-                <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;">after a power outage<br>patients start dying</div>
-            </div>
-            <div style="text-align: center; padding: 36px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px);">
-                <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--lime-green); margin-bottom: 8px; text-shadow: 0 0 30px rgba(175,190,106,0.3);">100K</div>
-                <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;">clinics across Africa<br>lost power today</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AMINA'S STORY -->
-    <section class="panel amina" id="the-moment" style="padding: 100px 20px;">
-        <div class="amina-inner">
-            <p class="amina-prose reveal">Amina grips the wooden bedframe. The contractions started at sunrise. Outside, her three-year-old chases a chicken through red dust. The smell of charcoal smoke. A radio playing somewhere.</p>
-            <p class="amina-prose reveal">Her sister-in-law wipes her forehead with a damp cloth. Cool against the heat. The nearest clinic is two hours by foot. The baby is coming now.</p>
-            <p class="amina-prose reveal"><em>Something is wrong.</em> Too much blood, soaking through the fabric, pooling on the packed earth floor. The metallic smell fills the room. Her sister-in-law runs for help. The radio keeps playing.</p>
-            <p class="amina-prose reveal"><strong>By the time the motorbike arrives, Amina's eyes have closed.</strong> Her hand still warm. The baby crying.</p>
-            <p class="amina-prose dim reveal" style="margin-top: 2.5rem;">Her daughter will grow up being told: <em style="color: rgba(255,255,255,0.7);">your mother loved you so much.</em></p>
-
-            <div class="amina-break reveal"><span></span><span></span><span></span></div>
-
-            <p class="amina-remember reveal">While you read Amina's story, approximately 3 minutes passed.<br>In that time, somewhere in Sub-Saharan Africa, another mother died.</p>
-
-            <div class="amina-counter reveal">
-                <div class="amina-clock"><span class="tick"></span> <span id="pageTimer">0:00</span></div>
-                <p class="amina-elapsed">Since you opened this page, <span id="liveLost">0</span> mothers have been lost.</p>
-                <p class="amina-rate">21 mothers die every hour &middot; 499 every day</p>
-                <div class="amina-big">182,000</div>
-                <div class="amina-big-label">mothers lost every year</div>
-                <p class="amina-each">Each one had a name. A hand someone held. A child who would remember.</p>
-                <div style="margin-top: 2.5rem;">
-                    <a href="#donate" style="display: inline-block; padding: 14px 36px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">It takes 30 seconds to help save a life</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- THE MOMENT (CLINIC) -->
-    <section class="panel-mid" style="background: #0a0a0a; padding: 80px 20px; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div class="reveal" style="margin-bottom: 2.5rem;">
-                <img src="nurse.png" alt="A nurse uses her phone light during a power outage in a clinic" loading="lazy" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-            </div>
-            <p class="reveal reveal-delay-1" style="font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.8; color: rgba(255,255,255,0.85); max-width: 620px; margin: 0 auto; text-align: left;">
-                Tonight, in Narok County, Kenya, a mother lies on the delivery table. The room smells like iodine and sweat. A monitor beeps steadily beside her.<br><br>
-                <strong style="color: #fff;">The lights go out.</strong><br>
-                <strong style="color: #fff;">The beeping stops.</strong><br>
-                <strong style="color: #fff;">Oxygen stops.</strong><br><br>
-                In the sudden silence, the only sound is the mother's breathing. A nurse fumbles in the dark, her fingers finding her phone. The glow from the screen barely reaches the delivery table.<br><br>
-                This isn't a fictional story. It happened four times last week. It will happen four times next week. It is whether the lights stay on.
-            </p>
         </div>
     </section>
 
