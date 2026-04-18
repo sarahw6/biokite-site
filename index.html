@@ -8,7 +8,8 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         :root {
             --biokite-blue: #3786B7;
@@ -47,7 +48,7 @@
         }
         .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .nav-logo img { height: 60px; width: auto; background: var(--white); padding: 6px 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .nav-logo-text { font-family: 'Cormorant Garamond', 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: 2px; font-style: italic; }
+        .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: 2px; font-style: italic; }
         .nav-logo-text .labs { font-weight: 400; opacity: 0.8; }
         .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 10px 16px; border-radius: 6px; transition: all 0.2s; text-align: center; }
@@ -122,12 +123,13 @@
         .daly-strip strong { color: var(--lime-green); font-weight: 700; }
 
         /* ─── LIVE NOW STRIP ─── */
-        .live-strip { background: linear-gradient(90deg, rgba(175,190,106,0.08) 0%, rgba(80,176,214,0.06) 100%); border-top: 1px solid rgba(175,190,106,0.2); border-bottom: 1px solid rgba(175,190,106,0.2); padding: 1rem 20px; }
+        .live-strip { background: linear-gradient(90deg, #1e3a50 0%, #1a3040 100%); border-top: 1px solid rgba(175,190,106,0.2); border-bottom: 1px solid rgba(175,190,106,0.2); padding: 1rem 20px; }
         .live-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; font-family: 'Inter', sans-serif; font-size: clamp(0.85rem, 1.5vw, 0.98rem); color: rgba(255,255,255,0.9); line-height: 1.5; }
         .live-dot { width: 9px; height: 9px; border-radius: 50%; background: #e85c5c; box-shadow: 0 0 10px rgba(232,92,92,0.6); animation: live-pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
         @keyframes live-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
         .live-label { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime-green); }
         .live-sep { color: rgba(255,255,255,0.3); }
+        .live-text { color: rgba(255,255,255,0.85); }
         .live-text strong { color: var(--white); font-weight: 700; }
         @media (max-width: 600px) {
             .live-inner { gap: 8px; }
@@ -451,8 +453,6 @@
         .amina-counter { text-align: center; padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.06); }
         .amina-counter .amina-elapsed { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.35); margin-bottom: 0.75rem; }
         .amina-counter .amina-elapsed span { color: #e85c5c; font-weight: 600; }
-        .amina-clock { display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', monospace; font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; letter-spacing: 0.05em; }
-        .amina-clock .tick { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #e85c5c; animation: clock-tick 1s steps(1) infinite; }
         @keyframes clock-tick { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.2; } }
         .amina-counter .amina-rate { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; margin-bottom: 2rem; }
         .amina-counter .amina-big { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2.5rem, 6vw, 4rem); color: #e85c5c; line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 0 40px rgba(232,92,92,0.2); }
@@ -511,11 +511,12 @@
     </style>
 </head>
 <body>
+    <a href="#home" class="skip-link">Skip to main content</a>
 
     <!-- NAV -->
     <nav>
         <div class="nav-inner">
-            <a href="#" class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <img src="logo.png" alt="BioKite Labs">
                 <div class="nav-logo-text">BioKite <span class="labs">Labs</span></div>
             </a>
@@ -531,7 +532,7 @@
                 <li><a href="#partnerships">Partners</a></li>
                 <li><a href="#involved">Get Involved</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -651,7 +652,6 @@
             <p class="amina-remember reveal">While you read Amina's story, approximately 3 minutes passed.<br>In that time, somewhere in Sub-Saharan Africa, another mother died.</p>
 
             <div class="amina-counter reveal">
-                <div class="amina-clock"><span class="tick"></span> <span id="pageTimer">0:00</span></div>
                 <p class="amina-elapsed">Since you opened this page, <span id="liveLost">0</span> mothers have been lost.</p>
                 <p class="amina-rate">21 mothers die every hour &middot; 499 every day</p>
                 <div class="amina-big">182,000</div>
@@ -1096,7 +1096,7 @@
             <!-- Card 1: NuruGrid + Solar Engineer -->
             <div class="vision-card reveal">
                 <div class="vision-card-img">
-                    <img src="solar_engineer.png" alt="Certified energy officer working on solar panels at sunset" loading="lazy">
+                    <img src="solar_engineer.jpg" alt="Certified energy officer working on solar panels at sunset" loading="lazy">
                 </div>
                 <div class="vision-card-text">
                     <div class="vision-label">NuruGrid</div>
@@ -1108,7 +1108,7 @@
             <!-- Card 2: Africa Network Map -->
             <div class="vision-card reverse reveal">
                 <div class="vision-card-img">
-                    <img src="split_0_1.png" alt="Africa at sunset with glowing network connecting rural clinics" loading="lazy">
+                    <img src="split_0_1.jpg" alt="Africa at sunset with glowing network connecting rural clinics" loading="lazy">
                 </div>
                 <div class="vision-card-text">
                     <div class="vision-label">NuruLoop</div>
@@ -1527,12 +1527,22 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('open');
             hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open'));
         });
         document.querySelectorAll('#navLinks a').forEach(a => {
             a.addEventListener('click', () => {
                 navLinks.classList.remove('open');
                 hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.focus();
+            }
         });
 
         // Scroll reveal
@@ -1589,22 +1599,14 @@
         }, { threshold: 0.5 });
         document.querySelectorAll('.stat-card .num').forEach(el => statObserver.observe(el));
 
-        // Live mortality counter + page timer
+        // Live mortality counter
         const liveLost = document.getElementById('liveLost');
-        const pageTimer = document.getElementById('pageTimer');
         if (liveLost) {
             const startTime = Date.now();
             const deathsPerMs = 182000 / (365 * 24 * 60 * 60 * 1000);
             function updateCounter() {
                 const elapsed = Date.now() - startTime;
-                const lost = Math.floor(elapsed * deathsPerMs);
-                liveLost.textContent = lost;
-                if (pageTimer) {
-                    const secs = Math.floor(elapsed / 1000);
-                    const m = Math.floor(secs / 60);
-                    const s = secs % 60;
-                    pageTimer.textContent = m + ':' + (s < 10 ? '0' : '') + s;
-                }
+                liveLost.textContent = Math.floor(elapsed * deathsPerMs);
                 requestAnimationFrame(updateCounter);
             }
             updateCounter();

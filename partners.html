@@ -8,48 +8,9 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --biokite-blue: #3786B7;
-            --sky-blue: #50B0D6;
-            --kite-green: #7A9F5F;
-            --lime-green: #AFBE6A;
-            --deep-navy: #2E507E;
-            --charcoal: #4E4F4F;
-            --light-gray: #D8E1D3;
-            --off-white: #F8FAF7;
-            --dark-bg: #1a2e45;
-            --white: #FFFFFF;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--charcoal); background: var(--white); line-height: 1.6; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; color: var(--deep-navy); }
-        a { text-decoration: none; color: inherit; }
-
-        /* ─── NAV ─── */
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(135deg, var(--biokite-blue) 0%, var(--deep-navy) 100%); box-shadow: none; transition: box-shadow 0.3s; }
-        nav.scrolled { box-shadow: var(--shadow-md); }
-        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 80px; }
-        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo img { height: 60px; width: auto; background: var(--white); padding: 6px 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .nav-logo-text { font-family: 'Cormorant Garamond', 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: 2px; font-style: italic; }
-        .nav-logo-text .labs { font-weight: 400; opacity: 0.8; }
-        .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; padding: 10px 16px; border-radius: 6px; transition: all 0.2s; text-align: center; }
-        .nav-links a:hover { color: var(--lime-green); background: rgba(255,255,255,0.1); }
-        .nav-links a.active { color: var(--lime-green); background: rgba(255,255,255,0.1); }
-        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; }
-        .hamburger span { display: block; width: 25px; height: 3px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: all 0.3s; transform-origin: center; }
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-
         /* ─── HERO ─── */
         .page-hero {
             padding: 160px 20px 100px;
@@ -126,40 +87,15 @@
         .contact-form button { padding: 16px 32px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
         .contact-form button:hover { background: #c5d47a; transform: translateY(-2px); }
 
-        /* ─── FOOTER ─── */
-        footer { background: var(--deep-navy); padding: 60px 20px 30px; color: var(--white); }
-        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .footer-brand { display: flex; align-items: center; gap: 10px; }
-        .footer-brand img { height: 30px; width: auto; }
-        .footer-brand span { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; }
-        .footer-links { display: flex; gap: 20px; list-style: none; }
-        .footer-links a { color: var(--white); opacity: 0.7; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s; }
-        .footer-links a:hover { opacity: 1; color: var(--lime-green); }
-        .footer-copy { font-size: 0.85rem; opacity: 0.6; }
-
-        /* ─── ANIMATIONS ─── */
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.12s; }
-        .reveal-delay-2 { transition-delay: 0.24s; }
-        .reveal-delay-3 { transition-delay: 0.36s; }
-
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
-            .nav-inner { height: 70px; }
-            .nav-logo img { height: 50px; }
-            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 20px 25px rgba(0,0,0,0.15); z-index: 1000; }
-            .nav-links.open { display: flex; }
-            .nav-links a { color: var(--deep-navy); padding: 15px 20px; text-align: center; border-bottom: 1px solid var(--light-gray); font-size: 1rem; }
-            .hamburger { display: flex; flex-direction: column; gap: 5px; }
             .equip-grid { grid-template-columns: 1fr; }
             .reference-facts { flex-direction: column; }
-            .footer-inner { flex-direction: column; text-align: center; }
-            .footer-links { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- NAV -->
     <nav>
@@ -174,14 +110,14 @@
                 <li><a href="esg.html">For ESG Partners</a></li>
                 <li><a href="invest.html">For Investors</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section class="page-hero">
+    <section class="page-hero" id="main-content">
         <div class="tag reveal">For Health Directors</div>
         <h1 class="reveal reveal-delay-1">Keep your clinic powered during outages.<br><span style="color: var(--lime-green);">Owned by your community. No subscriptions.</span></h1>
         <p class="reveal reveal-delay-2">BioKite installs facility-owned backup power, trains a certified energy officer from your community, and gives you a weekly scorecard proving your clinic is ready.</p>
@@ -365,11 +301,16 @@
         <h2 class="reveal">Schedule a call with our team.</h2>
         <p class="reveal reveal-delay-1">Tell us about your facilities. We will show you exactly what Clinic Ready looks like for your county.</p>
         <form class="contact-form reveal reveal-delay-2" action="https://formspree.io/f/biokitelabs@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="text" name="county" placeholder="County or district name" required>
-            <input type="number" name="facilities" placeholder="Number of facilities" min="1" required>
-            <input type="email" name="email" placeholder="Email address" required>
-            <input type="tel" name="phone" placeholder="Phone number (optional)">
+            <label for="hd-name" class="sr-only">Your name</label>
+            <input id="hd-name" type="text" name="name" placeholder="Your name" required>
+            <label for="hd-county" class="sr-only">County or district name</label>
+            <input id="hd-county" type="text" name="county" placeholder="County or district name" required>
+            <label for="hd-facilities" class="sr-only">Number of facilities</label>
+            <input id="hd-facilities" type="number" name="facilities" placeholder="Number of facilities" min="1" required>
+            <label for="hd-email" class="sr-only">Email address</label>
+            <input id="hd-email" type="email" name="email" placeholder="Email address" required>
+            <label for="hd-phone" class="sr-only">Phone number</label>
+            <input id="hd-phone" type="tel" name="phone" placeholder="Phone number (optional)">
             <button type="submit">Schedule a Call</button>
         </form>
     </section>
@@ -392,12 +333,29 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); hamburger.classList.toggle('active'); });
+        hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); hamburger.classList.toggle('active'); hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open')); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && navLinks.classList.contains('open')) { navLinks.classList.remove('open'); hamburger.classList.remove('active'); hamburger.setAttribute('aria-expanded', 'false'); hamburger.focus(); } });
         document.querySelectorAll('#navLinks a').forEach(a => { a.addEventListener('click', () => { navLinks.classList.remove('open'); hamburger.classList.remove('active'); }); });
         const navbar = document.querySelector('nav');
         window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
         const revealObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Form feedback
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                try {
+                    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+                    if (res.ok) { form.innerHTML = '<p style="color: var(--lime-green); font-size: 1.1rem; font-weight: 600; padding: 2rem 0;">Thank you! We will be in touch within 24 hours.</p>'; }
+                    else { btn.textContent = 'Something went wrong. Try again.'; btn.disabled = false; }
+                } catch { btn.textContent = 'Network error. Try again.'; btn.disabled = false; }
+            });
+        }
     </script>
 </body>
 </html>
