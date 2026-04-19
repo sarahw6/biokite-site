@@ -377,7 +377,7 @@
         .lo-close { text-align: center; padding: 2rem 0; }
         .lo-close blockquote { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--white); line-height: 1.5; margin: 0 0 1rem; padding: 0; border: none; }
         .lo-close .lo-attr { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-        .lo-scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 0 0 3rem; }
+        .lo-scale { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 0 0 3rem; }
         .lo-scale-card { padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .lo-scale-card:hover { transform: translateY(-5px); border-color: rgba(80,176,214,0.25); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
         .lo-scale-card.danger { border-color: rgba(232, 92, 92, 0.2); background: linear-gradient(135deg, rgba(232,92,92,0.08) 0%, rgba(232,92,92,0.02) 100%); }
@@ -649,7 +649,12 @@
                     <div class="lo-scale-card danger">
                         <div class="lo-scale-num">182,000</div>
                         <div class="lo-scale-label">mothers die every year<br>in Sub-Saharan Africa</div>
-                        <div class="lo-scale-context">499 per day. 21 per hour. 1 every 2.9 minutes.</div>
+                        <div class="lo-scale-context">499 per day. 21 per hour. One every 2.9 minutes.</div>
+                    </div>
+                    <div class="lo-scale-card danger">
+                        <div class="lo-scale-num">2.8M</div>
+                        <div class="lo-scale-label">children under 5 die every year<br>in Sub-Saharan Africa</div>
+                        <div class="lo-scale-context">7,671 per day. 320 per hour. One every 11 seconds.</div>
                     </div>
                     <div class="lo-scale-card">
                         <div class="lo-scale-num">$28B</div>
@@ -672,14 +677,22 @@
 
             <div class="amina-break reveal"><span></span><span></span><span></span></div>
 
-            <p class="amina-remember reveal">While you read Amina's story, approximately 3 minutes passed.<br>In that time, somewhere in Sub-Saharan Africa, another mother died.</p>
+            <p class="amina-remember reveal">While you read Amina's story, approximately 3 minutes passed.<br>In that time, somewhere in Sub-Saharan Africa, another mother died. And 16 children.</p>
 
             <div class="amina-counter reveal">
-                <p class="amina-elapsed">Since you opened this page, <span id="liveLost">0</span> mothers have been lost.</p>
-                <p class="amina-rate">21 mothers die every hour &middot; 499 every day</p>
-                <div class="amina-big">182,000</div>
-                <div class="amina-big-label">mothers lost every year</div>
-                <p class="amina-each">Each one had a name. A hand someone held. A child who would remember.</p>
+                <p class="amina-elapsed">Since you opened this page, <span id="liveLost">0</span> mothers and <span id="liveChildLost">0</span> children have been lost.</p>
+                <p class="amina-rate">21 mothers every hour &middot; 320 children every hour</p>
+                <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                    <div>
+                        <div class="amina-big">182,000</div>
+                        <div class="amina-big-label">mothers lost every year</div>
+                    </div>
+                    <div>
+                        <div class="amina-big">2.8M</div>
+                        <div class="amina-big-label">children lost every year</div>
+                    </div>
+                </div>
+                <p class="amina-each">Each one had a name. A hand someone held. A family that will never be whole again.</p>
                 <div style="margin-top: 2.5rem;">
                     <a href="#donate" style="display: inline-block; padding: 14px 36px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">It takes 30 seconds to help save a life</a>
                 </div>
@@ -692,7 +705,7 @@
         <div class="lights-out-body">
             <div class="lo-inner" style="padding-top: 4rem;">
 
-                <p class="lo-prose reveal">One of the world's most significant, readily solvable problems is <strong>power outages in health facilities</strong> and what they do to the people inside. Over one billion people receive care in clinics where the lights can cut out at any moment. Across Sub-Saharan Africa, 182,000 mothers die every year. In Kenya alone, more than 5,000. $28 billion in medical hardware sits in clinics worldwide, underperforming or idle, because <em>no one owns the operational layer that keeps it running.</em></p>
+                <p class="lo-prose reveal">One of the world's most significant, readily solvable problems is <strong>power outages in health facilities</strong> and what they do to the people inside. Over one billion people receive care in clinics where the lights can cut out at any moment. Across Sub-Saharan Africa, 182,000 mothers and 2.8 million children under 5 die every year. In Kenya alone, more than 5,000 mothers and 64,500 children. $28 billion in medical hardware sits in clinics worldwide, underperforming or idle, because <em>no one owns the operational layer that keeps it running.</em></p>
 
                 <p class="lo-prose reveal">We target Kenya because the problem occurs frequently here and with catastrophic consequences.</p>
 
@@ -728,7 +741,7 @@
                     <div class="lo-mortality-num" style="font-size: clamp(2rem, 4vw, 2.8rem);">43%</div>
                     <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); font-weight: 500;">Every day a power outage lasts beyond two hours, patient mortality rises by 43%.</p>
                     <p>At Olosho-Oibor: 208 outages last year. Each one, two to six hours. That is 208 windows where a woman on the delivery table, a newborn under an oxygen mask, or a child waiting for a refrigerated vaccine faced sharply elevated risk of death.</p>
-                    <p><strong style="color: #e85c5c; font-size: 1.05rem;">More than 5,000 mothers die in Kenya every year.</strong> Power outages do not cause every death. But in a clinic running on prayer and a dead generator, they turn survivable emergencies into fatal ones.</p>
+                    <p><strong style="color: #e85c5c; font-size: 1.05rem;">In Kenya alone, more than 5,000 mothers and 64,500 children under 5 die every year.</strong> Power outages do not cause every death. But in a clinic running on prayer and a dead generator, they turn survivable emergencies into fatal ones.</p>
                 </div>
 
                 <!-- TRACTABLE -->
@@ -1647,14 +1660,17 @@
         }, { threshold: 0.5 });
         document.querySelectorAll('.stat-card .num').forEach(el => statObserver.observe(el));
 
-        // Live mortality counter
+        // Live mortality counters
         const liveLost = document.getElementById('liveLost');
+        const liveChildLost = document.getElementById('liveChildLost');
         if (liveLost) {
             const startTime = Date.now();
-            const deathsPerMs = 182000 / (365 * 24 * 60 * 60 * 1000);
+            const motherDeathsPerMs = 182000 / (365 * 24 * 60 * 60 * 1000);
+            const childDeathsPerMs = 2800000 / (365 * 24 * 60 * 60 * 1000);
             function updateCounter() {
                 const elapsed = Date.now() - startTime;
-                liveLost.textContent = Math.floor(elapsed * deathsPerMs);
+                liveLost.textContent = Math.floor(elapsed * motherDeathsPerMs);
+                if (liveChildLost) liveChildLost.textContent = Math.floor(elapsed * childDeathsPerMs);
                 requestAnimationFrame(updateCounter);
             }
             updateCounter();
