@@ -124,13 +124,16 @@
 
         /* ─── LIVE NOW STRIP ─── */
         .live-strip { background: linear-gradient(90deg, #1e3a50 0%, #1a3040 100%); border-top: 1px solid rgba(175,190,106,0.2); border-bottom: 1px solid rgba(175,190,106,0.2); padding: 1rem 20px; }
-        .live-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; font-family: 'Inter', sans-serif; font-size: clamp(0.85rem, 1.5vw, 0.98rem); color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .live-inner { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; font-family: 'Inter', sans-serif; font-size: clamp(0.85rem, 1.5vw, 0.98rem); color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .live-row { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .live-dot { width: 9px; height: 9px; border-radius: 50%; background: #e85c5c; box-shadow: 0 0 10px rgba(232,92,92,0.6); animation: live-pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
         @keyframes live-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
         .live-label { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime-green); }
         .live-sep { color: rgba(255,255,255,0.3); }
         .live-text { color: #FFFFFF; }
-        .live-text strong { color: var(--lime-green); font-weight: 700; }
+        .live-text strong { font-weight: 700; }
+        .live-text strong.grid { color: var(--lime-green); }
+        .live-text strong.loop { color: var(--sky-blue); }
         @media (max-width: 600px) {
             .live-inner { gap: 8px; }
             .live-sep { display: none; }
@@ -568,10 +571,16 @@
     <!-- LIVE NOW STRIP -->
     <div class="live-strip">
         <div class="live-inner reveal">
-            <span class="live-dot"></span>
-            <span class="live-label">Live in Narok County</span>
-            <span class="live-sep">&middot;</span>
-            <span class="live-text"><strong>24 local stakeholders</strong> engaged — <strong>18 Kenyan engineers</strong>, <strong>6 community health leaders</strong>, an expert electrician, and a <strong>director of 2 rural clinics</strong> &amp; head of the Narok County Doctors-Nurses Association — co-designing the pilot with us</span>
+            <div class="live-row">
+                <span class="live-dot"></span>
+                <span class="live-label">Live in Narok County</span>
+            </div>
+            <div class="live-row">
+                <span class="live-text"><strong class="grid">NuruGrid</strong> — <strong class="grid">24 local stakeholders</strong> co-designing the pilot: <strong class="grid">18 Kenyan engineers</strong>, <strong class="grid">6 community health leaders</strong>, an expert electrician, and a <strong class="grid">director of 2 rural clinics</strong> &amp; head of the Narok County Doctors-Nurses Association</span>
+            </div>
+            <div class="live-row">
+                <span class="live-text"><strong class="loop">NuruLoop</strong> — Narok County already has a motorbike resource-delivery network. We're plugging into it.</span>
+            </div>
         </div>
     </div>
 
@@ -815,19 +824,23 @@
                 <!-- THE ASK -->
                 <div class="lo-ask reveal">
                     <div class="lo-ask-amount">$75,000</div>
-                    <div class="lo-ask-desc">The solution is readily available. With this funding, we manufacture, ship, and install the battery kit and full protocol at three clinics, train 15 engineers, and publish the first clinical data.</div>
+                    <div class="lo-ask-desc">For the cost of powering <strong>one</strong> rural clinic the conventional way, BioKite builds 15 batteries and trains 15 engineers who can power up to 15 clinics and reach up to 150,000 patients&mdash;and keep them running.</div>
                     <div class="lo-ask-items">
-                        <div class="lo-ask-item">
-                            <div class="lo-ask-item-num">3</div>
-                            <div class="lo-ask-item-label">Clinics</div>
-                        </div>
                         <div class="lo-ask-item">
                             <div class="lo-ask-item-num">15</div>
                             <div class="lo-ask-item-label">Engineers Certified</div>
                         </div>
                         <div class="lo-ask-item">
-                            <div class="lo-ask-item-num">1</div>
-                            <div class="lo-ask-item-label">Published Study</div>
+                            <div class="lo-ask-item-num">15</div>
+                            <div class="lo-ask-item-label">Batteries Built</div>
+                        </div>
+                        <div class="lo-ask-item">
+                            <div class="lo-ask-item-num">15</div>
+                            <div class="lo-ask-item-label">Clinics Powered</div>
+                        </div>
+                        <div class="lo-ask-item">
+                            <div class="lo-ask-item-num">150K</div>
+                            <div class="lo-ask-item-label">Patients Reached</div>
                         </div>
                     </div>
                 </div>
@@ -1208,7 +1221,7 @@
         <div style="max-width: 900px; width: 100%; text-align: center;">
             <h2 class="reveal" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">BIOKITE STORE</h2>
             <p class="reveal reveal-delay-1" style="font-size: 1.1rem; color: var(--white); opacity: 0.8; margin-bottom: 0.5rem;">Every dollar runs the pilot. Tax-deductible (501(c)(3) in process).</p>
-            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2rem;">$75,000. 12 months. 3 clinics. 15 engineers. 1 published study.</p>
+            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2rem;">$75,000. 15 engineers. 15 batteries. Up to 15 clinics. Up to 150,000 patients.</p>
 
             <!-- PROGRESS BAR -->
             <div class="progress-wrap reveal reveal-delay-1">
@@ -1295,7 +1308,7 @@
             <!-- WHAT HAPPENS -->
             <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
                 <h3 style="font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.3rem;">WHAT HAPPENS WHEN WE HIT $75,000</h3>
-                <p style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2.5rem;">One pilot. One proof. A model to light up Africa's 95,000 clinics.</p>
+                <p style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2.5rem;">For the cost of one conventional clinic, BioKite powers up to fifteen. A model for 95,000 more.</p>
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: left; max-width: 820px; margin: 0 auto;">
                     <div style="padding: 28px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(16px); transition: all 0.4s; position: relative; overflow: hidden;">
                         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--lime-green), var(--kite-green));"></div>
@@ -1429,45 +1442,52 @@
             <h2 class="reveal reveal-delay-1" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">Partner With Us</h2>
             <div class="brand-bar" style="margin: 1.5rem auto 1.5rem;"></div>
             <p class="reveal reveal-delay-2" style="font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 3rem; line-height: 1.7;">
-                We're looking for institutional partners who want to put their name on a pilot that produces real data, real infrastructure, and a published study. Three ways to get involved.
+                For the cost of powering one rural clinic the conventional way, BioKite builds 15 batteries and trains 15 engineers who can power up to 15 clinics and reach up to 150,000 patients. Three ways to get involved.
             </p>
 
             <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; text-align: left; margin-bottom: 3rem;">
+                <!-- TRANSFORMATIONAL -->
+                <a target="_blank" rel="noopener" href="https://buy.stripe.com/5kQ7sMb1W6WLcDFbOB8bS01" style="background: rgba(175,190,106,0.12); border: 2px solid var(--lime-green); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;" class="donate-card">
+                    <div style="position: absolute; top: -12px; left: 24px; background: var(--lime-green); color: var(--deep-navy); font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Full Vision</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$75,000</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Transformational</div>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 engineers + 15 clinics powered</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> ~75K&ndash;150K patients reached</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 12-month monitoring + maintenance</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Annual recertification funded</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Published peer-reviewed study</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Naming rights + board seat</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> First right of refusal on expansion</li>
+                    </ul>
+                    <div style="margin-top: 16px; font-size: 0.8rem; opacity: 0.5; font-style: italic;">Split-pay available: $25,000/year over 3 years</div>
+                </a>
+
                 <!-- RECOMMENDED -->
-                <a target="_blank" rel="noopener" href="https://buy.stripe.com/5kQ7sMb1W6WLcDFbOB8bS01" target="_blank" style="background: rgba(175,190,106,0.12); border: 2px solid var(--lime-green); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;" class="donate-card">
+                <a target="_blank" rel="noopener" href="https://buy.stripe.com/6oU5kE1rm2GvgTVg4R8bS02" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(175,190,106,0.4); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;" class="donate-card">
                     <div style="position: absolute; top: -12px; left: 24px; background: var(--lime-green); color: var(--deep-navy); font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Recommended</div>
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$25,000</div>
-                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Single-Site Pilot</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Pilot Partner</div>
                     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Three clinics powered</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Fifteen engineers trained &amp; certified</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Published before-and-after data</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> A named dispensary partner for Kenya</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 engineers + up to 15 clinics</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> ~75K&ndash;150K patients reached</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Published before/after data</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Co-author on peer-reviewed study</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Named dispensary partner</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Co-pitch Gates/ELMA &amp; MoH leads</li>
                     </ul>
-                    <div style="margin-top: 16px; font-size: 0.8rem; opacity: 0.5; font-style: italic;">Split-pay available: $25,000 over 3 years</div>
                 </a>
 
-                <!-- MINIMAL -->
-                <a target="_blank" rel="noopener" href="https://buy.stripe.com/6oU5kE1rm2GvgTVg4R8bS02" target="_blank" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
+                <!-- TRAINING PARTNER -->
+                <a target="_blank" rel="noopener" href="mailto:biokitelabs@gmail.com?subject=BioKite%20Training%20Partnership" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$15,000</div>
-                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Proof-of-Concept</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Training Partner</div>
                     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> One clinic powered</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> First engineer class trained</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Full uptime and outcome data</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Expansion proposal delivered at Day 90</li>
-                    </ul>
-                </a>
-
-                <!-- INTRODUCTIONS ONLY -->
-                <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Partnership%20%E2%80%93%20Introductions" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--white); opacity: 0.7; margin-bottom: 4px;">$0</div>
-                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Introductions Only</div>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5; opacity: 0.8;">
-                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> Introduce us to funders</li>
-                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> BioKite runs the pilot independently</li>
-                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> Review findings, option to co-publish</li>
-                        <li style="display: flex; align-items: flex-start; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700; flex-shrink: 0;">&#10003;</span> If compelling: co-author paper &amp; co-pitch funders for 50-clinic expansion</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 engineers certified as FEOs</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 deployment-grade batteries built</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 6&ndash;7 clinics powered = 30K&ndash;70K patients</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Full uptime data</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Site visit + training co-branding</li>
                     </ul>
                 </a>
             </div>
@@ -1475,8 +1495,8 @@
             <!-- THE FULL ASK -->
             <div class="reveal" style="max-width: 640px; margin: 0 auto; padding: 36px 32px; background: rgba(175,190,106,0.08); border: 1px solid rgba(175,190,106,0.25); border-radius: 16px;">
                 <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green); margin-bottom: 8px;">The Full Ask: $75,000</h3>
-                <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 12px;">12 months. 3 clinics. 15 engineers. 1 published study.</p>
-                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6;">Tax-deductible (501(c)(3) in process). We welcome split-pay arrangements, such as $25,000 per year over three years. Every dollar is accounted for in the budget above.</p>
+                <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 12px;">15 engineers. 15 batteries. Up to 15 clinics. Up to 150,000 patients. 1 published study.</p>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6;">For the cost of powering one clinic the conventional way, BioKite powers up to fifteen. Tax-deductible (501(c)(3) in process). Split-pay available: $25,000/year over three years.</p>
                 <a href="mailto:biokitelabs@gmail.com?subject=BioKite%20Partnership%20Inquiry" style="display: inline-block; margin-top: 20px; padding: 14px 36px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">Start the Conversation</a>
             </div>
         </div>
