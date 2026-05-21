@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioKite Labs | Duracell for Rural Health Clinics</title>
-    <meta name="description" content="1 billion people get healthcare where the power cuts out. We rebuild retired EV batteries into $336 backup systems. Community-owned power. Narok County, Kenya.">
+    <meta name="description" content="182,000 mothers die every year where the power cuts out. BioKite rebuilds EV batteries into $336 backup systems for rural clinics. Community-owned. Narok County, Kenya. Donate now.">
     <link rel="icon" type="image/png" href="logo.png">
 
     <!-- Open Graph -->
@@ -70,7 +70,9 @@
         .nav-links a.active { color: var(--lime-green); background: rgba(255,255,255,0.1); }
         .nav-links a.nav-donate { background: var(--lime-green); color: var(--deep-navy); font-weight: 700; border-radius: 6px; }
         .nav-links a.nav-donate:hover { background: #c5d47a; }
+        .donate-card { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .donate-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 20px rgba(175,190,106,0.1); border-color: var(--lime-green) !important; cursor: pointer; background: rgba(255,255,255,0.12) !important; }
+        .story-separator { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--lime-green), transparent); margin: 0 auto; }
 
         /* ─── PROGRESS BAR ─── */
         .progress-wrap { max-width: 500px; width: 100%; margin: 0 auto 2rem; }
@@ -290,8 +292,8 @@
         .team-sub { font-size: 1.1rem; color: var(--charcoal); opacity: 0.8; max-width: 500px; line-height: 1.6; font-weight: 400; margin-bottom: 60px; }
         .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1100px; width: 100%; }
         .team-card { text-align: center; padding: 20px; }
-        .team-photo { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; display: block; transition: transform 0.3s; }
-        .team-card:hover .team-photo { transform: scale(1.05); }
+        .team-photo { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; display: block; transition: transform 0.3s, filter 0.3s; filter: grayscale(0.1); }
+        .team-card:hover .team-photo { transform: scale(1.05); filter: grayscale(0); }
         .team-card h3 { font-size: 1rem; margin-bottom: 4px; }
         .team-card .role { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--biokite-blue); margin-bottom: 10px; }
         .team-card .bio { font-size: 0.85rem; color: var(--charcoal); opacity: 0.8; line-height: 1.55; }
@@ -526,6 +528,9 @@
             .footer-links { flex-wrap: wrap; justify-content: center; }
         }
     </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"NGO","name":"BioKite Labs","url":"https://biokitelabs.org","logo":"https://biokitelabs.org/logo.png","description":"Community-owned backup power for rural health clinics in Narok County, Kenya.","foundingDate":"2024","areaServed":"Kenya","founder":[{"@type":"Person","name":"Sarah Wang"},{"@type":"Person","name":"Maison Ole Kipila"},{"@type":"Person","name":"Mike Tuffour Amirikah"}]}
+    </script>
 </head>
 <body>
     <a href="#home" class="skip-link">Skip to main content</a>
@@ -565,10 +570,11 @@
         <div class="hero-bg"></div>
         <div class="hero-logo reveal"><img src="logo.png" alt="BioKite Labs"></div>
         <h1 class="reveal reveal-delay-1">
-            BioKite is Duracell for rural health clinics.
+            The lights stay on. Mothers go home.
         </h1>
-        <p class="hero-descriptor reveal reveal-delay-2">1 billion people get healthcare where the power cuts out without warning:<br>208 outages a year, 2 to 6 hours each, mothers delivering by headlamp.</p>
-        <p class="hero-sub reveal reveal-delay-2">For the cost of one conventional battery: 15 engineers trained, 15 batteries built, 15 clinics powered, 150,000 patients served.<br>Raising $75K to launch in Narok County, Kenya.</p>
+        <p class="hero-descriptor reveal reveal-delay-2">BioKite is Duracell for rural health clinics.</p>
+        <p class="hero-sub reveal reveal-delay-2" style="max-width: 560px;">1 billion people get healthcare where the power cuts out. 208 outages a year. Mothers delivering by headlamp. We fix that.</p>
+        <p class="hero-sub reveal reveal-delay-2" style="margin-top: 1rem; max-width: 560px; font-weight: 600; color: var(--lime-green);">$75K buys 15 engineers, 15 batteries, 15 clinics powered, 150,000 patients served. Launching in Narok County, Kenya.</p>
         <div class="reveal reveal-delay-2" style="margin-top: 2rem; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
             <a href="#donate" style="display: inline-block; padding: 16px 40px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">Donate Now</a>
             <a href="#partnerships" style="display: inline-block; padding: 16px 40px; background: transparent; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s;">Partner With Us</a>
@@ -593,7 +599,7 @@
                 <span class="live-text"><strong class="grid">NuruGrid</strong> &middot; <strong class="grid">24 local stakeholders</strong> co-designing the pilot: <strong class="grid">18 Kenyan engineers</strong>, <strong class="grid">6 community health leaders</strong>, an expert electrician, and a <strong class="grid">director of 2 rural clinics</strong> &amp; head of the Narok County Doctors-Nurses Association</span>
             </div>
             <div class="live-row">
-                <span class="live-text"><strong class="loop">NuruLoop</strong> &middot; Last-mile delivery to community health posts in remote areas. Narok County already has a motorbike resource-delivery network&mdash;we're plugging into it. Cold chain maintained throughout.</span>
+                <span class="live-text"><strong class="loop">NuruLoop</strong> &middot; Last-mile delivery to community health posts in remote areas. Narok County already has a motorbike resource-delivery network, and we're plugging into it. Cold chain maintained throughout.</span>
             </div>
         </div>
     </div>
@@ -850,7 +856,7 @@
                         <h3>NuruLoop</h3>
                         <div class="lo-sub">Batteries that move</div>
                         <p>Narok County already has a motorbike resource-delivery network. NuruLoop plugs into it for last-mile distribution to community health posts in remote areas. A clinic battery dies. A trained motorcycle rider delivers a charged replacement the same day. The dead battery cycles back to the hub for reconditioning. Cold chain is maintained throughout.</p>
-                        <p>No clinic waits. No battery sits on a shelf. Power circulates&mdash;even where the road ends.</p>
+                        <p>No clinic waits. No battery sits on a shelf. Power circulates, even where the road ends.</p>
                         <div class="lo-stat-big">Same day</div>
                         <div class="lo-stat-ctx">Last-mile delivery. Remote areas reached. Cold chain intact. Always local.</div>
                     </div>
@@ -899,30 +905,9 @@
     <section class="panel-mid story" id="story">
         <div class="section-tag light reveal">The Founder</div>
         <p class="story-text reveal">
-            My parents are immigrants. The clinics they knew had cracked walls, one bare bulb, and nurses guessing dosages with expired supplies. I grew up with a bone tumor no one could diagnose. <strong>I learned early: knowledge is power. Without resources, it means nothing.</strong>
+            At 19, I couldn't afford healthcare for my best friend. But then a stranger reached out with lifesaving information after his mom passed away 2 years prior. That's why I'm devoting my life to public health.
         </p>
         <div class="brand-bar" style="margin-top: 2.5rem; position: relative; z-index: 1;"></div>
-        <p class="story-text reveal reveal-delay-1" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            I was 19 years old, working $15 an hour at an Italian flatbread shop. My hands still smelled like olive oil and rosemary at the end of every shift. Someone I loved got really sick. I couldn't afford the medical bill. I felt powerless. A friend stepped in and helped me find a way to take care of her. After five sleepless nights on a cold kitchen floor, she unexpectedly got better.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1.75rem; max-width: 560px; line-height: 1.8;">
-            That experience broke something open in me. I promised myself: <em style="color: var(--lime-green);">"I never want anyone to feel this much pain."</em> And I promised God I'd devote my life to making healthcare accessible to the people who need it most.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            At the lowest point of my life, my dad grabbed my shoulder and said, <em style="color: var(--lime-green);">"Your body is a temple for your soul."</em> He taught me that the most lasting help isn't a handout. It's building someone's capacity to take care of themselves and their community. That principle became the foundation of BioKite.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            That faith took me to Kenya, where a Maasai community leader named Maison became my co-founder and closest partner. Every interview echoed the Clinton Health Access Initiative's <em style="color: var(--lime-green);">"One of the biggest challenges we've seen is solar infrastructure falling into disrepair because maintenance costs weren't properly funded."</em> So we stopped importing solutions. We started building engineers.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.9); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            I later lost Penelope to inaccessible healthcare: the kind that happens when clinics can't keep the lights on. A phone call saying she passed away at noon. I promised God: <strong>I'll devote my entire life to lifting BioKite to success.</strong>
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            That's why I'm dedicating myself full-time to BioKite. The people who need healthcare most are often the ones who can't access it.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: rgba(255,255,255,0.5); margin-top: 1.5rem; max-width: 420px; font-weight: 600;">
-            Survival depends not just on medicine, but on the available power grid. BioKite Labs exists to solve that.
-        </p>
         <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: var(--lime-green); margin-top: 1.5rem; max-width: 420px; font-weight: 700; letter-spacing: 0.3px;">
             Power isn't optional. It's whether they come home.
         </p>
@@ -934,55 +919,12 @@
         <div class="section-tag light reveal">The Co-Founder</div>
         <h3 class="reveal" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 800; color: var(--lime-green); margin: 0.75rem auto 1.25rem; max-width: 560px; text-align: center; letter-spacing: 0.02em;">My Journey to Rural Health Practice</h3>
         <p class="story-text reveal">
-            Some of my earliest memories begin on a red-dirt road. Each week, my small hand inside a bigger one, I walked to our neighborhood community health center in rural Ghana to visit a close relative who was receiving palliative care for end-stage disease. It might sound strange to call those visits some of my favorite childhood memories. But they were. <strong style="color: var(--lime-green);">They planted something quiet and stubborn in me: the understanding that medicine isn't only about treating disease. It's about showing up for people when the systems built to help them fail.</strong>
+            2 AM. A woman arrived with obstructed labor needing an emergency cesarean, then the power went out. The solar system had been dead for months and the generator wouldn't start. My team managed a life-threatening delivery by phone torchlight, then drove her 45 kilometers through the night. Mother and baby survived, but survival shouldn't depend on whether a generator starts.
         </p>
         <div class="brand-bar" style="margin-top: 2.5rem; position: relative; z-index: 1;"></div>
-        <p class="story-text reveal reveal-delay-1" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            She died, as too many die in rural Africa. Not from a lack of medical knowledge, but from a lack of the infrastructure that turns knowledge into rescue. That loss, woven together with a deep love for science, set me on the path to medicine.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            Growing up in a disadvantaged community in West Africa gave me a front-row seat to the health struggles of my neighbors. I knew early, before I was old enough to fully understand what it meant, that my education wasn't only mine. It was a debt. A responsibility to communities like mine that rarely see doctors who understand what it's like to live there.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            During medical school in Europe, I spent my days in immaculate lecture halls and laboratories. But I never let my hands forget the shape of a clinic that runs on prayer. I volunteered with public health screening programs for homeless populations and undocumented African immigrants: the people forgotten twice. I became a vocal advocate for health equity, and through international NGOs, I joined annual rural medical missions across South Sudan, South Africa, Zimbabwe, Ghana, and Malawi. When graduation came, the choice was not a choice. Home. The neighborhoods that raised me. The clinics that ask impossible things of impossible heroes.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            Working in rural district hospitals in Ghana opened my eyes to how fragile healthcare becomes when basic infrastructure fails. The prevalence of preventable disease was staggering, made worse by the double burden of communicable and lifestyle-related conditions, in a system held together by determination more than resources.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--lime-green); margin-top: 1.75rem; max-width: 560px; line-height: 1.8; font-weight: 700;">
-            One night stands out.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            It was 2 AM on a busy Wednesday in the obstetrics clinic where I was working. It was the kind of African night where the air does not move and your scrubs are already stuck to your back before the next patient arrives. A young woman came in with prolonged, obstructed labor. She needed vacuum extraction. Possibly an emergency cesarean. Possibly a referral.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--lime-green); margin-top: 1.5rem; max-width: 560px; line-height: 1.8; font-weight: 700;">
-            Then the power went out.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            The clinic's solar system had been dead for months. The generator wouldn't start. Fuel pump failure. In an instant, the most consequential moment of this woman's life was happening in near-total darkness. No functional suction. No proper lighting. Just the trembling beams of phone torches and one dying LED lantern, throwing long shadows across the delivery room.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            My team and I tried to manage a life-threatening delivery in the dark, improvising with inadequate tools, knowing that every minute increased the risk to both mother and baby. We loaded her into an ambulance and sent her 45 kilometers through the night to the district hospital.
-        </p>
         <div class="reveal reveal-delay-2" style="margin: 2.25rem auto 0; max-width: 520px; text-align: center;">
             <img src="mike-night-emergency.jpg" alt="A medical team works to stabilize a woman on a stretcher beside a rural ambulance at night, lit only by their headlamps" loading="lazy" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05);">
         </div>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: rgba(255,255,255,0.95); margin-top: 1.75rem; max-width: 560px; line-height: 1.8; font-weight: 600;">
-            Mother and baby survived.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            <strong style="color: var(--lime-green);">But survival is not victory.</strong> It was a preventable escalation, driven entirely by infrastructure failure. The emotional toll on my team was devastating. We felt like we had failed her, even though the failure wasn't ours. It was the system's. It was every donor who left equipment without a maintenance plan. It was every meeting that called solar &ldquo;sustainable&rdquo; without funding what makes it sustainable. It was the silence between a fuel pump breaking and an ambulance arriving in the dark.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.9); margin-top: 1.5rem; max-width: 560px; line-height: 1.8;">
-            That night clarified something I have carried ever since. <strong style="color: var(--lime-green);">Clinical skill alone cannot overcome systemic infrastructure collapse.</strong> You can be the most capable physician in the world, but if the lights go out and the backup fails, you are reduced to improvisation and prayer. Patients in rural areas deserve far more than that.
-        </p>
-        <h3 class="reveal" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 800; color: var(--lime-green); margin: 2.5rem auto 1rem; max-width: 560px; text-align: center; letter-spacing: 0.02em;">Why BioKite</h3>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            That experience, and dozens like it, taught me that solving healthcare in underserved communities requires more than clinical excellence. It requires building the infrastructure that makes care possible in the first place. At BioKite, I work to ensure that the solutions we design reflect what actually happens in rural clinics when everything goes wrong at once. The only thing left in the room is the people inside it. <strong style="color: var(--lime-green);">Because the most vulnerable patients on this planet should not have their survival depend on whether a generator starts, or whether a donated solar system still has working batteries.</strong>
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.9); margin-top: 1.25rem; max-width: 560px; line-height: 1.8;">
-            Medicine brought me to these communities. The infrastructure failures keep bringing me back to the drawing board, determined, day after day, to fix what should never have been broken in the first place.
-        </p>
         <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: var(--lime-green); margin-top: 1.5rem; max-width: 420px; font-weight: 700; letter-spacing: 0.3px;">
             A doctor in the dark is alone. Build the light.
         </p>
@@ -994,38 +936,11 @@
         <div class="section-tag light reveal">From the Field</div>
         <h3 class="reveal" style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 800; color: var(--lime-green); margin: 0.75rem auto 1.25rem; max-width: 560px; text-align: center; letter-spacing: 0.02em;">The Incision Was Already Made</h3>
         <p class="story-text reveal">
-            The scalpel had already opened her abdomen. The anesthesiologist had already put her under. A young mother, heavily pregnant, lay unconscious on the operating table in a rural clinic in Nigeria. The incision was made. The anesthesia was running. <strong style="color: var(--lime-green);">Every second she stayed under without the surgery moving forward was another second of risk.</strong>
+            A young mother lay on the operating table, abdomen open, anesthesia running. Then the power failed. A backup generator saved her that night, but another night, another mother: the baby came out in severe respiratory distress, and the baby did not survive. The infrastructure had collapsed before the emergency began. Backup power is not a convenience. It is the difference between a first breath and a last one.
         </p>
         <div class="brand-bar" style="margin-top: 2.5rem; position: relative; z-index: 1;"></div>
-        <p class="story-text reveal reveal-delay-1" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            Then the power failed.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            In that moment, the team faced an impossible calculation. Transfer her to another hospital? She was sedated under general anesthesia with her abdomen already open. The clock on the anesthesia was ticking&mdash;every minute under sedation without progress compounded the danger. Moving her meant loading a woman mid-surgery into an ambulance, driving unpaved roads in the dark, hoping the anesthesia didn&rsquo;t wear off or go wrong, hoping the receiving hospital had an available theater and a team ready to finish what someone else had started.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--lime-green); margin-top: 1.75rem; max-width: 560px; line-height: 1.8; font-weight: 700;">
-            A lot of people die during that transfer. The road between hospitals is where outcomes become tragedies.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            This time, they had a backup generator. It roared to life. The lights returned. The monitors beeped again. The surgical team completed the cesarean. Mother and baby survived. But the margin between that outcome and the other one&mdash;the one no one wants to say out loud&mdash;was the width of a power switch.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.8); margin-top: 1.75rem; max-width: 560px; line-height: 1.8;">
-            Not every night ended that way.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            Another delivery. Another mother. This time the baby came out in severe respiratory distress&mdash;blue, limp, gasping. The team tried the ventilator. Tried manual resuscitation. Chest compressions on a newborn, counting breaths, willing a tiny ribcage to rise. Every technique they had. Every manual method they knew.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: rgba(255,255,255,0.95); margin-top: 1.75rem; max-width: 560px; line-height: 1.8; font-weight: 600;">
-            The baby did not survive.
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.85); margin-top: 1rem; max-width: 560px; line-height: 1.8;">
-            A mother walked into that clinic carrying a life. She walked out carrying silence. Not because the doctors didn&rsquo;t know what to do. Not because they didn&rsquo;t try. <strong style="color: var(--lime-green);">Because the infrastructure beneath them had already collapsed before the emergency began.</strong>
-        </p>
-        <p class="story-text reveal reveal-delay-2" style="font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.9); margin-top: 1.5rem; max-width: 560px; line-height: 1.8;">
-            These are not rare events. They are the ordinary math of rural healthcare: skilled hands, empty outlets, and the terrible silence when the machines that keep newborns breathing have nothing to run on.
-        </p>
         <p class="story-text reveal reveal-delay-2" style="font-size: clamp(0.9rem, 1.3vw, 1rem); color: var(--lime-green); margin-top: 1.5rem; max-width: 420px; font-weight: 700; letter-spacing: 0.3px;">
-            Backup power isn&rsquo;t a convenience. It&rsquo;s the difference between a first breath and a last one.
+            Backup power isn't a convenience. It's the difference between a first breath and a last one.
         </p>
         <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.6); margin-top: 1.75rem; font-style: italic; position: relative; z-index: 1;">Dr. Emmanuel Gayus, MPH, Harvard T.H. Chan School of Public Health</p>
     </section>
@@ -1079,7 +994,7 @@
                 <div class="kit-card-body">
                     <p class="kit-desc">Vaccines meant for children should never spoil in the dark.<br>Continuous temperature and voltage tracking helps make sure they don't.</p>
                     <ul class="kit-features">
-                        <li>Cold chain maintained throughout the supply chain&mdash;from hub to last-mile community health post.</li>
+                        <li>Cold chain maintained throughout the supply chain, from hub to last-mile community health post.</li>
                         <li>Every dose logged. Every outage timestamped. Works entirely offline.</li>
                         <li>When the auditor comes, the proof is ready.</li>
                     </ul>
@@ -1232,50 +1147,56 @@
     <section class="panel team" id="team">
         <div class="section-tag reveal">The Team</div>
         <h2 class="section-title reveal reveal-delay-1">The people behind<br>the mission.</h2>
-        <p class="team-sub reveal reveal-delay-2">Harvard, MIT, the United Nations, and hands-on field experience across four continents&mdash;joined by eight young engineers from Narok County building the future with their own hands. United by one belief: reliable power is a right, not a privilege.</p>
+        <p class="team-sub reveal reveal-delay-2">Harvard, MIT, the United Nations, and hands-on field experience across four continents. Joined by eight young engineers from Narok County building the future with their own hands. United by one belief: reliable power is a right, not a privilege.</p>
         <div class="team-grid reveal reveal-delay-3">
             <div class="team-section-label">Leadership</div>
             <div class="team-card">
-                <img src="sarah.jpg" alt="Sarah Wang" class="team-photo">
-                <h3>Sarah Wang, MPH <a href="https://www.linkedin.com/in/sarahjmwang" target="_blank" rel="noopener" title="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
+                <img src="sarah.jpg" alt="Sarah Wang" class="team-photo" loading="lazy">
+                <h3>Sarah Wang, MPH <a href="https://www.linkedin.com/in/sarahjmwang" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
                 <div class="role">Co-Founder &amp; CEO</div>
                 <div class="bio">Doing this full-time. Harvard MPH (Coca-Cola Gold Scholar, top 1%). MIT AI Certificate. 10+ years leading global health research and policy advocacy. Managed a $690K budget, organized 30,000 people, and secured a corporate pledge to transform 7,200 restaurants. Led 20-person teams across 3 countries.</div>
             </div>
             <div class="team-card">
-                <img src="maison.jpg" alt="Maison Ole Kipila" class="team-photo">
-                <h3>Maison Ole Kipila <a href="https://www.linkedin.com/in/maison-ole-kipila-4b9102278" target="_blank" rel="noopener" title="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
+                <img src="maison.jpg" alt="Maison Ole Kipila" class="team-photo" loading="lazy">
+                <h3>Maison Ole Kipila <a href="https://www.linkedin.com/in/maison-ole-kipila-4b9102278" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
                 <div class="role">Co-Founder &amp; Chief of Partnerships</div>
                 <div class="bio">8+ years as an established Maasai community leader. Government relationships across Narok County. UN Indigenous Peoples Caucus (COP30). The reason BioKite has community trust in Kenya.</div>
             </div>
             <div class="team-card">
-                <img src="mike.jpg" alt="Mike Tuffour Amirikah" class="team-photo">
-                <h3>Mike Tuffour Amirikah, MD, EMBA, MPH <a href="https://www.linkedin.com/in/miketuffouramirikahjr" target="_blank" rel="noopener" title="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
+                <img src="mike.jpg" alt="Mike Tuffour Amirikah" class="team-photo" loading="lazy">
+                <h3>Mike Tuffour Amirikah, MD, EMBA, MPH <a href="https://www.linkedin.com/in/miketuffouramirikahjr" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
                 <div class="role">Co-Founder &amp; Vice President</div>
                 <div class="bio">Harvard MPH. Physician with 10+ years of rural clinical experience in Africa. The clinical voice in product design, ensuring everything we build works where it matters most.</div>
+            </div>
+            <div class="team-card">
+                <img src="naeku.jpeg" alt="Naeku Leshao" class="team-photo" loading="lazy">
+                <h3>Naeku Leshao</h3>
+                <div class="role">Chief Marketing Officer</div>
+                <div class="bio">7+ years empowering marginalized communities in the Maasai Mara. Founder of Elongo Afrika Initiatives. Project Director, Tales of Our Land (CJRF). Top 100 Women of Influence 2025. Maasai Mara Youth Council board member.</div>
             </div>
             <div class="team-divider"></div>
             <div class="team-section-label">Advisors</div>
             <div class="team-card">
-                <img src="byron.jpg" alt="Byron Aho" class="team-photo">
-                <h3>Byron Aho <a href="https://www.linkedin.com/in/byron-aho" target="_blank" rel="noopener" title="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
+                <img src="byron.jpg" alt="Byron Aho" class="team-photo" loading="lazy">
+                <h3>Byron Aho <a href="https://www.linkedin.com/in/byron-aho" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
                 <div class="role">Advisor</div>
                 <div class="bio">25+ years in infrastructure: electrical installation, power-grid deployment, and site-readiness for clinic solar+battery systems.</div>
             </div>
             <div class="team-card">
-                <img src="brian.jpg" alt="Brian H. Potts" class="team-photo">
-                <h3>Brian H. Potts, JD, LLM <a href="https://www.linkedin.com/in/brian-h-potts-26914923" target="_blank" rel="noopener" title="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
+                <img src="brian.jpg" alt="Brian H. Potts" class="team-photo" loading="lazy">
+                <h3>Brian H. Potts, JD, LLM <a href="https://www.linkedin.com/in/brian-h-potts-26914923" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
                 <div class="role">Advisor</div>
                 <div class="bio">25+ years in nonprofit strategy, business, and energy markets law. UC Berkeley Law. Billions in energy and infrastructure projects developed.</div>
             </div>
             <div class="team-card">
-                <img src="tony.jpg" alt="Tony Medrano" class="team-photo">
-                <h3>Tony Medrano, JD, MBA <a href="https://www.linkedin.com/in/tonymedrano" target="_blank" rel="noopener" title="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
+                <img src="tony.jpg" alt="Tony Medrano" class="team-photo" loading="lazy">
+                <h3>Tony Medrano, JD, MBA <a href="https://www.linkedin.com/in/tonymedrano" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
                 <div class="role">Advisor</div>
                 <div class="bio">25+ years in nonprofit, law, and business strategy. 3&times; startup CEO with 2 exits. Stanford JD/MBA. Former VP at Cue Health ($500M ARR).</div>
             </div>
             <div class="team-card">
-                <img src="tejasvi.jpg" alt="Tejasvi Sharma" class="team-photo">
-                <h3>Tejasvi Sharma, PhD, MPA <a href="https://www.linkedin.com/in/tejasvi-sharma" target="_blank" rel="noopener" title="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
+                <img src="tejasvi.jpg" alt="Tejasvi Sharma" class="team-photo" loading="lazy">
+                <h3>Tejasvi Sharma, PhD, MPA <a href="https://www.linkedin.com/in/tejasvi-sharma" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none;margin-left:6px;font-size:0.75em;vertical-align:middle;color:#0a66c2;">in</a></h3>
                 <div class="role">Advisor</div>
                 <div class="bio">Harvard MPA. PhD in Mechanical Engineering (University of Iowa). Assistant Professor in Sustainability &amp; Regenerative Living. Expert in biomass gasification, biochar, and renewable energy systems. Built solar cookers in Cameroon. Bridges academia and field deployment.</div>
             </div>
@@ -1287,7 +1208,7 @@
                 </p>
             </div>
             <div class="team-divider"></div>
-            <div class="team-section-label">Youth Engineers &mdash; Narok County, Kenya</div>
+            <div class="team-section-label">Youth Engineers, Narok County, Kenya</div>
             <div style="grid-column: 1 / -1; text-align: center; padding: 0 1rem 1.5rem; max-width: 700px; margin: 0 auto;">
                 <p style="font-size: 0.95rem; color: var(--charcoal); opacity: 0.85; line-height: 1.7;">
                     The first cohort. They aren't waiting for someone else to fix the power. They're learning to build the batteries themselves, maintain them, and keep clinics lit so mothers come home.
@@ -1297,7 +1218,7 @@
                 <img src="paul-maina.jpg" alt="Paul Maina" class="team-photo" loading="lazy">
                 <h3>Paul Maina</h3>
                 <div class="role">Lead Engineer Trainer</div>
-                <div class="bio">Background in electrical works and renewable energy systems. &ldquo;I joined BioKite because I believe in the transformative power of sustainable energy in driving economic growth and improving quality of life.&rdquo; Delivers solutions that are both practical and impactful&mdash;expanding access to clean energy, reducing dependency on unreliable power sources, and supporting long-term community development. Aligns professional skill with a broader vision of sustainability, innovation, and service to society.</div>
+                <div class="bio">Background in electrical works and renewable energy systems. &ldquo;I joined BioKite because I believe in the transformative power of sustainable energy in driving economic growth and improving quality of life.&rdquo; Delivers solutions that are both practical and impactful: expanding access to clean energy, reducing dependency on unreliable power sources, and supporting long-term community development. Aligns professional skill with a broader vision of sustainability, innovation, and service to society.</div>
             </div>
             <div class="team-card">
                 <img src="duncan-neboo.jpg" alt="Duncan Kayiok Neboo" class="team-photo" loading="lazy">
@@ -1309,13 +1230,13 @@
                 <img src="griffine-lepore.jpg" alt="Griffine Lepore" class="team-photo" loading="lazy">
                 <h3>Griffine Lepore</h3>
                 <div class="role">BioKite Engineer Trainee</div>
-                <div class="bio">Electrical engineering. Hands-on experience with power equipment, a curiosity to explore, and strong communication skills. Driven by the importance of academics and the need to power every home. Here to be part of the vision and reinforce it&mdash;saving lives and making a difference.</div>
+                <div class="bio">Electrical engineering. Hands-on experience with power equipment, a curiosity to explore, and strong communication skills. Driven by the importance of academics and the need to power every home. Here to be part of the vision and reinforce it, saving lives and making a difference.</div>
             </div>
             <div class="team-card">
                 <img src="bryan-kisantu.png" alt="Bryan Kisantu" class="team-photo" loading="lazy">
                 <h3>Bryan Kisantu</h3>
                 <div class="role">Youth Leadership Officer</div>
-                <div class="bio">Electrical Engineering graduate, Murang&rsquo;a University of Technology. Community service leader and green energy advocate. Drawn to BioKite&rsquo;s life-saving impact: enabling rural clinics to survive power outages by keeping oxygen compressors and vaccine refrigerators running&mdash;aiming to save thousands of mothers and children.</div>
+                <div class="bio">Electrical Engineering graduate, Murang&rsquo;a University of Technology. Community service leader and green energy advocate. Drawn to BioKite&rsquo;s life-saving impact: enabling rural clinics to survive power outages by keeping oxygen compressors and vaccine refrigerators running, aiming to save thousands of mothers and children.</div>
             </div>
             <div class="team-card">
                 <img src="emmanuel-lekishon.jpg" alt="Emmanuel Lekishon" class="team-photo" loading="lazy">
@@ -1339,7 +1260,7 @@
                 <img src="daniel-rakwa.jpg" alt="Daniel Kadipo Rakwa" class="team-photo" loading="lazy">
                 <h3>Daniel Kadipo Rakwa</h3>
                 <div class="role">Youth Leadership Officer</div>
-                <div class="bio">Bachelor&rsquo;s degree in Electrical and Electronics Engineering. Specializes in electrical design, soldering, and installation with proper equipment sizing. Performs safe electrical installations and ensures reliable power solutions. Joined BioKite because its core objectives align with his profession&mdash;and because he wants to learn new skills that facilitate his professional transition.</div>
+                <div class="bio">Bachelor&rsquo;s degree in Electrical and Electronics Engineering. Specializes in electrical design, soldering, and installation with proper equipment sizing. Performs safe electrical installations and ensures reliable power solutions. Joined BioKite because its core objectives align with his profession, and because he wants to learn new skills that facilitate his professional transition.</div>
             </div>
             <div class="team-card">
                 <img src="gideon-seneneng.jpg" alt="Gideon Leahan Seneneng" class="team-photo" loading="lazy">
@@ -1666,8 +1587,8 @@
 
     <!-- CTA -->
     <section class="panel-mid cta-panel" id="involved">
-        <h2 class="section-title reveal" style="text-align: center;">So she comes home.<br><span class="highlight">So she gets to grow up.</span></h2>
-        <p class="reveal reveal-delay-1">Engineer, funder, health authority, or organization: there is a special role for you to join our impact and reach our vision.</p>
+        <h2 class="section-title reveal" style="text-align: center;">She needs the lights<br><span class="highlight">to stay on.</span></h2>
+        <p class="reveal reveal-delay-1">Fund the first pilot. Prove the model. Scale to 95,000 clinics.</p>
         <div class="cta-buttons reveal reveal-delay-2">
             <a href="mailto:biokitelabs@gmail.com" class="btn btn-brand">Get in Touch</a>
             <a href="https://www.linkedin.com/company/biokitelabs" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
