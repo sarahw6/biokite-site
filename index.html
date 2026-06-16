@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioKite Labs | Duracell for Rural Health Clinics</title>
-    <meta name="description" content="182,000 mothers die every year where the power cuts out. BioKite rebuilds EV batteries into $336 backup systems for rural clinics. Community-owned. Narok County, Kenya. Donate now.">
+    <meta name="description" content="Electricity decides whether the mother keeps her baby. BioKite trains local Maasai engineers to build backup batteries for rural clinics where power outages kill mothers and babies. Narok County, Kenya. Donate now.">
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="canonical" href="https://biokitelabs.org/">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://videos.pexels.com">
+    <link rel="dns-prefetch" href="https://buy.stripe.com">
+    <link rel="dns-prefetch" href="https://donate.stripe.com">
 
     <!-- Open Graph -->
     <meta property="og:title" content="BioKite Labs | Duracell for Rural Health Clinics">
-    <meta property="og:description" content="1 billion people get healthcare where the power cuts out. We rebuild retired EV batteries into $336 backup systems. Narok County, Kenya.">
+    <meta property="og:description" content="Electricity decides whether the mother keeps her baby. We train local engineers to build backup batteries so mothers and babies survive childbirth against outages. Narok County, Kenya.">
     <meta property="og:image" content="https://biokitelabs.org/nuruloop-rider-savanna.jpg">
     <meta property="og:url" content="https://biokitelabs.org/">
     <meta property="og:type" content="website">
@@ -18,11 +25,12 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BioKite Labs | Duracell for Rural Health Clinics">
-    <meta name="twitter:description" content="1 billion people get healthcare where the power cuts out. We rebuild retired EV batteries into $336 backup systems. Narok County, Kenya.">
+    <meta name="twitter:description" content="Electricity decides whether the mother keeps her baby. We train local engineers to build backup batteries so mothers and babies survive childbirth against outages. Narok County, Kenya.">
     <meta name="twitter:image" content="https://biokitelabs.org/nuruloop-rider-savanna.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#2E507E">
     <link rel="stylesheet" href="styles.css">
     <style>
         :root {
@@ -71,7 +79,8 @@
         .nav-links a.nav-donate { background: var(--lime-green); color: var(--deep-navy); font-weight: 700; border-radius: 6px; }
         .nav-links a.nav-donate:hover { background: #c5d47a; }
         .donate-card { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .donate-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 20px rgba(175,190,106,0.1); border-color: var(--lime-green) !important; cursor: pointer; background: rgba(255,255,255,0.12) !important; }
+        .donate-card:hover, .donate-card:focus-visible { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 20px rgba(175,190,106,0.1); border-color: var(--lime-green) !important; cursor: pointer; background: rgba(255,255,255,0.12) !important; outline: 2px solid var(--lime-green); outline-offset: 2px; }
+        #backToTop:hover { background: var(--biokite-blue); transform: translateY(-2px); }
         .story-separator { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--lime-green), transparent); margin: 0 auto; }
 
         /* ─── PROGRESS BAR ─── */
@@ -529,14 +538,33 @@
         }
     </style>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"NGO","name":"BioKite Labs","url":"https://biokitelabs.org","logo":"https://biokitelabs.org/logo.png","description":"Community-owned backup power for rural health clinics in Narok County, Kenya.","foundingDate":"2024","areaServed":"Kenya","founder":[{"@type":"Person","name":"Sarah Wang"},{"@type":"Person","name":"Maison Ole Kipila"},{"@type":"Person","name":"Mike Tuffour Amirikah"}]}
+    {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "BioKite Labs",
+        "url": "https://biokitelabs.org",
+        "logo": "https://biokitelabs.org/logo.png",
+        "image": "https://biokitelabs.org/nuruloop-rider-savanna.jpg",
+        "description": "Electricity decides whether the mother keeps her baby. BioKite trains local Maasai engineers to build backup batteries for rural clinics experiencing 4-6 outages per week in Narok County, Kenya.",
+        "foundingDate": "2024",
+        "areaServed": {"@type": "Country", "name": "Kenya"},
+        "email": "biokitelabs@gmail.com",
+        "sameAs": ["https://www.linkedin.com/company/biokitelabs"],
+        "founder": [
+            {"@type": "Person", "name": "Sarah Wang", "jobTitle": "CEO"},
+            {"@type": "Person", "name": "Maison Ole Kipila", "jobTitle": "Chief of Partnerships"},
+            {"@type": "Person", "name": "Mike Tuffour Amirikah", "jobTitle": "Vice President"}
+        ],
+        "knowsAbout": ["renewable energy", "rural healthcare", "battery technology", "community health"],
+        "nonprofitStatus": "501(c)(3) pending"
+    }
     </script>
 </head>
 <body>
     <a href="#home" class="skip-link">Skip to main content</a>
 
     <!-- NAV -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
                 <img src="logo.png" alt="BioKite Labs">
@@ -560,28 +588,29 @@
         </div>
     </nav>
 
+    <main>
     <!-- HERO -->
     <section class="panel hero" id="home">
         <div class="hero-video">
-            <video autoplay muted loop playsinline>
+            <video autoplay muted loop playsinline preload="metadata" poster="olosho-clinic.jpg">
                 <source src="https://videos.pexels.com/video-files/6130036/6130036-hd_1920_1080_30fps.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-bg"></div>
-        <div class="hero-logo reveal"><img src="logo.png" alt="BioKite Labs"></div>
+        <div class="hero-logo reveal"><img src="logo.png" alt="BioKite Labs" fetchpriority="high"></div>
         <h1 class="reveal reveal-delay-1">
-            Power outage? Doctors lose babies and mothers.
+            Electricity decides whether the mother keeps her baby.
         </h1>
-        <p class="hero-descriptor reveal reveal-delay-2">We train engineers to build batteries for rural clinics in Africa.</p>
+        <p class="hero-descriptor reveal reveal-delay-2">We train local engineers to build batteries for hospitals so mothers and babies survive childbirth against outages.</p>
         <div class="reveal reveal-delay-2" style="margin-top: 2rem; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
             <a href="#donate" style="display: inline-block; padding: 16px 40px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">Donate Now</a>
             <a href="#partnerships" style="display: inline-block; padding: 16px 40px; background: transparent; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s;">Partner With Us</a>
         </div>
         <div class="cred-bar reveal reveal-delay-3">
-            <div class="cred-item"><div class="cred-num">24</div><div class="cred-label">Narok Stakeholders Engaged</div></div>
-            <div class="cred-item"><div class="cred-num">15</div><div class="cred-label">Engineers in Training</div></div>
-            <div class="cred-item"><div class="cred-num">15</div><div class="cred-label">Clinics in Progress</div></div>
-            <div class="cred-item"><div class="cred-num">150K</div><div class="cred-label">Patients Targeted</div></div>
+            <div class="cred-item"><div class="cred-num">15</div><div class="cred-label">Youth Engineers</div></div>
+            <div class="cred-item"><div class="cred-num">30</div><div class="cred-label">Batteries Planned</div></div>
+            <div class="cred-item"><div class="cred-num">15</div><div class="cred-label">Clinics Targeted</div></div>
+            <div class="cred-item"><div class="cred-num">150K</div><div class="cred-label">Lives Protected</div></div>
         </div>
         <div class="hero-scroll"><span>Scroll to explore</span><div class="scroll-arrow"></div></div>
     </section>
@@ -594,7 +623,7 @@
                 <span class="live-label">Live in Narok County</span>
             </div>
             <div class="live-row">
-                <span class="live-text"><strong class="grid">NuruGrid</strong> &middot; Pilot co-designed with <strong class="grid">24 local stakeholders</strong>: <strong class="grid">18 engineers</strong>, <strong class="grid">6 health leaders</strong>, <strong class="grid">1 electrician</strong>, and <strong class="grid">1 director of 2 clinics</strong></span>
+                <span class="live-text"><strong class="grid">NuruGrid</strong> &middot; Pilot co-designed with <strong class="grid">24 local stakeholders</strong>: <strong class="grid">15 engineers</strong>, <strong class="grid">12 community ambassadors</strong>, and <strong class="grid">5 community leaders</strong></span>
             </div>
             <div class="live-row">
                 <span class="live-text"><strong class="loop">NuruLoop</strong> &middot; Last-mile battery delivery to remote health posts via Narok County's existing motorbike network.</span>
@@ -674,8 +703,8 @@
 
             <div class="amina-break reveal"><span></span><span></span><span></span></div>
 
-            <div class="amina-counter reveal">
-                <p class="amina-elapsed">Since you opened this page, <span id="liveLost">0</span> mothers and <span id="liveChildLost">0</span> children have been lost.</p>
+            <div class="amina-counter reveal" role="status" aria-live="polite" aria-atomic="true">
+                <p class="amina-elapsed">Since you opened this page, <span id="liveLost" aria-label="mothers lost">0</span> mothers and <span id="liveChildLost" aria-label="children lost">0</span> children have been lost.</p>
                 <p class="amina-rate">One mother every 2.9 minutes &middot; One child every 11 seconds</p>
                 <div style="margin-top: 2rem;">
                     <a href="#donate" style="display: inline-block; padding: 14px 36px; background: var(--lime-green); color: var(--deep-navy); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; border-radius: 8px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(175,190,106,0.4);">It takes 30 seconds to help save a life</a>
@@ -698,7 +727,7 @@
 
                 <!-- TRACTABLE -->
                 <div class="lo-tag reveal">Tractable</div>
-                <p class="lo-prose reveal">For the price of one conventional battery, train 15 engineers to build 30 batteries, that can last about 7 years each and support clinics serving up to 10,000 patients annually.</p>
+                <p class="lo-prose reveal">For the price of one conventional system (about $10,000), we build 30 stable power sources&mdash;15 LiFePO4 systems and 15 solar battery systems&mdash;that last about seven years each and keep clinics powered for thousands of patients annually.</p>
 
                 <div class="lo-devices reveal">
                     <div class="lo-device">
@@ -781,10 +810,10 @@
     <section class="panel-mid story" id="story">
         <div class="section-tag light reveal">The Founder</div>
         <p class="story-text reveal">
-            BioKite is here to address our doctors having the heart wrenching experience of losing babies during power outages. We're training the next generation to build batteries against power outages occurring 25% of the day, four to six times weekly.
+            When I lost my childhood best friend on Valentine's Day without any heads up that she was severely sick, I felt the pain of not having the power to save the most important person in the world to me. BioKite is how I ensure no one feels the pain of losing a loved one to bad healthcare conditions, as a promise to God: making sure the operating equipment stays on when a mother and her baby need it most.
         </p>
         <div class="brand-bar" style="margin-top: 2.5rem; position: relative; z-index: 1;"></div>
-        <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.6); margin-top: 1.5rem; font-style: italic; position: relative; z-index: 1;">Sarah Wang, CEO, BioKite Labs</p>
+        <p class="reveal reveal-delay-2" style="font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.6); margin-top: 1.5rem; font-style: italic; position: relative; z-index: 1;">Sarah Wang, MPH, Co-Founder &amp; CEO, BioKite Labs</p>
     </section>
 
     <!-- BEFORE / AFTER -->
@@ -849,14 +878,14 @@
     <!-- KENYA -->
     <section class="panel-mid kenya" id="kenya" style="padding: 7rem 2rem;">
         <div class="section-tag light reveal">First Deployment</div>
-        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Kenya.</h2>
+        <h2 class="section-title reveal reveal-delay-1" style="color: var(--white);">Narok County, Kenya.</h2>
         <div class="brand-bar" style="margin: 1.5rem 0 1.5rem; position: relative; z-index: 1;"></div>
-        <p class="kenya-body reveal reveal-delay-2">Community-led.</p>
+        <p class="kenya-body reveal reveal-delay-2">Co-designed with 24 local stakeholders. Majority Maasai indigenous team. Expanding to four Kenyan communities.</p>
         <div class="kenya-facts reveal reveal-delay-3">
             <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> County partnerships</div>
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Community officers</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> 12 community ambassadors</div>
             <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Zero subscriptions</div>
-            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Facility-owned assets</div>
+            <div class="kenya-fact"><span class="check"><svg fill="none" stroke="#AFBE6A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Community-owned assets</div>
         </div>
     </section>
 
@@ -865,9 +894,9 @@
         <div class="reveal" style="margin: 0 auto 2.5rem; max-width: 480px; text-align: center;">
             <img src="nuruloop-rider-savanna.jpg" alt="A NuruLoop rider in a BioKite Labs cap and shirt rides a motorcycle carrying a backup battery across the Kenyan savanna, with a giraffe in the background" loading="lazy" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);">
         </div>
-        <blockquote class="reveal">Sustainable Care</blockquote>
+        <blockquote class="reveal">Mission Mother Keeps Baby</blockquote>
         <div class="brand-bar"></div>
-        <p class="attribution reveal reveal-delay-1">When a clinic controls its own power, it controls its ability to care.</p>
+        <p class="attribution reveal reveal-delay-1">Owned by the local Maasai Mara community. When a clinic controls its own power, it controls its ability to care.</p>
     </section>
 
     <!-- CHAI QUOTE -->
@@ -980,7 +1009,7 @@
                 <div class="role">Engineer Trainee</div>
             </div>
             <div class="team-card">
-                <img src="bryan-kisantu.png" alt="Bryan Kisantu" class="team-photo" loading="lazy">
+                <img src="bryan-kisantu-compressed.jpg" alt="Bryan Kisantu" class="team-photo" loading="lazy">
                 <h3>Bryan Kisantu</h3>
                 <div class="role">Youth Leadership Officer</div>
             </div>
@@ -1020,9 +1049,9 @@
     <!-- DONATE -->
     <section class="panel-mid" id="donate" style="background: var(--deep-navy); padding: 80px 20px; color: var(--white);">
         <div style="max-width: 900px; width: 100%; text-align: center;">
-            <h2 class="reveal" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">BIOKITE STORE</h2>
+            <h2 class="reveal" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">DONATE</h2>
             <p class="reveal reveal-delay-1" style="font-size: 1.1rem; color: var(--white); opacity: 0.8; margin-bottom: 0.5rem;">Every dollar runs the pilot. Tax-deductible (501(c)(3) pending).</p>
-            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2rem;">$75,000. 15 engineers. 15 batteries. Up to 15 clinics. Up to 150,000 patients.</p>
+            <p class="reveal reveal-delay-1" style="font-size: 1rem; color: var(--lime-green); font-weight: 600; margin-bottom: 2rem;">$75,000. 15 engineers. 30 batteries. Up to 15 clinics. Up to 150,000 lives. Four Kenyan communities.</p>
 
             <!-- PROGRESS BAR -->
             <div class="progress-wrap reveal reveal-delay-1">
@@ -1030,7 +1059,7 @@
                     <div class="progress-bar-fill" id="progressFill"></div>
                 </div>
                 <div class="progress-labels">
-                    <span style="color: var(--lime-green); font-weight: 700;">$548 raised</span>
+                    <span style="color: var(--lime-green); font-weight: 700;">$548 raised &mdash; be the next donor</span>
                     <span style="color: var(--white); opacity: 0.6;">Goal: $75,000</span>
                 </div>
             </div>
@@ -1094,13 +1123,13 @@
             <!-- WHAT HAPPENS -->
             <div class="reveal" style="text-align: center; margin-bottom: 3rem; max-width: 640px; margin-left: auto; margin-right: auto;">
                 <h3 style="font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 800; color: var(--white); margin-bottom: 1.5rem;">WHAT HAPPENS AT $75,000</h3>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 16px; text-align: center;">
                     <div style="padding: 20px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
                         <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green);">15</div>
                         <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 4px;">Engineers certified</div>
                     </div>
                     <div style="padding: 20px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green);">15</div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green);">30</div>
                         <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 4px;">Batteries built</div>
                     </div>
                     <div style="padding: 20px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
@@ -1109,10 +1138,14 @@
                     </div>
                     <div style="padding: 20px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
                         <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green);">150K</div>
-                        <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 4px;">Patients reached</div>
+                        <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 4px;">Lives protected</div>
+                    </div>
+                    <div style="padding: 20px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--lime-green);">4</div>
+                        <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 4px;">Communities reached</div>
                     </div>
                 </div>
-                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 1rem;">Published before-and-after data. A model for 95,000 clinics.</p>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 1rem;">15 LiFePO4 + 15 solar battery systems for the price of one conventional system. Published before-and-after data.</p>
             </div>
 
             <!-- WHERE EVERY DOLLAR GOES -->
@@ -1205,50 +1238,68 @@
             <h2 class="reveal reveal-delay-1" style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); margin-bottom: 0.5rem;">Partner With Us</h2>
             <div class="brand-bar" style="margin: 1.5rem auto 1.5rem;"></div>
             <p class="reveal reveal-delay-2" style="font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 3rem; line-height: 1.7;">
-                Three ways to get involved.
+                We keep the dispensaries that programs, health workers, and prior investments already depend on running during the moments that matter most. Split-pay arrangements welcome.
             </p>
 
+            <!-- REASONS TO PARTNER -->
+            <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 3rem; max-width: 900px;">
+                <div style="padding: 24px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; text-align: left;">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--lime-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Local Ownership</div>
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6;">Community owns and maintains the systems. Zero subscriptions, durable local capacity.</div>
+                </div>
+                <div style="padding: 24px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; text-align: left;">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--lime-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Measurable Evidence</div>
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6;">Published clinic uptime before/after, ready for reports, donors, and peer-reviewed research.</div>
+                </div>
+                <div style="padding: 24px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; text-align: left;">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--lime-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Maternal & Newborn Survival</div>
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6;">Reliable power protects mothers and babies during deliveries and enables vaccine refrigeration.</div>
+                </div>
+                <div style="padding: 24px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; text-align: left;">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--lime-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Scalable Model</div>
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6;">Narok is a documented case study, replicable across counties and countries.</div>
+                </div>
+            </div>
+
             <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; text-align: left; margin-bottom: 3rem;">
-                <!-- TRANSFORMATIONAL -->
+                <!-- FULL VISION -->
                 <a target="_blank" rel="noopener" href="https://buy.stripe.com/5kQ7sMb1W6WLcDFbOB8bS01" style="background: rgba(175,190,106,0.12); border: 2px solid var(--lime-green); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;" class="donate-card">
-                    <div style="position: absolute; top: -12px; left: 24px; background: var(--lime-green); color: var(--deep-navy); font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Full Vision</div>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$75,000</div>
-                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Transformational</div>
+                    <div style="position: absolute; top: -12px; left: 24px; background: var(--lime-green); color: var(--deep-navy); font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Transformational</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$80,000</div>
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Full Vision</div>
                     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 engineers + 15 clinics powered</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> ~75K&ndash;150K patients reached</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 12-month monitoring + maintenance</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Everything in Pilot Partner</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 12-month monitoring &amp; maintenance</li>
                         <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Annual recertification funded</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Published peer-reviewed study</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Naming rights + board seat</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> First right of refusal on expansion</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Naming rights to a deployed clinic battery system</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Advisory council seat</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Early opportunity to co-fund expansion</li>
                     </ul>
-                    <div style="margin-top: 16px; font-size: 0.8rem; opacity: 0.5; font-style: italic;">Split-pay available: $25,000/year over 3 years</div>
+                    <div style="margin-top: 16px; font-size: 0.8rem; opacity: 0.5; font-style: italic;">Split-pay welcome</div>
                 </a>
 
-                <!-- RECOMMENDED -->
+                <!-- PILOT PARTNER / RECOMMENDED -->
                 <a target="_blank" rel="noopener" href="https://buy.stripe.com/6oU5kE1rm2GvgTVg4R8bS02" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(175,190,106,0.4); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block; position: relative;" class="donate-card">
                     <div style="position: absolute; top: -12px; left: 24px; background: var(--lime-green); color: var(--deep-navy); font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Recommended</div>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$25,000</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$30,000</div>
                     <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Pilot Partner</div>
                     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
                         <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 engineers + up to 15 clinics</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> ~75K&ndash;150K patients reached</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Published before/after data</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> ~45,000 direct catchment (150K at scale)</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Published before-and-after data</li>
                         <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Co-author on peer-reviewed study</li>
                         <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Named dispensary partner</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Co-pitch Gates/ELMA &amp; MoH leads</li>
                     </ul>
                 </a>
 
                 <!-- TRAINING PARTNER -->
                 <a target="_blank" rel="noopener" href="mailto:biokitelabs@gmail.com?subject=BioKite%20Training%20Partnership" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 32px 24px; text-decoration: none; color: var(--white); transition: all 0.3s; display: block;" class="donate-card">
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$15,000</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lime-green); margin-bottom: 4px;">$20,000</div>
                     <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.5; margin-bottom: 16px;">Training Partner</div>
                     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; line-height: 1.5;">
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 engineers certified as FEOs</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 engineers certified as Field Energy Officers</li>
                         <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 15 deployment-grade batteries built</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 6&ndash;7 clinics powered = 30K&ndash;70K patients</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> 6&ndash;7 clinics powered (~18,000&ndash;25,000 catchment)</li>
                         <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Full uptime data</li>
                         <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--lime-green); font-weight: 700;">&#10003;</span> Site visit + training co-branding</li>
                     </ul>
@@ -1258,7 +1309,7 @@
             <!-- CURRENT PARTNERSHIPS -->
             <div class="reveal" style="margin-top: 3rem; padding: 28px 32px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">
                 <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--lime-green); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.08em;">Current Partnerships</h3>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
                     <div style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.85);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-green); flex-shrink: 0;"></span> Maasai Mara University</div>
                     <div style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.85);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-green); flex-shrink: 0;"></span> Maasai Mara Youth Council</div>
                     <div style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.85);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-green); flex-shrink: 0;"></span> Elongko Africa</div>
@@ -1270,10 +1321,11 @@
 
     <!-- CTA -->
     <section class="panel-mid cta-panel" id="involved">
-        <h2 class="section-title reveal" style="text-align: center;">Join us in preventing the loss of<br><span class="highlight">babies during outages.</span></h2>
-        <p class="reveal reveal-delay-1">Would you be open to donating $50?</p>
+        <h2 class="section-title reveal" style="text-align: center;">Every clinic deserves power that<br><span class="highlight">never goes out.</span></h2>
+        <p class="reveal reveal-delay-1" style="max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.7;">$50 pays an engineering student for one week. $150 builds one battery. $75,000 powers 15 clinics across four communities. Every dollar runs the pilot.</p>
         <div class="cta-buttons reveal reveal-delay-2">
-            <a href="mailto:biokitelabs@gmail.com" class="btn btn-brand">Get in Touch</a>
+            <a href="#donate" class="btn btn-brand">Donate Now</a>
+            <a href="mailto:biokitelabs@gmail.com" class="btn btn-outline">Get in Touch</a>
             <a href="https://www.linkedin.com/company/biokitelabs" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
         </div>
     </section>
@@ -1284,8 +1336,13 @@
         <a href="#donate">Donate Now</a>
     </div>
 
+    <!-- BACK TO TOP -->
+    <button id="backToTop" aria-label="Back to top" style="position: fixed; bottom: 30px; left: 30px; z-index: 90; width: 44px; height: 44px; border-radius: 50%; background: var(--deep-navy); color: var(--white); border: 2px solid rgba(255,255,255,0.2); cursor: pointer; font-size: 1.2rem; display: none; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">&#8593;</button>
+
+    </main>
+
     <!-- FOOTER -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-inner">
             <div class="footer-brand"><img src="logo.png" alt="BioKite"><span>BioKite Labs</span></div>
             <ul class="footer-links">
@@ -1301,8 +1358,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-tagline">"Power is not optional. It is whether she goes home."</div>
-            <div class="footer-copy">&copy; 2026 BioKite Labs. Narok County, Kenya.</div>
+            <div class="footer-tagline">"Electricity decides whether the mother keeps her baby."</div>
+            <div class="footer-copy">&copy; 2026 BioKite Labs. Narok County, Kenya. 501(c)(3) pending.</div>
         </div>
     </footer>
 
@@ -1385,20 +1442,29 @@
         }, { threshold: 0.5 });
         document.querySelectorAll('.stat-card .num').forEach(el => statObserver.observe(el));
 
-        // Live mortality counters
+        // Live mortality counters (throttled to update every second instead of every frame)
         const liveLost = document.getElementById('liveLost');
         const liveChildLost = document.getElementById('liveChildLost');
         if (liveLost) {
             const startTime = Date.now();
             const motherDeathsPerMs = 182000 / (365 * 24 * 60 * 60 * 1000);
             const childDeathsPerMs = 2800000 / (365 * 24 * 60 * 60 * 1000);
-            function updateCounter() {
+            setInterval(() => {
                 const elapsed = Date.now() - startTime;
                 liveLost.textContent = Math.floor(elapsed * motherDeathsPerMs);
                 if (liveChildLost) liveChildLost.textContent = Math.floor(elapsed * childDeathsPerMs);
-                requestAnimationFrame(updateCounter);
-            }
-            updateCounter();
+            }, 1000);
+        }
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                backToTop.style.display = window.scrollY > 1200 ? 'flex' : 'none';
+            }, { passive: true });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         }
     </script>
 
