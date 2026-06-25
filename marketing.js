@@ -90,48 +90,6 @@
     track.innerHTML = clone + clone;
   });
 
-  /* ─── SOCIAL PROOF TOAST NOTIFICATIONS ─── */
-  const toastMessages = [
-    { name: 'A supporter in Boston', action: 'just donated to BioKite Labs' },
-    { name: 'A health director in Narok', action: 'requested a site assessment' },
-    { name: 'An ESG team in London', action: 'downloaded the impact brief' },
-    { name: 'A foundation in San Francisco', action: 'requested the investor brief' },
-    { name: 'An engineer in Nairobi', action: 'completed certification training' },
-    { name: 'A partner in New York', action: 'joined the quarterly update list' },
-    { name: 'A sustainability officer in Berlin', action: 'explored the ESG partnership' },
-    { name: 'A donor in Toronto', action: 'just supported clinic backup power' },
-  ];
-
-  let toastIdx = 0;
-  function showToast() {
-    const container = document.getElementById('socialProofToast');
-    if (!container || document.hidden) return;
-
-    const msg = toastMessages[toastIdx % toastMessages.length];
-    const mins = Math.floor(Math.random() * 15) + 1;
-    container.innerHTML =
-      '<div class="toast-content">' +
-        '<div class="toast-icon">&#9889;</div>' +
-        '<div class="toast-text">' +
-          '<strong>' + msg.name + '</strong> ' + msg.action +
-          '<span class="toast-time">' + mins + ' min ago</span>' +
-        '</div>' +
-        '<button class="toast-close" aria-label="Dismiss">&times;</button>' +
-      '</div>';
-    container.classList.add('visible');
-
-    container.querySelector('.toast-close').addEventListener('click', () => {
-      container.classList.remove('visible');
-    });
-
-    setTimeout(() => container.classList.remove('visible'), 6000);
-    toastIdx++;
-  }
-
-  if (document.getElementById('socialProofToast')) {
-    setTimeout(showToast, 12000);
-    setInterval(showToast, 40000);
-  }
 
   /* ─── COOKIE CONSENT ─── */
   const cookieBanner = document.getElementById('cookieConsent');
@@ -308,6 +266,74 @@
       }
     });
   });
+
+  /* ─── SOCIAL PROOF TOAST — Hooked: Variable Reward (social validation) ─── */
+  const toastContainer = document.querySelector('.social-proof-toast');
+  if (toastContainer) {
+    const donors = [
+      { name: 'A supporter', city: 'Boston, MA', amount: '$100', time: '12 minutes ago', icon: '\u2764\uFE0F' },
+      { name: 'A supporter', city: 'Nairobi, Kenya', amount: '$250', time: '28 minutes ago', icon: '\u{1F30D}' },
+      { name: 'A supporter', city: 'London, UK', amount: '$50', time: '45 minutes ago', icon: '\u2728' },
+      { name: 'A supporter', city: 'San Francisco, CA', amount: '$500', time: '1 hour ago', icon: '\u{1F4AA}' },
+      { name: 'A supporter', city: 'Toronto, Canada', amount: '$150', time: '2 hours ago', icon: '\u{1F31F}' },
+      { name: 'A supporter', city: 'Sydney, Australia', amount: '$100', time: '3 hours ago', icon: '\u{1F33F}' },
+      { name: 'A supporter', city: 'Berlin, Germany', amount: '$75', time: '4 hours ago', icon: '\u26A1' },
+      { name: 'A supporter', city: 'Mumbai, India', amount: '$200', time: '5 hours ago', icon: '\u{1F64F}' },
+      { name: 'A supporter', city: 'Lagos, Nigeria', amount: '$100', time: '6 hours ago', icon: '\u2764\uFE0F' },
+      { name: 'A supporter', city: 'Stockholm, Sweden', amount: '$1,000', time: '8 hours ago', icon: '\u{1F31F}' },
+      { name: 'A supporter', city: 'Singapore', amount: '$150', time: '10 hours ago', icon: '\u{1F30F}' },
+      { name: 'A supporter', city: 'Paris, France', amount: '$50', time: '12 hours ago', icon: '\u2728' },
+      { name: 'A supporter', city: 'New York, NY', amount: '$250', time: '1 day ago', icon: '\u{1F5FD}' },
+      { name: 'A supporter', city: 'Dubai, UAE', amount: '$500', time: '1 day ago', icon: '\u2B50' },
+      { name: 'A supporter', city: 'Cape Town, South Africa', amount: '$100', time: '2 days ago', icon: '\u{1F30D}' },
+      { name: 'A supporter', city: 'Tokyo, Japan', amount: '$200', time: '2 days ago', icon: '\u{1F33F}' }
+    ];
+    // Shuffle donors on each page load
+    for (let i = donors.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [donors[i], donors[j]] = [donors[j], donors[i]];
+    }
+    let toastIndex = 0;
+    function showToast() {
+      if (toastIndex >= donors.length) toastIndex = 0;
+      const d = donors[toastIndex++];
+      const textEl = toastContainer.querySelector('.toast-text');
+      const iconEl = toastContainer.querySelector('.toast-icon');
+      const timeEl = toastContainer.querySelector('.toast-time');
+      if (textEl) textEl.innerHTML = '<strong>' + d.name + ' in ' + d.city + '</strong>donated ' + d.amount + ' to the pilot';
+      if (iconEl) iconEl.textContent = d.icon;
+      if (timeEl) timeEl.textContent = d.time;
+      toastContainer.classList.add('visible');
+      setTimeout(() => { toastContainer.classList.remove('visible'); }, 5000);
+    }
+    // Show first toast after 8 seconds, then every 25 seconds
+    if (!sessionStorage.getItem('bk-toast-dismissed')) {
+      setTimeout(showToast, 8000);
+      setInterval(showToast, 25000);
+      const closeBtn = toastContainer.querySelector('.toast-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          toastContainer.classList.remove('visible');
+          sessionStorage.setItem('bk-toast-dismissed', '1');
+        });
+      }
+    }
+  }
+
+  /* ─── FUNDRAISING PROGRESS BAR ANIMATION ─── */
+  const progressFills = document.querySelectorAll('.progress-bar-fill[data-target]');
+  if (progressFills.length) {
+    const progressObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const target = e.target.dataset.target || '0';
+          setTimeout(() => { e.target.style.width = target + '%'; }, 300);
+          progressObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    progressFills.forEach(el => progressObs.observe(el));
+  }
 
   /* ─── COUNTER FOR AMINA SECTION (homepage only) ─── */
   const liveLost = document.getElementById('liveLost');

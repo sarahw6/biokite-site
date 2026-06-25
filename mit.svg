@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 100" width="460" height="200">
+  <!-- MIT Logo matching user's reference image -->
+  <!-- M: two tall parallel bars -->
+  <rect x="0" y="0" width="22" height="100" fill="#A31F34"/>
+  <rect x="32" y="0" width="22" height="100" fill="#A31F34"/>
+  <!-- I: short crimson cap + gray body -->
+  <rect x="84" y="0" width="22" height="26" fill="#A31F34"/>
+  <rect x="84" y="34" width="22" height="66" fill="#8A8B8C"/>
+  <!-- T: tall left bar + crossbar at top + short right bar -->
+  <rect x="136" y="0" width="22" height="100" fill="#A31F34"/>
+  <rect x="136" y="0" width="94" height="26" fill="#A31F34"/>
+  <rect x="208" y="0" width="22" height="52" fill="#A31F34"/>
+</svg>
