@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Happens When the Lights Go Out | BioKite Labs Blog</title>
+    <meta name="description" content="In rural Kenya, clinics lose power during childbirth. Mothers and babies die from something completely preventable. Here is how BioKite Labs is changing that.">
+    <meta name="author" content="Sarah Wang">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="canonical" href="https://biokitelabs.org/blog.html">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://donate.stripe.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="What Happens When the Lights Go Out | BioKite Labs">
+    <meta property="og:description" content="In rural Kenya, clinics lose power during childbirth. Mothers and babies die from something completely preventable. Here is how BioKite Labs is changing that.">
+    <meta property="og:image" content="https://biokitelabs.org/olosho-clinic.jpg">
+    <meta property="og:url" content="https://biokitelabs.org/blog.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BioKite Labs">
+    <meta property="article:published_time" content="2026-06-25T00:00:00+03:00">
+    <meta property="article:author" content="Sarah Wang">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Happens When the Lights Go Out | BioKite Labs">
+    <meta name="twitter:description" content="In rural Kenya, clinics lose power during childbirth. Mothers and babies die from something completely preventable. Here is how BioKite Labs is changing that.">
+    <meta name="twitter:image" content="https://biokitelabs.org/olosho-clinic.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#1E3A5F">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* ─── BLOG PAGE STYLES ─── */
+
+        /* Hero */
+        .blog-hero {
+            padding: 140px 20px 60px;
+            background: linear-gradient(170deg, rgba(13,27,42,0.97) 0%, rgba(30,58,95,0.95) 40%, rgba(26,58,42,0.93) 100%);
+            position: relative; overflow: hidden; color: var(--white);
+            text-align: center;
+        }
+        .blog-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(107,158,58,0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(55,134,183,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .blog-hero-inner {
+            max-width: 680px; margin: 0 auto; position: relative; z-index: 1;
+        }
+        .blog-hero-tag {
+            display: inline-block; padding: 5px 14px;
+            background: rgba(107,158,58,0.2); border: 1px solid rgba(107,158,58,0.3);
+            color: var(--lime-green); font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; border-radius: 20px; margin-bottom: 1.5rem;
+        }
+        .blog-hero h1 {
+            font-family: 'Montserrat', sans-serif; font-weight: 800;
+            font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--white);
+            line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -0.02em;
+        }
+        .blog-byline {
+            font-size: 0.88rem; color: rgba(255,255,255,0.55);
+            font-family: 'Inter', sans-serif;
+        }
+        .blog-byline a {
+            color: rgba(255,255,255,0.75); text-decoration: underline;
+            text-decoration-color: rgba(255,255,255,0.25);
+            transition: color 0.2s;
+        }
+        .blog-byline a:hover { color: var(--lime-green); }
+
+        /* Article body */
+        .blog-article {
+            max-width: 680px; margin: 0 auto;
+            padding: 56px 20px 80px;
+        }
+        .blog-article p {
+            font-family: 'Lora', serif;
+            font-size: 1.08rem; line-height: 1.85;
+            color: var(--charcoal); margin-bottom: 1.5rem;
+        }
+        .blog-article h2 {
+            font-family: 'Montserrat', sans-serif; font-weight: 700;
+            font-size: 1.35rem; color: var(--deep-navy);
+            margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.3;
+        }
+        .blog-article h3 {
+            font-family: 'Montserrat', sans-serif; font-weight: 600;
+            font-size: 1.1rem; color: var(--deep-navy);
+            margin-top: 2rem; margin-bottom: 0.75rem; line-height: 1.35;
+        }
+        .blog-lead {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem; line-height: 1.8;
+            color: var(--charcoal); font-style: italic;
+            border-left: 3px solid var(--lime-green);
+            padding-left: 20px; margin-bottom: 2rem;
+        }
+        .blog-divider {
+            width: 36px; height: 3px; background: var(--lime-green);
+            border-radius: 2px; margin: 2.5rem 0; border: none;
+        }
+
+        /* Blog image */
+        .blog-image {
+            margin: 2rem 0; border-radius: 12px; overflow: hidden;
+        }
+        .blog-image img {
+            width: 100%; height: auto; display: block;
+            border-radius: 12px;
+        }
+        .blog-image figcaption {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem; color: var(--charcoal);
+            opacity: 0.55; margin-top: 8px; text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Stats callout */
+        .blog-stats {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 16px; margin: 2.5rem 0;
+            padding: 28px; border-radius: 14px;
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #1b3a5c 100%);
+            position: relative; overflow: hidden;
+        }
+        .blog-stats::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(107,158,58,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .blog-stat-item {
+            text-align: center; padding: 12px; position: relative; z-index: 1;
+        }
+        .blog-stat-num {
+            font-family: 'Montserrat', sans-serif; font-weight: 800;
+            font-size: 1.8rem; color: var(--lime-green); line-height: 1;
+            margin-bottom: 6px;
+        }
+        .blog-stat-label {
+            font-size: 0.78rem; color: rgba(255,255,255,0.55);
+            font-weight: 500; line-height: 1.4;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Partnership tiers */
+        .blog-tiers {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 12px; margin: 1.5rem 0 2rem;
+        }
+        .blog-tier {
+            text-align: center; padding: 20px 12px;
+            border-radius: 12px; border: 1px solid var(--light-gray);
+            background: var(--off-white);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .blog-tier:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .blog-tier-amount {
+            font-family: 'Montserrat', sans-serif; font-weight: 800;
+            font-size: 1.3rem; color: var(--deep-navy); margin-bottom: 4px;
+        }
+        .blog-tier-name {
+            font-family: 'Montserrat', sans-serif; font-weight: 600;
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--lime-green); margin-bottom: 6px;
+        }
+        .blog-tier-desc {
+            font-family: 'Inter', sans-serif; font-size: 0.8rem;
+            color: var(--charcoal); opacity: 0.7; line-height: 1.45;
+        }
+
+        /* Donate button */
+        .blog-donate-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 40px; font-family: 'Montserrat', sans-serif;
+            font-weight: 700; font-size: 1rem; border-radius: 8px;
+            text-decoration: none; transition: all 0.3s; cursor: pointer;
+            background: var(--lime-green); color: var(--deep-navy);
+            box-shadow: 0 4px 15px rgba(107,158,58,0.4);
+            border: none;
+        }
+        .blog-donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107,158,58,0.5);
+            background: #7ab344;
+        }
+        .blog-donate-btn:focus-visible {
+            outline: 3px solid var(--biokite-blue);
+            outline-offset: 3px;
+        }
+        .blog-cta-area {
+            text-align: center; margin: 2rem 0;
+        }
+
+        /* Proposal link */
+        .blog-proposal-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'Inter', sans-serif; font-size: 0.92rem;
+            font-weight: 600; color: var(--biokite-blue);
+            text-decoration: underline;
+            text-decoration-color: rgba(55,134,183,0.3);
+            text-underline-offset: 3px;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+        .blog-proposal-link:hover {
+            color: var(--deep-navy);
+            text-decoration-color: var(--deep-navy);
+        }
+        .blog-proposal-link svg {
+            width: 16px; height: 16px; flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        .blog-proposal-link:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* FAQ */
+        .blog-faq { margin-top: 2.5rem; }
+        .blog-faq .faq-question:focus-visible {
+            outline: 3px solid var(--biokite-blue);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Author box */
+        .blog-author {
+            display: flex; align-items: center; gap: 16px;
+            padding: 24px; border-radius: 14px;
+            background: var(--off-white); border: 1px solid var(--light-gray);
+            margin-top: 3rem;
+        }
+        .blog-author img {
+            width: 56px; height: 56px; border-radius: 50%;
+            object-fit: cover; flex-shrink: 0;
+            border: 2px solid var(--lime-green);
+        }
+        .blog-author-info {
+            font-family: 'Inter', sans-serif;
+        }
+        .blog-author-name {
+            font-family: 'Montserrat', sans-serif; font-weight: 700;
+            font-size: 0.92rem; color: var(--deep-navy); margin-bottom: 2px;
+        }
+        .blog-author-role {
+            font-size: 0.82rem; color: var(--charcoal); opacity: 0.65;
+            line-height: 1.45;
+        }
+
+        /* Focus styles for accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--biokite-blue);
+            outline-offset: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .blog-hero { padding: 120px 20px 48px; }
+            .blog-article { padding: 40px 20px 60px; }
+            .blog-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 20px; }
+            .blog-stat-num { font-size: 1.5rem; }
+            .blog-tiers { grid-template-columns: 1fr; gap: 10px; }
+            .blog-author { flex-direction: column; text-align: center; }
+        }
+    </style>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What Happens When the Lights Go Out",
+        "description": "In rural Kenya, clinics lose power during childbirth. Mothers and babies die from something completely preventable. Here is how BioKite Labs is changing that.",
+        "image": "https://biokitelabs.org/olosho-clinic.jpg",
+        "datePublished": "2026-06-25",
+        "dateModified": "2026-06-25",
+        "author": {
+            "@type": "Person",
+            "name": "Sarah Wang",
+            "jobTitle": "CEO",
+            "url": "https://biokitelabs.org"
+        },
+        "publisher": {
+            "@type": "NGO",
+            "name": "BioKite Labs",
+            "url": "https://biokitelabs.org",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://biokitelabs.org/logo.png"
+            },
+            "foundingDate": "2024",
+            "email": "biokitelabs@gmail.com",
+            "nonprofitStatus": "501(c)(3) pending"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://biokitelabs.org/blog.html"
+        },
+        "wordCount": "750",
+        "timeRequired": "PT3M"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is my donation tax-deductible?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "BioKite Labs is applying for 501(c)(3) nonprofit status in the United States. Once approved, donations will be tax-deductible retroactively. We will send you a receipt either way."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where does the money go?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "About 60% goes to battery parts and solar panels. About 25% pays for training and salaries for our local engineers. The remaining 15% covers transport, tools, and keeping things running."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I visit and see the work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We welcome partners to visit Narok County and see the clinics firsthand. Email us at biokitelabs@gmail.com and we will set it up."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes this different from other solar projects?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most projects install equipment and leave. We train local people to build and repair the systems themselves. That means when something breaks, there is already someone nearby who knows how to fix it."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- READING PROGRESS BAR -->
+    <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="BioKite Labs home">
+                <img src="logo.png" alt="BioKite Labs logo">
+                <div class="nav-logo-text">BioKite <span class="labs">Labs</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="invest.html">Investors</a></li>
+                <li><a href="esg.html">ESG</a></li>
+                <li><a href="partners.html">Health Directors</a></li>
+                <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
+                <li><a href="partnership.html">Partnership</a></li>
+                <li><a href="https://donate.stripe.com/3cI28s2vqch53353i58bS00" class="nav-donate" target="_blank" rel="noopener">Donate</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════ -->
+    <header class="blog-hero">
+        <div class="blog-hero-inner reveal">
+            <span class="blog-hero-tag">Blog</span>
+            <h1>What Happens When the<br>Lights Go Out</h1>
+            <p class="blog-byline">Published June 2026 | 3-minute read | By <a href="index.html#team">Sarah Wang</a></p>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         ARTICLE
+         ═══════════════════════════════════════════ -->
+    <article class="blog-article">
+
+        <!-- THE PROBLEM -->
+        <p class="blog-lead">
+            Picture a mother in a small clinic in rural Kenya. She is in the middle of giving birth. Then the power goes out.
+        </p>
+
+        <p>
+            No lights. No machines to monitor the baby. No way to sterilize tools. The nurse pulls out her phone and uses the flashlight. That is the reality for hundreds of thousands of women in Narok County, Kenya - a place the size of Connecticut, where most clinics have no backup power at all.
+        </p>
+
+        <p>
+            When the power fails during childbirth, bad things happen. Babies are born with problems that could have been caught in time. Mothers bleed, and no one can see how badly. Some of these mothers and babies do not make it home.
+        </p>
+
+        <p>
+            This is not a rare event. The power grid here is unreliable. Outages happen every week, sometimes lasting hours. Every single one of these deaths is preventable.
+        </p>
+
+        <hr class="blog-divider">
+
+        <!-- WHY OTHER SOLUTIONS FAILED -->
+        <h2>Why the Usual Fixes Do Not Work</h2>
+
+        <p>
+            You might think: just send solar panels. And many organizations have. But here is the problem - most donated solar equipment breaks down within five years. When it breaks, there is nobody nearby who knows how to repair it. The parts are expensive and hard to get. So the panels sit on rooftops, useless, collecting dust.
+        </p>
+
+        <p>
+            Clinics in Narok County cannot afford to buy replacements. They barely have enough budget for bandages and medicine. They need a solution that someone local can actually keep running.
+        </p>
+
+        <figure class="blog-image reveal">
+            <img src="olosho-clinic.jpg" alt="A rural health clinic building in Narok County, Kenya, surrounded by open landscape" loading="lazy" width="680" height="450">
+            <figcaption>Olosho Clinic in Narok County - one of 15 clinics that will receive backup power.</figcaption>
+        </figure>
+
+        <hr class="blog-divider">
+
+        <!-- WHAT BIOKITE DOES -->
+        <h2>What We Do Differently</h2>
+
+        <p>
+            BioKite Labs does not just drop off equipment and leave. We find young people from the local community and train them to build backup batteries from scratch. These are powerful, long-lasting batteries - the same kind used in electric cars - packaged into a system designed for clinics.
+        </p>
+
+        <p>
+            The key difference? These young engineers own the process. They build the batteries. They install them. And when something needs fixing five years from now, they are right there in the community to take care of it. No waiting for a repair crew from the capital. No expensive spare parts from overseas.
+        </p>
+
+        <p>
+            Each battery system lasts about seven years. It keeps a clinic running through power outages so that lights stay on during deliveries, refrigerators keep vaccines cold, and monitors keep tracking the baby's heartbeat. The simple things that save lives.
+        </p>
+
+        <figure class="blog-image reveal">
+            <img src="nuruloop-rider-savanna.jpg" alt="A BioKite team member transporting battery equipment on a motorcycle through the Kenyan savanna" loading="lazy" width="680" height="450">
+            <figcaption>Our team delivers and services battery systems across Narok County by motorcycle.</figcaption>
+        </figure>
+
+        <hr class="blog-divider">
+
+        <!-- THE NUMBERS -->
+        <h2>What This Looks Like in Numbers</h2>
+
+        <p>
+            Our pilot program is focused and lean. Here is what we are building:
+        </p>
+
+        <div class="blog-stats reveal" role="group" aria-label="Key project numbers">
+            <div class="blog-stat-item">
+                <div class="blog-stat-num">15</div>
+                <div class="blog-stat-label">Local engineers trained</div>
+            </div>
+            <div class="blog-stat-item">
+                <div class="blog-stat-num">15</div>
+                <div class="blog-stat-label">Clinics powered up</div>
+            </div>
+            <div class="blog-stat-item">
+                <div class="blog-stat-num">150K</div>
+                <div class="blog-stat-label">Lives protected</div>
+            </div>
+            <div class="blog-stat-item">
+                <div class="blog-stat-num">$75K</div>
+                <div class="blog-stat-label">Total cost</div>
+            </div>
+        </div>
+
+        <p>
+            That works out to about $5,000 per clinic. For the cost of a used car, an entire community gets reliable power for the place where their children are born.
+        </p>
+
+        <hr class="blog-divider">
+
+        <!-- HOW YOU CAN HELP -->
+        <h2>How You Can Help</h2>
+
+        <p>
+            We have set up three ways to partner with us, depending on what feels right for you or your organization. Every dollar goes directly to batteries, training, and keeping the lights on in clinics.
+        </p>
+
+        <div class="blog-tiers reveal" role="list" aria-label="Partnership levels">
+            <div class="blog-tier" role="listitem">
+                <div class="blog-tier-name">Supporter</div>
+                <div class="blog-tier-amount">$20K</div>
+                <div class="blog-tier-desc">Power 4 clinics and train 4 engineers</div>
+            </div>
+            <div class="blog-tier" role="listitem">
+                <div class="blog-tier-name">Champion</div>
+                <div class="blog-tier-amount">$30K</div>
+                <div class="blog-tier-desc">Power 6 clinics and train 6 engineers</div>
+            </div>
+            <div class="blog-tier" role="listitem">
+                <div class="blog-tier-name">Full Pilot</div>
+                <div class="blog-tier-amount">$75K</div>
+                <div class="blog-tier-desc">Fund the entire program - all 15 clinics</div>
+            </div>
+        </div>
+
+        <p>
+            If you are not in a position to give at those levels, any amount helps. Even $50 buys the wiring for one battery. This is real, physical stuff that goes straight to a clinic.
+        </p>
+
+        <div class="blog-cta-area">
+            <a href="https://donate.stripe.com/3cI28s2vqch53353i58bS00" class="blog-donate-btn magnetic-btn" target="_blank" rel="noopener">
+                Donate Now
+            </a>
+        </div>
+
+        <hr class="blog-divider">
+
+        <!-- FAQ -->
+        <section class="blog-faq" aria-label="Frequently asked questions">
+            <h2>Common Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                    Is my donation tax-deductible?
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                <div class="faq-answer" id="faq-1" role="region">
+                    <p>BioKite Labs is applying for 501(c)(3) nonprofit status in the United States. Once approved, donations will be tax-deductible retroactively. We will send you a receipt either way.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                    Where does the money go?
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                <div class="faq-answer" id="faq-2" role="region">
+                    <p>About 60% goes to battery parts and solar panels. About 25% pays for training and salaries for our local engineers. The remaining 15% covers transport, tools, and keeping things running.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                    Can I visit and see the work?
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                <div class="faq-answer" id="faq-3" role="region">
+                    <p>Yes. We welcome partners to visit Narok County and see the clinics firsthand. Email us at <a href="mailto:biokitelabs@gmail.com">biokitelabs@gmail.com</a> and we will set it up.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                    What makes this different from other solar projects?
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                <div class="faq-answer" id="faq-4" role="region">
+                    <p>Most projects install equipment and leave. We train local people to build and repair the systems themselves. That means when something breaks, there is already someone nearby who knows how to fix it. No outside help needed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                    How do I know this is real?
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                <div class="faq-answer" id="faq-5" role="region">
+                    <p>We publish quarterly updates with photos, data, and progress reports from each clinic. Our team is on the ground in Narok County every day. You can also <a href="partnership.html">read our full partnership proposal</a> with detailed budgets and timelines.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="blog-divider">
+
+        <!-- LINK TO FULL PROPOSAL -->
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="partnership.html" class="blog-proposal-link">
+                Read the full partnership proposal
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+        </div>
+
+        <!-- AUTHOR BOX -->
+        <aside class="blog-author reveal" aria-label="About the author">
+            <img src="sarah-new.jpg" alt="Sarah Wang, CEO of BioKite Labs" loading="lazy" width="56" height="56">
+            <div class="blog-author-info">
+                <div class="blog-author-name">Sarah Wang</div>
+                <div class="blog-author-role">CEO and Co-founder, BioKite Labs. Based between Boston and Narok County, Kenya.</div>
+            </div>
+        </aside>
+
+    </article>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand"><img src="logo.png" alt="BioKite Labs logo"><span>BioKite Labs</span></div>
+                <p class="footer-tagline">Mission: Mother Keeps Her Baby</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/biokitelabs" target="_blank" rel="noopener" aria-label="BioKite Labs on LinkedIn"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    <a href="mailto:biokitelabs@gmail.com" aria-label="Email BioKite Labs"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Navigate</h4>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="partners.html">For Health Directors</a></li>
+                    <li><a href="esg.html">For ESG Partners</a></li>
+                    <li><a href="invest.html">For Investors</a></li>
+                    <li><a href="partnership.html">Partnership Proposal</a></li>
+                    <li><a href="blog.html" aria-current="page">Blog</a></li>
+                    <li><a href="mailto:biokitelabs@gmail.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Stay Updated</h4>
+                <p class="footer-newsletter-text">Get quarterly impact updates from Narok County.</p>
+                <form class="newsletter-form" action="https://formspree.io/f/biokitelabs@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Newsletter Signup - Blog Page">
+                    <div class="newsletter-input-group">
+                        <label for="nl-email-blog" class="sr-only">Email address for newsletter</label>
+                        <input id="nl-email-blog" type="email" name="email" placeholder="Your email" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">&copy; 2026 BioKite Labs. All rights reserved. 501(c)(3) pending.</div>
+            <div class="footer-legal">
+                <span>Narok County, Kenya</span>
+                <span class="footer-sep">|</span>
+                <span>biokitelabs@gmail.com</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+        <svg class="progress-ring" viewBox="0 0 40 40"><circle class="progress-ring-bg" cx="20" cy="20" r="18"/><circle class="progress-ring-circle" cx="20" cy="20" r="18"/></svg>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- COOKIE CONSENT -->
+    <div id="cookieConsent" class="cookie-consent">
+        <p>We use cookies to improve your experience on biokitelabs.org.</p>
+        <button class="cookie-accept">Got it</button>
+    </div>
+
+    <script>
+        /* ─── Hamburger ─── */
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+        });
+        document.querySelectorAll('#navLinks a').forEach(a => {
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.focus();
+            }
+        });
+
+        /* ─── Scroll: nav shadow + reading progress + back-to-top ─── */
+        const navbar = document.querySelector('nav');
+        const progressBar = document.getElementById('readingProgress');
+        const backToTop = document.getElementById('backToTopBtn');
+        const progressCircle = backToTop ? backToTop.querySelector('.progress-ring-circle') : null;
+        const circumference = 2 * Math.PI * 18;
+
+        if (progressCircle) {
+            progressCircle.style.strokeDasharray = circumference;
+            progressCircle.style.strokeDashoffset = circumference;
+        }
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const sy = window.scrollY;
+                    const docH = document.documentElement.scrollHeight - window.innerHeight;
+                    const pct = docH > 0 ? Math.min(sy / docH, 1) : 0;
+
+                    /* Nav shadow */
+                    navbar.classList.toggle('scrolled', sy > 10);
+
+                    /* Reading progress bar */
+                    if (progressBar) progressBar.style.width = (pct * 100) + '%';
+
+                    /* Back to top */
+                    if (backToTop) {
+                        backToTop.classList.toggle('visible', sy > 400);
+                        if (progressCircle) {
+                            progressCircle.style.strokeDashoffset = circumference - (pct * circumference);
+                        }
+                    }
+
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        /* ─── Scroll reveal ─── */
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        /* ─── FAQ accordion ─── */
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                /* Close all */
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                /* Open clicked if it was closed */
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        /* ─── Cookie consent ─── */
+        const cookieConsent = document.getElementById('cookieConsent');
+        if (cookieConsent && !localStorage.getItem('biokite_cookies')) {
+            setTimeout(() => cookieConsent.classList.add('visible'), 2000);
+            cookieConsent.querySelector('.cookie-accept').addEventListener('click', () => {
+                cookieConsent.classList.remove('visible');
+                localStorage.setItem('biokite_cookies', 'accepted');
+            });
+        }
+
+        /* ─── Page load ─── */
+        document.documentElement.classList.add('js-loaded');
+    </script>
+
+</body>
+</html>
