@@ -267,49 +267,33 @@
     });
   });
 
-  /* ─── SOCIAL PROOF TOAST — Hooked: Variable Reward (social validation) ─── */
+  /* ─── SOCIAL PROOF TOAST ─── */
   const toastContainer = document.querySelector('.social-proof-toast');
   if (toastContainer) {
-    const donors = [
-      { name: 'A supporter', city: 'Boston, MA', amount: '$100', time: '12 minutes ago', icon: '\u2764\uFE0F' },
-      { name: 'A supporter', city: 'Nairobi, Kenya', amount: '$250', time: '28 minutes ago', icon: '\u{1F30D}' },
-      { name: 'A supporter', city: 'London, UK', amount: '$50', time: '45 minutes ago', icon: '\u2728' },
-      { name: 'A supporter', city: 'San Francisco, CA', amount: '$500', time: '1 hour ago', icon: '\u{1F4AA}' },
-      { name: 'A supporter', city: 'Toronto, Canada', amount: '$150', time: '2 hours ago', icon: '\u{1F31F}' },
-      { name: 'A supporter', city: 'Sydney, Australia', amount: '$100', time: '3 hours ago', icon: '\u{1F33F}' },
-      { name: 'A supporter', city: 'Berlin, Germany', amount: '$75', time: '4 hours ago', icon: '\u26A1' },
-      { name: 'A supporter', city: 'Mumbai, India', amount: '$200', time: '5 hours ago', icon: '\u{1F64F}' },
-      { name: 'A supporter', city: 'Lagos, Nigeria', amount: '$100', time: '6 hours ago', icon: '\u2764\uFE0F' },
-      { name: 'A supporter', city: 'Stockholm, Sweden', amount: '$1,000', time: '8 hours ago', icon: '\u{1F31F}' },
-      { name: 'A supporter', city: 'Singapore', amount: '$150', time: '10 hours ago', icon: '\u{1F30F}' },
-      { name: 'A supporter', city: 'Paris, France', amount: '$50', time: '12 hours ago', icon: '\u2728' },
-      { name: 'A supporter', city: 'New York, NY', amount: '$250', time: '1 day ago', icon: '\u{1F5FD}' },
-      { name: 'A supporter', city: 'Dubai, UAE', amount: '$500', time: '1 day ago', icon: '\u2B50' },
-      { name: 'A supporter', city: 'Cape Town, South Africa', amount: '$100', time: '2 days ago', icon: '\u{1F30D}' },
-      { name: 'A supporter', city: 'Tokyo, Japan', amount: '$200', time: '2 days ago', icon: '\u{1F33F}' }
+    const messages = [
+      { text: '15 engineering students certified in Narok County', time: 'This month' },
+      { text: '24 local stakeholders co-designed the pilot', time: 'Recent' },
+      { text: '3 clinics selected for first deployment', time: 'This quarter' }
     ];
-    // Shuffle donors on each page load
-    for (let i = donors.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [donors[i], donors[j]] = [donors[j], donors[i]];
-    }
     let toastIndex = 0;
+    let toastCount = 0;
+    const MAX_TOASTS = 2;
     function showToast() {
-      if (toastIndex >= donors.length) toastIndex = 0;
-      const d = donors[toastIndex++];
+      if (toastCount >= MAX_TOASTS) return;
+      const d = messages[toastIndex++];
       const textEl = toastContainer.querySelector('.toast-text');
       const iconEl = toastContainer.querySelector('.toast-icon');
       const timeEl = toastContainer.querySelector('.toast-time');
-      if (textEl) textEl.innerHTML = '<strong>' + d.name + ' in ' + d.city + '</strong>donated ' + d.amount + ' to the pilot';
-      if (iconEl) iconEl.textContent = d.icon;
+      if (textEl) textEl.innerHTML = d.text;
+      if (iconEl) iconEl.textContent = '\u2705';
       if (timeEl) timeEl.textContent = d.time;
       toastContainer.classList.add('visible');
+      toastCount++;
       setTimeout(() => { toastContainer.classList.remove('visible'); }, 5000);
     }
-    // Show first toast after 8 seconds, then every 25 seconds
     if (!sessionStorage.getItem('bk-toast-dismissed')) {
-      setTimeout(showToast, 8000);
-      setInterval(showToast, 25000);
+      setTimeout(showToast, 15000);
+      setTimeout(showToast, 60000);
       const closeBtn = toastContainer.querySelector('.toast-close');
       if (closeBtn) {
         closeBtn.addEventListener('click', () => {
