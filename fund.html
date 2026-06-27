@@ -224,6 +224,13 @@
         .cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
         .cta-note { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 1.5rem; }
 
+        /* ─── PILLAR GRID ─── */
+        .pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 1rem; }
+        /* ─── PHASE GRID ─── */
+        .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 2rem; }
+        /* ─── BUDGET TABLE MIDDLE COLUMN ─── */
+        .budget-table th:nth-child(2), .budget-table td:nth-child(2) { padding-left: 16px; padding-right: 16px; }
+
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
             .stats-bar { grid-template-columns: 1fr 1fr; margin-top: -30px; }
@@ -232,6 +239,9 @@
             .clinics-grid { grid-template-columns: 1fr; }
             .evidence-grid { grid-template-columns: 1fr; }
             .team-row { grid-template-columns: 1fr; }
+            .pillar-grid { grid-template-columns: 1fr; }
+            .phase-grid { grid-template-columns: 1fr; }
+            .budget-table th:nth-child(2), .budget-table td:nth-child(2) { display: none; }
         }
         @media (max-width: 600px) {
             .stats-bar { grid-template-columns: 1fr; }
@@ -256,7 +266,7 @@
       "name": "Where exactly does my money go?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "60% battery parts and solar panels. 25% engineer training and salaries. 15% transport, tools, and operations. No hidden overhead."
+        "text": "$24,500 for battery systems hardware. $18,000 for engineer training and certification. $9,500 for clinic deployment and logistics. $8,500 for a 12-month outcomes study. $7,500 for program operations. $7,000 for contingency and financial operations. No hidden overhead."
       }
     },
     {
@@ -390,9 +400,10 @@
             <h2 class="reveal reveal-delay-1">What happens when the lights go out.</h2>
             <div class="brand-bar reveal"></div>
             <p class="problem-text reveal reveal-delay-2">Picture a mother in a small clinic in Narok County, Kenya. She is in the middle of giving birth. Then the power goes out. No lights. No fetal monitor. No oxygen concentrator. No way to sterilize tools. The nurse pulls out her phone and uses the flashlight.</p>
+            <p class="problem-text reveal reveal-delay-2">A woman's lifetime risk of pregnancy-related death in sub-Saharan Africa is 1 in 55, approximately 250 times higher than in Western Europe. Sub-Saharan Africa accounts for 85% of the world's unelectrified population, with 451 million rural residents still without electricity. A randomized study of rural health facilities in Uganda found that reliable electricity averted an estimated 61% of maternal deaths. These are not isolated problems. They are compounding failures that converge in the delivery room.</p>
             <div class="problem-stat-box reveal reveal-delay-3">
                 <div class="stat-highlight">208 outages per year</div>
-                <div class="stat-context">At Olosho-Oibor Dispensary alone, 57% of operating hours are lost to power outages.</div>
+                <div class="stat-context">At Olosho-Oibor Dispensary, serving approximately 3,000 patients with a single nurse-midwife, experiencing 4 to 6 power outages per week lasting 2 to 6 hours each. 57% of operating hours are lost to power outages.</div>
             </div>
             <div class="problem-citation reveal">
                 "Hospital mortality risk increases 43% per outage day exceeding two hours."
@@ -453,6 +464,26 @@
             <div class="different-quote reveal">
                 "Most projects install equipment and leave. We train local people to build and repair the systems themselves. When something breaks, there is already someone nearby who knows how to fix it."
             </div>
+
+            <h3 class="reveal" style="font-size: 1.2rem; color: var(--deep-navy); margin-top: 2.5rem; margin-bottom: 1.5rem;">The 4-Pillar Implementation Model</h3>
+            <div class="pillar-grid reveal">
+                <div style="padding: 24px; background: var(--white); border-radius: 14px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--biokite-blue);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--biokite-blue); margin-bottom: 8px;">Pillar 1: EV Battery Waste Recovery</h4>
+                    <p style="font-size: 0.9rem; color: var(--charcoal); opacity: 0.8; line-height: 1.6; margin: 0;">Partners with WEEE Centre to collect and test retired EV batteries at minimal cost, converting electronic waste into reliable medical-grade energy storage.</p>
+                </div>
+                <div style="padding: 24px; background: var(--white); border-radius: 14px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--biokite-blue);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--biokite-blue); margin-bottom: 8px;">Pillar 2: Local Engineer Training</h4>
+                    <p style="font-size: 0.9rem; color: var(--charcoal); opacity: 0.8; line-height: 1.6; margin: 0;">160-hour certification through Maasai Mara University partnership. Graduates earn the Certified Field Energy Officer title and serve as the permanent technical workforce for their communities.</p>
+                </div>
+                <div style="padding: 24px; background: var(--white); border-radius: 14px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--biokite-blue);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--biokite-blue); margin-bottom: 8px;">Pillar 3: Deployment via NuruLoop</h4>
+                    <p style="font-size: 0.9rem; color: var(--charcoal); opacity: 0.8; line-height: 1.6; margin: 0;">Motorbike network delivers battery materials and finished units to remote facilities, enabling maintenance and resupply across terrain that lacks paved roads.</p>
+                </div>
+                <div style="padding: 24px; background: var(--white); border-radius: 14px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--biokite-blue);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--biokite-blue); margin-bottom: 8px;">Pillar 4: Remote Monitoring</h4>
+                    <p style="font-size: 0.9rem; color: var(--charcoal); opacity: 0.8; line-height: 1.6; margin: 0;">Weekly uptime scorecards and quarterly impact reports provide continuous visibility into system performance and health outcomes at every deployed site.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -498,7 +529,7 @@
             <div class="clinics-grid reveal reveal-delay-3">
                 <div class="clinic-card first-site">
                     <h3>Olosho-Oibor Dispensary</h3>
-                    <p>208 outages per year. Serves 15,000+ people. First pilot site with baseline data collection complete.</p>
+                    <p>Serves approximately 3,000 patients. Single nurse-midwife. 4 to 6 power outages per week. First pilot site with operational baseline complete.</p>
                     <div class="clinic-status"><span class="status-dot"></span> Needs Funding</div>
                 </div>
                 <div class="clinic-card">
@@ -530,6 +561,43 @@
         </div>
     </section>
 
+    <!-- SCALE-UP PLAN -->
+    <section class="section section-dark">
+        <div class="section-inner">
+            <div class="section-label reveal">Scale-Up Plan</div>
+            <h2 class="reveal reveal-delay-1">From one county to continent-wide impact.</h2>
+            <div class="brand-bar reveal"></div>
+            <div class="phase-grid reveal reveal-delay-2">
+                <div style="padding: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; backdrop-filter: blur(16px);">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--lime-green); margin-bottom: 12px;">Phase 1: Narok County (Year 1)</div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 16px; line-height: 1.3;">Prove the model in 15 facilities</h3>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> 15 facilities deployed</li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> 15 Certified Field Energy Officers</li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> 30 battery systems operational</li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> Approximately 150,000 lives in catchment</li>
+                    </ul>
+                </div>
+                <div style="padding: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; backdrop-filter: blur(16px);">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--lime-green); margin-bottom: 12px;">Phase 2: National Expansion (Year 2 to 3)</div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 16px; line-height: 1.3;">Scale through government systems</h3>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> Government contracting with Kenyan Ministry of Health</li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> Certification program licensed to county health systems</li>
+                    </ul>
+                </div>
+                <div style="padding: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; backdrop-filter: blur(16px);">
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--lime-green); margin-bottom: 12px;">Phase 3: Cross-Border (Year 3 Onwards)</div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 16px; line-height: 1.3;">Expand across sub-Saharan Africa</h3>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> 1 to 3 new countries per year</li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5;"><span style="color: var(--lime-green); flex-shrink: 0;">&#10003;</span> Guided by maternal mortality burden and grid reliability data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- BUDGET TRANSPARENCY -->
     <section class="section section-light">
         <div class="section-inner">
@@ -540,34 +608,49 @@
                 <thead>
                     <tr>
                         <th>Category</th>
-                        <th>Allocation</th>
+                        <th>What It Covers</th>
+                        <th>Amount</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="budget-row">
-                        <td>
-                            Battery parts and solar panels
-                            <div class="budget-bar"><div class="budget-bar-fill" style="width: 60%;"></div></div>
-                        </td>
-                        <td>60%</td>
+                        <td>Battery systems hardware</td>
+                        <td style="font-size: 0.85rem; opacity: 0.75;">Second-life EV cells, BMS units, inverters, solar panels, enclosures, safety equipment</td>
+                        <td>$24,500</td>
                     </tr>
                     <tr class="budget-row">
-                        <td>
-                            Training and engineer salaries
-                            <div class="budget-bar"><div class="budget-bar-fill" style="width: 25%;"></div></div>
-                        </td>
-                        <td>25%</td>
+                        <td>Engineer training and certification</td>
+                        <td style="font-size: 0.85rem; opacity: 0.75;">15 engineer stipends (12 weeks), training materials, certification, lead trainer</td>
+                        <td>$18,000</td>
                     </tr>
                     <tr class="budget-row">
-                        <td>
-                            Transport, tools, and operations
-                            <div class="budget-bar"><div class="budget-bar-fill" style="width: 15%;"></div></div>
-                        </td>
-                        <td>15%</td>
+                        <td>Clinic deployment and logistics</td>
+                        <td style="font-size: 0.85rem; opacity: 0.75;">NuruLoop transport, installation, site assessments, community engagement, insurance</td>
+                        <td>$9,500</td>
+                    </tr>
+                    <tr class="budget-row">
+                        <td>12-month outcomes study</td>
+                        <td style="font-size: 0.85rem; opacity: 0.75;">Data collection, maternal outcomes partnership, ethics review, data analyst, publication</td>
+                        <td>$8,500</td>
+                    </tr>
+                    <tr class="budget-row">
+                        <td>Program operations</td>
+                        <td style="font-size: 0.85rem; opacity: 0.75;">Project manager, communications, field connectivity, translation</td>
+                        <td>$7,500</td>
+                    </tr>
+                    <tr class="budget-row">
+                        <td>Contingency and financial operations</td>
+                        <td style="font-size: 0.85rem; opacity: 0.75;">Reserve fund, 501(c)(3) finalization, banking, audit</td>
+                        <td>$7,000</td>
+                    </tr>
+                    <tr class="budget-row" style="border-top: 2px solid var(--deep-navy);">
+                        <td style="font-weight: 700; color: var(--deep-navy);">Total</td>
+                        <td></td>
+                        <td style="font-weight: 800; font-size: 1.1rem;">$75,000</td>
                     </tr>
                 </tbody>
             </table>
-            <p class="budget-note reveal reveal-delay-3">No hidden overhead. No consultants.</p>
+            <p class="budget-note reveal reveal-delay-3">No hidden overhead. No consultants. Unit costs validated through Olosho-Oibor pilot and current supplier pricing.</p>
         </div>
     </section>
 
@@ -594,8 +677,8 @@
                     <div class="evidence-source">WHO, 2023</div>
                 </div>
                 <div class="evidence-card">
-                    <div class="evidence-num">&lt;$105</div>
-                    <div class="evidence-label">Per life-year saved, at 1/21 of the WHO cost-effectiveness threshold</div>
+                    <div class="evidence-num">$350-$525</div>
+                    <div class="evidence-label">Projected cost per life-year saved in the pilot phase, with potential to reach below $105 per DALY at scale. The WHO benchmark for a highly cost-effective intervention is approximately $2,200.</div>
                     <div class="evidence-source">BioKite methodology</div>
                 </div>
             </div>
@@ -656,7 +739,7 @@
             </div>
             <div class="faq-item">
                 <button class="faq-question">Where exactly does my money go?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-                <div class="faq-answer">60% battery parts and solar panels. 25% engineer training and salaries. 15% transport, tools, and operations. No hidden overhead.</div>
+                <div class="faq-answer">$24,500 for battery systems hardware. $18,000 for engineer training and certification. $9,500 for clinic deployment and logistics. $8,500 for a 12-month outcomes study. $7,500 for program operations. $7,000 for contingency and financial operations. No hidden overhead.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">What makes this different from solar projects that failed?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
