@@ -267,43 +267,6 @@
     });
   });
 
-  /* ─── SOCIAL PROOF TOAST ─── */
-  const toastContainer = document.querySelector('.social-proof-toast');
-  if (toastContainer) {
-    const messages = [
-      { text: '15 engineering students certified in Narok County', time: 'This month' },
-      { text: '24 local stakeholders co-designed the pilot', time: 'Recent' },
-      { text: '3 clinics selected for first deployment', time: 'This quarter' }
-    ];
-    let toastIndex = 0;
-    let toastCount = 0;
-    const MAX_TOASTS = 2;
-    function showToast() {
-      if (toastCount >= MAX_TOASTS) return;
-      const d = messages[toastIndex++];
-      const textEl = toastContainer.querySelector('.toast-text');
-      const iconEl = toastContainer.querySelector('.toast-icon');
-      const timeEl = toastContainer.querySelector('.toast-time');
-      if (textEl) textEl.innerHTML = d.text;
-      if (iconEl) iconEl.textContent = '\u2705';
-      if (timeEl) timeEl.textContent = d.time;
-      toastContainer.classList.add('visible');
-      toastCount++;
-      setTimeout(() => { toastContainer.classList.remove('visible'); }, 5000);
-    }
-    if (!sessionStorage.getItem('bk-toast-dismissed')) {
-      setTimeout(showToast, 15000);
-      setTimeout(showToast, 60000);
-      const closeBtn = toastContainer.querySelector('.toast-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          toastContainer.classList.remove('visible');
-          sessionStorage.setItem('bk-toast-dismissed', '1');
-        });
-      }
-    }
-  }
-
   /* ─── FUNDRAISING PROGRESS BAR ANIMATION ─── */
   const progressFills = document.querySelectorAll('.progress-bar-fill[data-target]');
   if (progressFills.length) {
